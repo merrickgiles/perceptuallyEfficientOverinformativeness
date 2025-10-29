@@ -1,0 +1,221 @@
+---
+title: "Staircase Logit Plots"
+format: 
+  html:
+    toc: true
+    toc-location: right
+    toc-depth: 2 
+embed-resources: true
+editor: visual
+execute: 
+  warning: false
+---
+
+```{r}
+#| echo: true 
+#| output: false
+
+library(tidyverse)
+library(here)
+library(ggthemr)
+ggthemr("pale")
+
+light <- c("#DCBCBC")
+mid <- c("#B97C7C")
+dark <- c("#8F2727")
+darker <- c("#7C0000")
+
+lightblue <- c("#BCC8DC")    
+midblue <- c("#7C97B9")      
+darkblue <- c("#27548F")     
+darkerblue <- c("#00247C")
+
+# for extracting border colour of ggthemr 
+current_theme <- theme_get()
+axis_color <- current_theme$axis.line$colour
+
+# my custom theme
+my_theme <- function() {
+  theme(
+    panel.grid.major = element_line(
+      size = 0.2,        
+      linetype = "solid"),
+    text = element_text(family = "serif", size = 18),
+    panel.border = element_rect(color = axis_color, 
+                                fill = NA, 
+                                linewidth = 1.1),
+    axis.line = element_blank()
+  )
+}
+
+setwd(here("experimentOne", "data", "staircasePlots"))
+
+colour <- read_csv(file = "colorStaircases.csv")
+material <- read_csv(file = "materialStaircases.csv")
+```
+
+ 
+
+## Plotting
+
+ 
+
+### Yellow to Orange Staircase Plot
+
+```{r}
+steps_metal <- material |>
+  mutate(stim = ifelse(dimension == "wood", 10 - step, step),
+         correct = ifelse(response == "wood", 1, 0)) |>
+  group_by(stim) |> 
+   summarise(
+    n = n(),
+    sum_correct = sum(correct),
+    prop_correct = sum_correct / n
+  )
+
+steps_yo_binned <- colour |>
+  filter(dimension %in% c("yellow", "orange")) |> 
+  mutate(stim = ifelse(dimension == "yellow", 50 - step, step),
+         correct = ifelse(response == "yellow", 1, 0)) |> 
+  mutate(stim = 5 * .bincode(stim, c(1:10) * 5))
+
+steps_yo <- colour |>
+  filter(dimension %in% c("yellow", "orange")) |> 
+  mutate(stim = ifelse(dimension == "yellow", 50 - step, step),
+         correct = ifelse(response == "yellow", 1, 0))
+```
+
+```{r}
+ggplot(
+  data = steps_yo_binned, 
+  aes(x = stim, y = correct)
+) +
+  stat_smooth(
+    data = steps_yo, 
+    aes(x=stim, y = correct),
+    method="glm", 
+    se=FALSE, 
+    method.args = list(family=binomial), 
+    col=midblue,
+    size = 1.7
+    ) +
+    stat_summary(fun.data = mean_cl_boot, geom="linerange", color = midblue, alpha = 0.80, size = 1.8) +
+  stat_summary(fun = mean, geom="point", color = darkblue, size = 2.5) +
+  my_theme() + 
+  labs(
+    x = "Orange-to-Yellow Staircase Step Number",
+    y = "Probability of Label \"yellow\"", 
+  )
+```
+
+&nsbp;
+
+### Green to Blue Staircase Plot
+
+```{r}
+steps_gb_binned <- colour |>
+  filter(dimension %in% c("green", "blue")) |> 
+  mutate(stim = ifelse(dimension == "green", 50 - step, step),
+         correct = ifelse(response == "green", 1, 0)) |> 
+  mutate(stim = 5 * .bincode(stim, c(1:10) * 5))
+
+steps_gb <- colour |>
+  filter(dimension %in% c("green", "blue")) |> 
+  mutate(stim = ifelse(dimension == "green", 50 - step, step),
+         correct = ifelse(response == "green", 1, 0))
+```
+
+```{r}
+ggplot(
+  data = steps_gb_binned, 
+  aes(x = stim, y = correct)
+) +
+  stat_smooth(
+    data = steps_gb, 
+    aes(x=stim, y = correct),
+    method="glm", 
+    se=FALSE, 
+    method.args = list(family=binomial), 
+    col=midblue,
+    size = 1.7
+    ) +
+    stat_summary(fun.data = mean_cl_boot, geom="linerange", color = midblue, alpha = 0.80, size = 1.8) +
+  stat_summary(fun = mean, geom="point", color = darkblue, size = 2.5) +
+  my_theme() + 
+  labs(
+    x = "Blue-to-Green Staircase Step Number",
+    y = "Probability of Label \"green\"", 
+  )
+```
+
+ 
+
+### Extracting the separable material categories from the list information.
+
+I had to get the list information by going to the original experiment and checking the lists. List 1 is orange-yellow/wood-glass, 2 is orange-yellow/cardboard-metal, 3 is blue-green/wood-glass, and 4 is blue-green/cardboard-metal.
+
+ 
+
+### Wood to Glass Staircase Plot
+
+```{r}
+steps_wood_glass <- material |> 
+  filter(list %in% c("list1", "list3")) |> 
+  mutate(stim = ifelse(dimension == "metal", 10 - step, step),
+         correct = ifelse(response == "metal", 1, 0))
+```
+
+```{r}
+ggplot(
+  data = steps_wood_glass, 
+  aes(x = stim, y = correct)
+) +
+  stat_smooth(
+    data = steps_wood_glass, 
+    aes(x=stim, y = correct),
+    method="glm", 
+    se=FALSE, 
+    method.args = list(family=binomial), 
+    col=mid,
+    size = 1.7
+    ) +
+    stat_summary(fun.data = mean_cl_boot, geom="linerange", color = mid, alpha = 0.80, size = 1.8) +
+  stat_summary(fun = mean, geom="point", color = dark, size = 2.5) +
+  my_theme() + 
+  labs(
+    x = "Wood-to-Glass Staircase Step Number",
+    y = "Probability of Label \"Metal\"", 
+  )
+```
+
+ 
+
+```{r}
+steps_cardboard_metal <- material |> 
+  filter(list %in% c("list2", "list4")) |> 
+  mutate(stim = ifelse(dimension == "metal", 10 - step, step),
+         correct = ifelse(response == "metal", 1, 0))
+```
+
+```{r}
+ggplot(
+  data = steps_cardboard_metal, 
+  aes(x = stim, y = correct)
+) +
+  stat_smooth(
+    data = steps_cardboard_metal, 
+    aes(x=stim, y = correct),
+    method="glm", 
+    se=FALSE, 
+    method.args = list(family=binomial), 
+    col=mid,
+    size = 1.7
+    ) +
+    stat_summary(fun.data = mean_cl_boot, geom="linerange", color = mid, alpha = 0.80, size = 1.8) +
+  stat_summary(fun = mean, geom="point", color = dark, size = 2.5) +
+  my_theme() + 
+  labs(
+    x = "Cardboard-to-Metal Staircase Step Number",
+    y = "Probability of Label \"Metal\"", 
+  )
+```

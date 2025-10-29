@@ -1,0 +1,940 @@
+---
+title: "Overmodification Experiment 2: Static Colour vs. Orientation Free Response Paradigm"
+format: 
+  html:
+    toc: true
+    toc-location: right
+    toc-depth: 2 
+embed-resources: true
+editor: visual
+execute: 
+  warning: false
+---
+
+A processing script for experiment two of the overmodification project
+
+*Set up computing environment*
+
+```{r setup}
+#| echo: true 
+#| output: false
+
+library(tidyverse)
+library(jsonlite)
+library(brms)
+library(tidybayes)
+library(BayesFactor)
+library(ggthemr)
+ggthemr("pale")
+
+
+sand = c("#e0cda9")
+dust = c("#9E8472")
+forest = c("#a0ae9b")
+shallowWaters = c("#a4b8c1")
+
+darkSand = c("#5C4033")
+darkDust = c("#1b0000")
+darkForest = c("#06402B")
+darkShallowWaters = c("#2f4858")
+
+earthShades = c("#b2988e", "#b37a5f", "#d4b88a", "#a0ae9b", "#8d9da8")
+
+earthShadesDark = c("#554740", "#553929", "#68553d", "#06402B", "#2f4858")
+
+fourPalette = c("#7a6b6e", "#8d9da8", "#e0cda9", "#a8a89e")
+
+fourPaletteDark = c("#1b0000", "#2f4858", "#5C4033", "#06402B")
+
+threePalette = c("#8d9da8", "#a8a89e", "#e0cda9")
+
+threePaletteDark = c("#2f4858", "#06402B", "#5C4033")
+
+data <- read_csv("rawData/rawData.csv")
+
+finishStatusOrient <- read_csv("rawData/finishStatuses/orientationFinishStatuses.csv")
+finishStatusColor <- read_csv("rawData/finishStatuses/colorFinishStatuses.csv")
+
+#for ease of col name use
+colnames(data)<- c("serverCode", "column1", "column2", "string")
+```
+
+###### 
+
+*Removing participants who did not complete the experiment (in-line with ethics approval), and experimenters debug link*
+
+```{r}
+# experimenters debugging
+data <- data %>%   
+  select(-column1) %>%   
+  filter(!grepl('debug', serverCode)) %>%    
+  separate(
+    serverCode, 
+    into = c("Participant id", NA), 
+    sep = ":", 
+    remove=FALSE
+    )
+
+# drop outs
+finishStatus <- bind_rows(finishStatusOrient, finishStatusColor) 
+
+data <- finishStatus %>%
+  select("Participant id", "Status") %>% 
+  left_join(data) %>% 
+  filter(Status == "APPROVED") %>% 
+  select(-`Participant id`, -Status) 
+```
+
+*Indexing df for trial ordering:*
+
+```{r}
+indexedDataFrame <- data %>% 
+group_by(serverCode) %>% 
+mutate(index = row_number()) 
+```
+
+## Transforming JSON strings to nice tibbles
+
+*Turn server codes into participants with id's, and filter out unnecessary columns.*
+
+```{r}
+participantData <- indexedDataFrame %>%   
+  separate(serverCode, 
+           into = c("participant", NA), 
+           sep = ":", 
+           remove=FALSE) %>% 
+  group_by(participant) %>% 
+  mutate(participant = if(n() > 1) { 
+    sprintf("participant%03d",                   
+            cur_group_id())     
+    }) %>% 
+  ungroup() %>% 
+  select(participant,
+         index,
+         everything(), 
+         -serverCode) %>% 
+  arrange(participant) %>% 
+  select(-column2)
+```
+
+*Check our total N, INCLUDING rejected and returned*
+
+```{r}
+usablePreEverything <- participantData$participant %>% 
+  unique()
+
+message('Everything including rejections and returns: ', length(usablePreEverything), ' people.')
+```
+
+As expected, 40 participants.
+
+###### 
+
+*Filter in relevant data*
+
+```{r}
+data <- participantData %>% 
+  filter(str_detect(tolower(string), "setsize"))
+```
+
+*Parse*
+
+```{r}
+parseddata <- data %>% 
+  mutate(inx = 1:n()) %>% 
+  rowwise() %>% 
+  mutate(trialdata = lapply(string, fromJSON)) %>% 
+  unnest(trialdata) %>% 
+  mutate(label = names(trialdata)) %>% 
+  spread(label, trialdata) %>% 
+  unnest(where(is.list)) %>% 
+  select(-string, -inx)
+```
+
+*Check our total N recruited after filtering in relevant data*
+
+```{r}
+usableAfterFirstFilter <- parseddata$participant %>% 
+  unique()
+
+message('Total recruited is: ', length(usableAfterFirstFilter), ' people.')
+```
+
+Again, N = 40.
+
+###### 
+
+###### 
+
+## Participant Removal
+
+*Filter in crit data*
+
+```{r}
+parsedCrit <- parseddata %>% 
+  filter(
+    trialType == "crit"
+  ) 
+```
+
+###### 
+
+#### Failure to establish reference on \>50% of trials
+
+*Set up a dictionary of terms constituting sufficiency*
+
+Note: set up sufficient terms by iterating over the next three chunks, expanding sufficient terms with manual checks to identify idiocyncratic responses/spelling.
+
+Some notes:
+
+-   Some said "sole object of" or "only object with". I accept these responses as sufficient.
+
+-   "Like a ball" – accept.
+
+-   "X sided or X pointed object" – accept.
+
+-   Responses that include colour but no noun are not considered sufficient. E.g., I'm marking "green" or "green one" is not sufficient (even though it technically is) – just to be conservative toward hypothesis.
+
+```{r}
+sufficientTerms <- c(
+  "hexagon", "pentagon", "square", "circle", "sides", "corners", "round", "shape", "points", "pointed", "sided", "ball", "sole", "only", "polygon", "sqiare", "suqare", "Sqaure", "odd")
+```
+
+*Set function returning responses w/ a word in the dictionary*
+
+```{r}
+containsSufficientTerm <- function(text) {
+  any(sapply(sufficientTerms, function(term) grepl(term, text, ignore.case = TRUE)))
+}
+```
+
+*Run function on responses*
+
+```{r}
+noSufficientTerm <- parsedCrit[!sapply(
+  parsedCrit$response, 
+  containsSufficientTerm), ]
+
+ noSufficientTerm %>% select(response) %>% view()
+```
+
+After a manual check, I'm satisfied with what is included and excluded, so I'll mutate the condition to a tibble.
+
+###### 
+
+*Mutate to TRUE/FALSE condition, Calc proportion*
+
+```{r}
+containsTermCheck <- parsedCrit %>%
+  mutate(
+    containsSufficientTerm = sapply(response, 
+                                    containsSufficientTerm)
+    ) %>% 
+  group_by(participant) %>% 
+  summarise(
+    totalTrials = n(), 
+    nonSufficientTrials = sum(containsSufficientTerm == FALSE),
+    proportionNonSufficient = 
+      nonSufficientTrials / totalTrials 
+            )
+```
+
+*Remove identified participants (2)*
+
+```{r}
+nonSufficientParticipantsfilter <- containsTermCheck %>% 
+  filter(proportionNonSufficient >= 0.50) 
+```
+
+*Apply to data frame*
+
+```{r}
+sufficientParsedCrit <- anti_join(
+  parsedCrit, 
+  nonSufficientParticipantsfilter, 
+  by = "participant"
+) 
+```
+
+*Check N*
+
+```{r}
+usablesufficientParsedCrit <- sufficientParsedCrit$participant %>% 
+  unique()
+
+message('Total providing >50% sufficient responses is: ', length(usablesufficientParsedCrit), ' people.')
+```
+
+2 participants removed due to that criteria.
+
+###### 
+
+###### 
+
+**Trial Removal: Failure to establish reference**
+
+*Count N-trials before*
+
+```{r}
+message('Total number of trials before independent trial remove is: ', nrow(sufficientParsedCrit), ' trials.')
+```
+
+Prior to removal, 1292 trials, N = 38.
+
+*\
+Identify non-sufficient responses*
+
+```{r}
+noSufficientTermTrials <- sufficientParsedCrit[!sapply(
+  sufficientParsedCrit$response, 
+  containsSufficientTerm), ]
+
+ noSufficientTermTrials 
+```
+
+After Manual checking, this proved adequate.
+
+*\
+Mutate to TRUE/FALSE condition, and remove fifteen trials above*
+
+```{r}
+sufficientParticipantAndTrialCrit <- sufficientParsedCrit %>%
+  mutate(
+    containsSufficientTerm = sapply(response, 
+                                    containsSufficientTerm)
+    ) %>% 
+  filter(containsSufficientTerm == TRUE) 
+```
+
+*Count N trials after*
+
+```{r}
+message('Total number of trials after non-sufficient trial remove is ', nrow(sufficientParticipantAndTrialCrit), '. The number of removed trials was ', nrow(sufficientParsedCrit) - nrow(sufficientParticipantAndTrialCrit), '. Percent trial removal == ', 15/nrow(sufficientParsedCrit), '.')
+```
+
+Total number of trials after non-sufficient trial remove is 1277. The number of removed trials was 15. Proportion trial removal == 0.01.
+
+The only other point of removal is a demonstrable violation of task instructions. From manual checking, we can see that there was no violation in terms of writing random responses. However, we should also look at participants using spatial information.
+
+###### 
+
+### Inclusion of Spatial information on \>50% of trials
+
+*Set up dictionary to identify terms used*
+
+```{r}
+spatialTerms <- c(
+  "left", "right", "above", "below", "top", "bottom", "row", "first", "second", "1st", "2nd", "3rd", "last", "middle", "furthest", "far", "next", "diagonally")
+```
+
+*Set function returning responses with a term in the dictionary*
+
+```{r}
+containsSpatialTerm <- function(text) {
+  any(sapply(spatialTerms, function(term) grepl(term, text, ignore.case = TRUE)))
+}
+```
+
+*Mutate to true/false condition*
+
+```{r}
+containsSpatialCheck <- sufficientParticipantAndTrialCrit %>%
+  mutate(
+    containsSpatialTerm = sapply(response, 
+                                    containsSpatialTerm)
+    ) 
+```
+
+From manual checking, we can ignore participant009 (do not remove) — they're using words like top to describe shape ('pointed top'), not spatial position. All others are guilty as charged.
+
+*Calc proportion*
+
+```{r}
+spatialCheckProp <- containsSpatialCheck %>% 
+  group_by(participant) %>% 
+  summarise(
+    totalTrials = n(), 
+    spatialTrials = sum(containsSpatialTerm == TRUE),
+    proportionSpatial = 
+      spatialTrials / totalTrials 
+            ) 
+```
+
+*Filter in those meeting removal criteria*
+
+```{r}
+SpatialParticipantsfilter <- spatialCheckProp %>% 
+  filter(proportionSpatial >= 0.50) 
+```
+
+*Remove from working dataframe*
+
+```{r}
+sufficientAndNonSpatial <- anti_join(
+  sufficientParticipantAndTrialCrit, 
+  SpatialParticipantsfilter, 
+  by = "participant"
+) 
+```
+
+Just one participant removed (005)
+
+*Taking stock*
+
+```{r}
+usablesufficientAndNonSpatial <- sufficientAndNonSpatial$participant %>% 
+  unique()
+
+message('Total after checking for >50% non-spatial responses is: ', length(usablesufficientAndNonSpatial), ' people.')
+```
+
+So we're left with 37/40 people after completing participant removal.
+
+###### 
+
+**Trial Removal: Using spatial information non-systematically**
+
+*Prior taking stock*
+
+```{r}
+message('Total number of trials before independent trial remove is: ', nrow(sufficientAndNonSpatial), ' trials.')
+```
+
+*Identify and remove spatial responses with new df*
+
+```{r}
+allTrialsAndSpatialCheck <- sufficientAndNonSpatial %>%
+  mutate(
+    containsSpatialTerm = sapply(response, 
+                                    containsSpatialTerm)
+    ) %>% 
+  filter(containsSpatialTerm == FALSE) 
+```
+
+*Post taking stock*
+
+```{r}
+message(
+  'Total number of trials after independent trial remove is: ',
+  nrow(allTrialsAndSpatialCheck), 
+  ' trials. The number of removed trials was ', 
+  nrow(sufficientAndNonSpatial) - 
+    nrow(allTrialsAndSpatialCheck), 
+  '. Percent trial removal == ', 
+  38/(nrow(sufficientParsedCrit))
+  )
+```
+
+Total number of trials after this trial removal is: 1205 trials. The number of removed trials was 38. Total proportion trial removal == 0.03
+
+###### 
+
+###### 
+
+## Building the Final Tibble
+
+*Create filler dictionary*
+
+```{r}
+filler_words <- c("the", "a", "an", "one", "it", "is", "was", "that", "this", "there", "with", "not", "the", "only", "last", "Lines", "stripes", "lines", "sided", "sides", "called", "has", "this", "a", "has", "shape", "figure", "corners", "corner", "pointy", "top", "flat", "bottom", "and", "pointed", "the", "item", "below", "above", "to", "left", "right", "odd", "out", "color", "colour", "of", "only", "type")
+```
+
+*Create overinformativeness column*
+
+```{r}
+process_response <- function(response) {
+  words <- str_split(tolower(response), "\\s+")[[1]]
+  non_filler_count <- sum(!words %in% filler_words & words != "")
+  return(non_filler_count)
+}
+
+tibble <- allTrialsAndSpatialCheck %>%
+  select(-containsSufficientTerm, -containsSpatialTerm) %>%
+  mutate(across(where(is.character), tolower)) %>%
+  rowwise() %>%
+  mutate(
+    non_filler_count = process_response(response),
+    overinformative = non_filler_count > 1
+  ) %>%
+  select(-non_filler_count) %>%
+  ungroup()
+```
+
+We now have to manually check. I've done so, iterating the filler words dictionary on each identification of mis-spelling/idiosyncracy.
+
+*Manual Check*
+
+```{r}
+tibble %>% 
+  select(overinformative, response) %>% view()
+```
+
+*Rename for plotting and working with df*
+
+```{r}
+tibble <- tibble %>%
+    mutate(setSize = recode(setSize, setsize3 = 'setsize03')) %>% 
+  mutate(setSize = recode(setSize, setsize6 = 'setsize06')) %>% 
+  mutate(setSize = recode(setSize, setsize9 = 'setsize09'))
+
+labels <- c(
+  "colorredundant" = "Colour Redundant",
+  "orientationredundant" = "Orientation Redundant"
+)
+```
+
+*Everything looks great. Save as df*
+
+```{r}
+write_csv(tibble, "processedData.csv")
+```
+
+###### 
+
+###### 
+
+###### 
+
+## Whaddowegot?
+
+*Colour vs. Orientation Redundant*
+
+```{r}
+tibble %>% 
+  filter(trialType == "crit") %>%
+  mutate(od = ifelse(overinformative, 1, 0)) %>% 
+  ggplot(
+    aes(x = redundant, 
+        y = od, 
+        fill = redundant,
+        color = redundant)
+    ) + 
+  stat_summary(fun.y = mean, geom="bar", 
+               alpha = 0.9, show.legend=FALSE, 
+               color = NA) + 
+  geom_jitter(
+      stat = "summary", aes(group = participant),
+      fun = mean, alpha = 0.4, size = 2.8, 
+      show.legend = FALSE, width = 0.2
+      ) +
+  stat_summary(fun.data = mean_cl_boot, 
+               geom="linerange", size = 1, 
+               color = "grey25") +
+  coord_cartesian(ylim = c(0, 1)) +
+  ylab("Proportion Overinformative") + 
+  xlab("Redundant Attribute") +
+  theme(
+    text = element_text(size = 18, 
+                        family = "serif",
+                        color = "black"), 
+    panel.border = element_rect(color = "gray80", 
+                                fill = NA, 
+                                size = 1),
+    panel.grid = element_blank()
+    ) +
+ scale_x_discrete(
+    limits = c("orientationredundant", "colorredundant"),
+  
+    labels = c("Orientation",  "Colour")
+ ) +
+  scale_fill_manual(values = c(shallowWaters, dust)) +
+  scale_color_manual(values = c(darkShallowWaters, darkSand))
+```
+
+###### 
+
+*Comparison of set sizes, faceted by redundant attribute*
+
+```{r}
+tibble %>% 
+  mutate(od = ifelse(overinformative, 1, 0)) %>% 
+  filter(trialType == "crit") %>% 
+  ggplot(
+    aes(x = setSize, 
+        y = od, 
+        fill = setSize,
+        color = setSize)
+    ) + 
+    facet_wrap(~redundant,
+             labeller = as_labeller(labels)
+               ) +
+  stat_summary(fun.y = mean, geom="bar", 
+               alpha = 0.9, show.legend=FALSE, 
+               color = NA) + 
+  geom_jitter(
+      stat = "summary", aes(group = participant),
+      fun = mean, alpha = 0.4, size = 2.8, 
+      show.legend = FALSE, width = 0.1
+      ) +
+  stat_summary(fun.data = mean_cl_boot, 
+               geom="linerange", size = 1, 
+               color = "grey25") +
+  coord_cartesian(ylim = c(0, 1)) +
+  ylab("Proportion Overinformativeness") + 
+  xlab("Display Set Size") +
+  theme(
+    text = element_text(size = 18, 
+                        family = "serif",
+                        color = "black"), 
+    panel.border = element_rect(color = "gray80", 
+                                fill = NA, 
+                                size = 0.7),
+    panel.grid = element_blank()
+    ) +
+  scale_fill_manual(values = fourPalette
+                    ) + 
+  scale_color_manual(values = fourPaletteDark
+                     ) +
+  scale_x_discrete(
+    labels = c("Three", "Six", "Nine", "Sixteen")
+    ) 
+```
+
+###### 
+
+*Comparison of n-distractors, faceted by redundant attribute*
+
+```{r}
+tibble %>% 
+  mutate(od = ifelse(overinformative, 1, 0)) %>% 
+  filter(trialType == "crit") %>% 
+  ggplot(
+    aes(x = nDistract, 
+        y = od, 
+        fill = nDistract,
+        color = nDistract)
+    ) + 
+    facet_wrap(~redundant,
+             labeller = as_labeller(labels)
+               ) + 
+  stat_summary(fun.y = mean, geom="bar", 
+               alpha = 0.9, show.legend=FALSE, 
+               color = NA) + 
+  geom_jitter(
+      stat = "summary", aes(group = participant),
+      fun = mean, alpha = 0.4, size = 2.8, 
+      show.legend = FALSE, width = 0.1
+      ) +
+  stat_summary(fun.data = mean_cl_boot, 
+               geom="linerange", size = 1, 
+               color = "grey25") +
+  coord_cartesian(ylim = c(0, 1)) +
+  ylab("Proportion Overinformativeness") + 
+  xlab("Number of Distractors") +
+  theme(
+    text = element_text(size = 18, 
+                        family = "serif",
+                        color = "black"), 
+    panel.border = element_rect(color = "gray80", 
+                                fill = NA, 
+                                size = 0.7),
+    panel.grid = element_blank()
+    ) +
+  scale_fill_manual(values = earthShades) +
+  scale_color_manual(values = earthShadesDark) + 
+  scale_x_discrete(
+    labels = c("None", "One", "Two", "Three", "Four")
+    ) 
+```
+
+###### 
+
+###### 
+
+## Inferential Statistics
+
+I'll set up the null, then start with a model including all predictors, gradually backing away to attribute-redundant. Models are compared to the null using Bayes factors.
+
+## Inferential Statistics
+
+### Null
+
+*Set up*
+
+```{r}
+#| echo: true 
+#| output: false
+
+null <- brm(
+  formula = overinformative ~ 1,
+  data = tibble,
+  family = bernoulli(link = "logit"), #binary logistic regression
+  warmup = 5000,  #burn-in   
+  iter = 10000,  #samples    
+  chains = 4,  #n chains    
+  cores=4, # cpu cores running in parallel  
+  #prior = prior("normal(0, 2)", class = "b"),
+  seed = 3000, #seed so we can return
+  save_pars = save_pars(all = TRUE)
+  )
+```
+
+*Summary*
+
+```{r}
+summary(null)
+
+# chain convergence
+mcmc_plot(null,
+         type = "trace",
+         prob = 0.95)
+
+# point estimate visualisation
+mcmc_plot(null,
+         type = "areas",
+         prob = 0.95)
+  
+```
+
+ 
+
+### Full Model
+
+*Set-up*
+
+```{r}
+#| echo: true 
+#| output: false
+
+full <- brm(
+  formula = overinformative ~ 1 + redundant + nDistract + setSize,
+  data = tibble,
+  family = bernoulli(link = "logit"), #binary logistic regression
+  warmup = 5000,  #burn-in   
+  iter = 10000,  #samples    
+  chains = 4,  #n chains    
+  cores=4, # cpu cores running in parallel  
+  prior = prior("normal(0, 2)", class = "b"),
+  seed = 3000, #seed so we can return
+  save_pars = save_pars(all = TRUE)
+  )
+```
+
+*Summary*
+
+```{r}
+summary(full)
+
+# chain convergence
+mcmc_plot(full,
+         type = "trace",
+         prob = 0.95)
+
+# point estimate visualisation
+mcmc_plot(full,
+         type = "areas",
+         prob = 0.95)
+```
+
+###### 
+
+### Setsize + Attribute-redundant
+
+*Set up*
+
+```{r}
+#| echo: true 
+#| output: false
+
+SetAtt  <- brm(
+  formula = overinformative ~ 1 + redundant + setSize,
+  data = tibble,
+  family = bernoulli(link = "logit"), #binary logistic regression
+  warmup = 5000,  #burn-in   
+  iter = 10000,  #samples    
+  chains = 4,  #n chains    
+  cores=4, # cpu cores running in parallel  
+  prior = prior("normal(0, 2)", class = "b"),
+  seed = 3000, #seed so we can return
+  save_pars = save_pars(all = TRUE)
+  )
+```
+
+*Summary*
+
+```{r}
+summary(SetAtt)
+
+# chain convergence
+mcmc_plot(SetAtt,
+         type = "trace",
+         prob = 0.95)
+
+# point estimate visualisation
+mcmc_plot(SetAtt,
+         type = "areas",
+         prob = 0.95)
+```
+
+###### 
+
+### N-distractors + Attribute-redundant
+
+*Set up*
+
+```{r}
+#| echo: true 
+#| output: false
+
+DistAtt  <- brm(
+  formula = overinformative ~ 1 + redundant + nDistract,
+  data = tibble,
+  family = bernoulli(link = "logit"), #binary logistic regression
+  warmup = 5000,  #burn-in   
+  iter = 10000,  #samples    
+  chains = 4,  #n chains    
+  cores=4, # cpu cores running in parallel  
+  prior = prior("normal(0, 2)", class = "b"),
+  seed = 3000, #seed so we can return
+  save_pars = save_pars(all = TRUE)
+  )
+```
+
+*Summary*
+
+```{r}
+summary(DistAtt)
+
+# chain convergence
+mcmc_plot(DistAtt,
+         type = "trace",
+         prob = 0.95)
+
+# point estimate visualisation
+mcmc_plot(DistAtt,
+         type = "areas",
+         prob = 0.95)
+```
+
+###### 
+
+### Set Size
+
+*Set up*
+
+```{r}
+#| echo: true 
+#| output: false
+
+setSize  <- brm(
+  formula = overinformative ~ 1 + setSize,
+  data = tibble,
+  family = bernoulli(link = "logit"), #binary logistic regression
+  warmup = 5000,  #burn-in   
+  iter = 10000,  #samples    
+  chains = 4,  #n chains    
+  cores=4, # cpu cores running in parallel  
+  prior = prior("normal(0, 2)", class = "b"),
+  seed = 3000, #seed so we can return
+  save_pars = save_pars(all = TRUE)
+  )
+```
+
+*Summary*
+
+```{r}
+summary(setSize)
+
+# chain convergence
+mcmc_plot(setSize,
+         type = "trace",
+         prob = 0.95)
+
+# point estimate visualisation
+mcmc_plot(setSize,
+         type = "areas",
+         prob = 0.95)
+```
+
+###### 
+
+### N distractors
+
+*Set up*
+
+```{r}
+#| echo: true 
+#| output: false
+
+nDistractor  <- brm(
+  formula = overinformative ~ 1 + nDistract,
+  data = tibble,
+  family = bernoulli(link = "logit"), #binary logistic regression
+  warmup = 5000,  #burn-in   
+  iter = 10000,  #samples    
+  chains = 4,  #n chains    
+  cores=4, # cpu cores running in parallel  
+  prior = prior("normal(0, 2)", class = "b"),
+  seed = 3000, #seed so we can return
+  save_pars = save_pars(all = TRUE)
+  )
+```
+
+*Summary*
+
+```{r}
+summary(nDistractor)
+
+# chain convergence
+mcmc_plot(nDistractor,
+         type = "trace",
+         prob = 0.95)
+
+# point estimate visualisation
+mcmc_plot(nDistractor,
+         type = "areas",
+         prob = 0.95)
+```
+
+### Attribute Redundant
+
+*Set up*
+
+```{r}
+#| echo: true 
+#| output: false
+
+attribute  <- brm(
+  formula = overinformative ~ 1 + redundant, 
+  data = tibble, 
+  family = bernoulli(link = "logit"), #binary logistic  regression 
+  warmup = 5000,  #burn-in   
+  iter = 10000,  #samples    
+  chains = 4,  #n chains    
+  cores=4, # cpu cores running in parallel  
+  prior = prior("normal(0, 2)", class = "b"), 
+  seed = 3000, #seed for determinism 
+  save_pars = save_pars(all = TRUE) 
+  )
+```
+
+*Summary*
+
+```{r}
+summary(attribute)
+
+# chain convergence
+mcmc_plot(attribute,
+         type = "trace",
+         prob = 0.95)
+
+# point estimate visualisation
+mcmc_plot(attribute,
+         type = "areas",
+         prob = 0.95)
+```
+
+###### 
+
+###### 
+
+### Model Comparison
+
+```{r}
+bayes_factor(full, null, log = TRUE)
+bayes_factor(DistAtt, null, log = TRUE)
+bayes_factor(SetAtt, null, log = TRUE)
+bayes_factor(setSize, null, log = TRUE)
+bayes_factor(nDistractor, null, log = TRUE)
+bayes_factor(attribute, null, log = TRUE)
+```

@@ -1,0 +1,614 @@
+---
+title: "Experiment One: Analysis"
+format: 
+  html:
+    toc: true
+    toc-location: right
+    toc-depth: 2 
+embed-resources: true
+editor: visual
+execute: 
+  warning: false
+---
+
+Analysis script for Experiment One. I'll first conduct main analysis, then move on to the supplementary analyses outlined in the pre-registration.
+
+###### 
+
+## Set up Computing Environment
+
+```{r}
+#| echo: true 
+#| output: false
+
+library(tidyverse)
+library(jsonlite)
+library(brms)
+library(tidybayes)
+library(BayesFactor)
+library(ggthemr)
+ggthemr("pale")
+
+
+sand = c("#e0cda9")
+dust = c("#9E8472")
+forest = c("#a0ae9b")
+
+darkSand = c("#5C4033")
+darkDust = c("#1b0000")
+darkForest = c("#06402B")
+
+data <- read_csv("processedData/processedDirectorData.csv")
+```
+
+###### 
+
+###### 
+
+## Re-formatting Data
+
+Just going to re-format the data into more intuitive names, because the way we collected data in Js is non-intuitive.
+
+```{r}
+selectedData <- data %>% 
+  select(
+    -list,
+    -accurate, 
+    -matLabel,
+    -colLabel, 
+    -accurate, 
+    -non_filler_count, 
+    -phase,
+    -hex,
+    -matCode
+         ) %>% 
+  
+  mutate (redundant = recode(
+      sufficient,
+      color = "material",
+      sound = "color"
+      )) %>% 
+  
+  mutate (sufficient = recode(
+    sufficient, 
+    color = "color",
+    sound = "material"
+    )) %>% 
+  
+  mutate (displayType = recode(
+    relevance,
+    base = "baseline",
+    relevant = "SLow_RHigh",
+    irrelevant = "SHigh_RLow"
+  )) %>% 
+  mutate(
+    displayType = if_else(trial == "filler", 
+                          "baseline", 
+                          displayType)
+    ) %>%
+  select(-relevance) %>%
+  
+  mutate (globalDiscriminability = recode(
+    discriminability,
+    high = "everythingHigh",
+    low = "lowAttributePresent"
+  )) %>%
+  select(-discriminability) %>%
+  
+  mutate (overinformative = overdescription) %>% 
+  select(-overdescription) 
+```
+
+```{r}
+factoredData <- selectedData %>%
+  mutate(
+    overinformative = factor(overinformative, 
+                             levels = c(TRUE, FALSE)), 
+    displayType = factor(displayType, 
+                       levels = c("SLow_RHigh", "SHigh_RLow", "baseline")),
+    redundant = factor(redundant, 
+                        levels = c("color", "material"))
+    ) 
+```
+
+```{r}
+factoredCriticalData <- factoredData %>% 
+  filter(trial == "critical") 
+```
+
+## Null Model
+
+*Set up null model with no predictors for model comparison*
+
+```{r}
+nullModel <- brm(
+  formula = overinformative ~ 0 + Intercept + (1 | participant),
+  data = factoredCriticalData,
+  family = bernoulli(link = "logit"),
+  warmup = 5000,   
+  iter = 10000,     
+  chains = 4,     
+  cores=4,  
+  prior = prior("normal(0, 2)", class = "b"),
+  seed = 3000, 
+  save_pars = save_pars(all = TRUE)
+  )
+```
+
+###### 
+
+###### 
+
+```{r}
+summary(nullModel)
+```
+
+## Display Type and Attribute-Redundant Predictors, with Interaction
+
+### Visualisation
+
+```{r}
+labels <- c(
+  "color" = "Colour Redundant",
+  "material" = "Material Redundant"
+)
+  
+selectedData %>% 
+  filter(trial == "critical") %>% 
+  mutate(od = ifelse(overinformative, 1, 0)) %>% 
+  ggplot(
+    aes(x = displayType, 
+        y = od, 
+        fill = displayType,
+        color = displayType)
+    ) + 
+  facet_wrap(~redundant,
+             labeller = as_labeller(labels)
+               ) +
+  stat_summary(fun.y = mean, geom="bar", 
+               alpha = 0.9, show.legend=FALSE, 
+               color = NA) + 
+  geom_jitter(
+      stat = "summary", aes(group = participant),
+      fun = mean, alpha = 0.15, size = 2.8, 
+      show.legend = FALSE, width = 0.1
+      ) +
+  stat_summary(fun.data = mean_cl_boot, 
+               geom="linerange", size = 1, 
+               color = "grey25") +
+  coord_cartesian(ylim = c(0, 1)) +
+  ylab("Proportion Overinformative") + 
+  xlab("Display Type") +
+  theme(
+    text = element_text(size = 18, 
+                        family = "serif",
+                        color = "black"), 
+    panel.border = element_rect(color = "gray80", 
+                                fill = NA, 
+                                size = 0.7),
+    panel.grid = element_blank()
+    ) +
+  scale_x_discrete(
+    limits = c("baseline", "SHigh_RLow", "SLow_RHigh"), 
+    labels = c("Baseline", "S-High\nR-Low","S-Low\nR-High")
+    ) + 
+   scale_fill_manual(values = c("#e0cda9", "#9E8472", "#a0ae9b" )) +
+  scale_color_manual(values = c("#5C4033", "#1b0000", "#06402B" )) 
+```
+
+###### 
+
+### Run Model
+
+```{r}
+displayAttributeInteraction <- brm(
+ formula = overinformative ~ 0 + Intercept + 
+  redundant*displayType + (1 | participant),
+  data = factoredCriticalData, 
+  family = bernoulli(link = "logit"), 
+  warmup = 5000,  
+  iter = 10000,      
+  chains = 4,       
+  cores=4,   
+  prior = prior("normal(0,2)", class = "b"),
+  sample_prior = 'yes', 
+  seed = 3000,       
+  save_pars = save_pars(all = TRUE)
+) 
+```
+
+###### 
+
+### Model Summary
+
+```{r}
+stanplot(displayAttributeInteraction, 
+         type = "trace")
+stanplot(displayAttributeInteraction, 
+               type = "acf_bar")
+summary(displayAttributeInteraction)
+```
+
+###### 
+
+###### 
+
+## Display Type and Attribute-Redundant Predictors, no Interaction
+
+### Run Model
+
+```{r}
+displayAttribute <- brm(
+ formula = overinformative ~ 0 + Intercept + 
+  redundant + displayType + (1 | participant),
+  data = factoredCriticalData, 
+  family = bernoulli(link = "logit"), 
+  warmup = 5000,  
+  iter = 10000,      
+  chains = 4,       
+  cores=4,   
+  prior = prior("normal(0,2)", class = "b"),
+  sample_prior = 'yes', 
+  seed = 3000,       
+  save_pars = save_pars(all = TRUE)
+) 
+```
+
+###### 
+
+### Model Summary
+
+```{r}
+stanplot(displayAttribute, 
+         type = "trace")
+stanplot(displayAttribute, 
+               type = "acf_bar")
+summary(displayAttribute)
+```
+
+###### 
+
+###### 
+
+## Attribute Only
+
+#### Visual
+
+```{r}
+selectedData %>% 
+  filter(trial == "critical") %>% 
+  mutate(od = ifelse(overinformative, 1, 0)) %>% 
+  ggplot(
+    aes(x = redundant, 
+        y = od, 
+        fill = redundant,
+        color = redundant)
+    ) + 
+  stat_summary(fun.y = mean, geom="bar", 
+               alpha = 0.9, show.legend=FALSE, 
+               color = NA) + 
+  geom_jitter(
+      stat = "summary", aes(group = participant),
+      fun = mean, alpha = 0.2, size = 2.8, 
+      show.legend = FALSE, width = 0.1
+      ) +
+  stat_summary(fun.data = mean_cl_boot, 
+               geom="linerange", size = 1, 
+               color = "grey25") +
+  coord_cartesian(ylim = c(0, 1)) +
+  ylab("Proportion Overinformative") + 
+  xlab("Attribute Redundant") +
+  theme(
+    text = element_text(size = 18, 
+                        family = "serif",
+                        color = "black"), 
+    panel.border = element_rect(color = "gray80", 
+                                fill = NA, 
+                                size = 0.7),
+    panel.grid = element_blank()
+    ) +
+  scale_x_discrete(
+    limits = c("color", "material"), 
+    labels = c("Color Redundant", "Material Redundant")
+    ) + 
+   scale_fill_manual(values = c("#e0cda9", "#a0ae9b")) +
+  scale_color_manual(values = c("#5C4033", "#06402B"))
+```
+
+###### 
+
+#### Model
+
+```{r}
+attributeOnly <- brm(
+ formula = overinformative ~ 0 + Intercept + 
+  redundant + (1 | participant),
+  data = factoredCriticalData, 
+  family = bernoulli(link = "logit"), 
+  warmup = 5000,  
+  iter = 10000,      
+  chains = 4,       
+  cores=4,   
+  prior = prior("normal(0,2)", class = "b"),
+  sample_prior = 'yes', 
+  seed = 3000,       
+  save_pars = save_pars(all = TRUE)
+) 
+```
+
+###### 
+
+### Summary
+
+```{r}
+stanplot(attributeOnly, 
+         type = "trace")
+stanplot(attributeOnly, 
+               type = "acf_bar")
+summary(attributeOnly)
+```
+
+###### 
+
+###### 
+
+## Display Type Only
+
+### Visual
+
+```{r}
+selectedData %>% 
+  filter(trial == "critical") %>% 
+  mutate(od = ifelse(overinformative, 1, 0)) %>% 
+  ggplot(
+    aes(x = displayType, 
+        y = od, 
+        fill = displayType,
+        color = displayType)
+    ) + 
+  stat_summary(fun.y = mean, geom="bar", 
+               alpha = 0.9, show.legend=FALSE, 
+               color = NA) + 
+  geom_jitter(
+      stat = "summary", aes(group = participant),
+      fun = mean, alpha = 0.2, size = 2.8, 
+      show.legend = FALSE, width = 0.1
+      ) +
+  stat_summary(fun.data = mean_cl_boot, 
+               geom="linerange", size = 1, 
+               color = "grey25") +
+  coord_cartesian(ylim = c(0, 1)) +
+  ylab("Proportion Overinformative") + 
+  xlab("Display Type") +
+  theme(
+    text = element_text(size = 18, 
+                        family = "serif",
+                        color = "black"), 
+    panel.border = element_rect(color = "gray80", 
+                                fill = NA, 
+                                size = 0.7),
+    panel.grid = element_blank()
+    ) +
+  scale_x_discrete(
+    limits = c("baseline", "SHigh_RLow", "SLow_RHigh"), 
+    labels = c("Baseline", "S-High\nR-Low", "S-Low\nR-High")
+    ) + 
+   scale_fill_manual(values = c("#e0cda9", "#a0ae9b", "#9E8472")) +
+  scale_color_manual(values = c("#5C4033", "#06402B", "#1b0000")) 
+```
+
+###### 
+
+### Model
+
+```{r}
+display <- brm(
+ formula = overinformative ~ 0 + Intercept + 
+  displayType + (1 | participant),
+  data = factoredCriticalData, 
+  family = bernoulli(link = "logit"), 
+  warmup = 5000,  
+  iter = 10000,      
+  chains = 4,       
+  cores=4,   
+  prior = prior("normal(0,2)", class = "b"),
+  sample_prior = 'yes', 
+  seed = 3000,       
+  save_pars = save_pars(all = TRUE)
+) 
+```
+
+###### 
+
+### Summary
+
+```{r}
+stanplot(display, 
+         type = "trace")
+stanplot(display, 
+               type = "acf_bar")
+summary(display)
+```
+
+###### 
+
+###### 
+
+## Global Discriminability Model
+
+### Visual
+
+```{r}
+selectedData %>% 
+  filter(trial == "critical") %>% 
+  mutate(od = ifelse(overinformative, 1, 0)) %>% 
+  ggplot(
+    aes(x = globalDiscriminability, 
+        y = od, 
+        fill = globalDiscriminability,
+        color = globalDiscriminability)
+    ) + 
+  stat_summary(fun.y = mean, geom="bar", 
+               alpha = 0.9, show.legend=FALSE, 
+               color = NA) + 
+  geom_jitter(
+      stat = "summary", aes(group = participant),
+      fun = mean, alpha = 0.2, size = 2.8, 
+      show.legend = FALSE, width = 0.1
+      ) +
+  stat_summary(fun.data = mean_cl_boot, 
+               geom="linerange", size = 1, 
+               color = "grey25") +
+  coord_cartesian(ylim = c(0, 1)) +
+  ylab("Proportion Overinformative") + 
+  xlab("Global Discriminability") +
+  theme(
+    text = element_text(size = 18, 
+                        family = "serif",
+                        color = "black"), 
+    panel.border = element_rect(color = "gray80", 
+                                fill = NA, 
+                                size = 0.7),
+    panel.grid = element_blank()
+    ) +
+   scale_fill_manual(values = c("#e0cda9", "#a0ae9b")) +
+  scale_color_manual(values = c("#5C4033", "#06402B"))
+```
+
+###### 
+
+### Model
+
+```{r}
+globalDiscrimModel <- brm(
+ formula = overinformative ~ 0 + Intercept + 
+  globalDiscriminability + (1 | participant),
+  data = factoredCriticalData, 
+  family = bernoulli(link = "logit"), 
+  warmup = 5000,  
+  iter = 10000,      
+  chains = 4,       
+  cores=4,   
+  prior = prior("normal(0,2)", class = "b"),
+  sample_prior = 'yes', 
+  seed = 3000,       
+  save_pars = save_pars(all = TRUE)
+) 
+```
+
+###### 
+
+### Summary
+
+```{r}
+stanplot(globalDiscrimModel, 
+         type = "trace")
+stanplot(globalDiscrimModel, 
+               type = "acf_bar")
+summary(globalDiscrimModel)
+```
+
+###### 
+
+###### 
+
+## Scene Variation Model
+
+### Visual
+
+Filler vs. Critical models — whether scene variation increases overinformativeness. Low scene-variation is fillers, whereas high scene variation is criticals. Of course, we have to filter in ONLY high-discriminability trials to avoid confounding. This also means that this model can't be compared to the other models.
+
+```{r}
+selectedData %>% 
+  mutate(od = ifelse(overinformative, 1, 0)) %>% 
+  filter(globalDiscriminability == "everythingHigh") %>% 
+  ggplot(
+    aes(x = trial, 
+        y = od, 
+        fill = trial,
+        color = trial)
+    ) + 
+  stat_summary(fun.y = mean, geom="bar", 
+               alpha = 0.9, show.legend=FALSE, 
+               color = NA) + 
+  geom_jitter(
+      stat = "summary", aes(group = participant),
+      fun = mean, alpha = 0.15, size = 2.8, 
+      show.legend = FALSE, width = 0.1
+      ) +
+  stat_summary(fun.data = mean_cl_boot, 
+               geom="linerange", size = 1, 
+               color = "grey25") +
+  coord_cartesian(ylim = c(0, 1)) +
+  ylab("Proportion Overinformative") + 
+  xlab("Scene Variation") +
+  theme(
+    text = element_text(size = 18, 
+                        family = "serif",
+                        color = "black"), 
+    panel.border = element_rect(color = "gray80", 
+                                fill = NA, 
+                                size = 0.7),
+    panel.grid = element_blank()
+    ) +
+  scale_x_discrete(
+    limits = c("critical", "filler"), 
+    labels = c("High", "Low")
+    ) +
+  scale_fill_manual(values = c("#b37a5f", "#d4b88a")) + 
+  scale_color_manual(values = c("#553929", "#68553d"))
+```
+
+Note that critical = high scene variation, filler = low scene variation.
+
+###### 
+
+### Model
+
+```{r}
+sceneVariationData <- selectedData %>%
+  filter(globalDiscriminability == "everythingHigh")
+```
+
+```{r}
+sceneVariation <- brm(
+ formula = overinformative ~ 0 + Intercept + 
+  trial + (1 | participant),
+  data = selectedData, 
+  family = bernoulli(link = "logit"), 
+  warmup = 5000,  
+  iter = 10000,      
+  chains = 4,       
+  cores=4,   
+  prior = prior("normal(0,2)", class = "b"),
+  sample_prior = 'yes', 
+  seed = 3000,       
+  save_pars = save_pars(all = TRUE)
+) 
+```
+
+###### 
+
+### Summary
+
+```{r}
+stanplot(sceneVariation, 
+         type = "trace")
+stanplot(sceneVariation, 
+               type = "acf_bar")
+summary(sceneVariation)
+```
+
+###### 
+
+###### 
+
+## Model Comparison: Evidence over the null hypothesis
+
+```{r}
+bayes_factor(displayAttributeInteraction, nullModel, log = TRUE)
+bayes_factor(displayAttribute, nullModel, log = TRUE)
+bayes_factor(attributeOnly, nullModel, log = TRUE)
+bayes_factor(display, nullModel, log = TRUE)
+bayes_factor(globalDiscrimModel, nullModel, log = TRUE)
+```

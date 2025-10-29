@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Center the images container */
+      .images-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 5px 0;
+        width: 100%;
+        height: 90vh;
+      }
+
+      /* Style for each row */
+      .image-row {
+        display: flex;
+        justify-content: center;
+        margin: 5px 0;
+        flex-wrap: nowrap;
+      }
+
+      /* Style for each image wrapper */
+      .image-wrapper {
+        width: 120px;
+        height: 120px;
+        margin: 0 5px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Style for the images */
+      .image-wrapper img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+
+      .image-wrapper.border {
+        outline: 5px solid rgb(163, 163, 163);
+        outline-offset: 2px;
+      }
+
+      .word-button {
+        font-size: 18px; /* Increase font size */
+        margin: 5px; /* Add spacing between buttons */
+        width: 170px; /* Set a fixed width for uniformity */
+      }
+
+      .backspace-button {
+        background-color: #696969; /* Black background */
+        color: #f0f0f0; /* Light gray text */
+      }
+
+      #tally-container {
+        padding: 25px; /* Add padding around the tally container */
+      }
+
+      #button-container {
+        margin-top: -80px; /* Shift the buttons up by 2cm (approximately -20px) */
+      }
+
+      #text_input h2 {
+        position: relative; /* Enable independent positioning */
+        top: -4.8px; /* Move the text slightly higher */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Images go here -->
+    <div class="images-grid">
+      <!-- First row with 3 images -->
+      <div class="image-row">
+        <div id="one" class="image-wrapper">
+          <img src="static/stimuli/colorShapes/circlegreen" />
+        </div>
+        <div id="two" class="image-wrapper">
+          <img src="static/stimuli/colorShapes/circlegreen" />
+        </div>
+        <div id="three" class="image-wrapper">
+          <img src="static/stimuli/colorShapes/circlegreen" />
+        </div>
+      </div>
+
+      <!-- Second row with 3 images -->
+      <div class="image-row">
+        <div id="four" class="image-wrapper">
+          <img src="static/stimuli/colorShapes/circlegreen" />
+        </div>
+        <div id="five" class="image-wrapper">
+          <img src="static/stimuli/colorShapes/circlegreen" />
+        </div>
+        <div id="six" class="image-wrapper">
+          <img src="static/stimuli/colorShapes/circlegreen" />
+        </div>
+      </div>
+
+      <!-- Third row with 3 images -->
+      <div class="image-row">
+        <div id="seven" class="image-wrapper">
+          <img src="static/stimuli/colorShapes/circlegreen" />
+        </div>
+        <div id="eight" class="image-wrapper">
+          <img src="static/stimuli/colorShapes/circlegreen" />
+        </div>
+        <div id="nine" class="image-wrapper">
+          <img src="static/stimuli/colorShapes/circlegreen" />
+        </div>
+      </div>
+    </div>
+
+    <div id="text_input">
+      <div class="input-container">
+        <!-- Text input field where users will type their responses -->
+        <h2>Click on the... &nbsp</h2>
+        <input
+          type="text"
+          class="text-input"
+          id="user-input"
+          placeholder="Words used appear here"
+        />
+        <!-- Button that users will click to submit their response -->
+        <button type="button" class="submit-button">Submit</button>
+      </div>
+    </div>
+
+    <div id="button-container">
+      <center>
+        <button type="button" class="word-button" data-word="jade">
+          Jade
+        </button>
+        <button type="button" class="word-button" data-word="teal">
+          Teal
+        </button>
+        <button type="button" class="word-button" data-word="hexagon">
+          Hexagon
+        </button>
+        <button type="button" class="word-button" data-word="circle">
+          Circle
+        </button>
+        <button type="button" class="word-button" data-word="square">
+          Square
+        </button>
+        <button type="button" class="word-button" data-word="pentagon">
+          Pentagon
+        </button>
+        <button type="button" class="word-button backspace-button" data-word="">
+          Backspace
+        </button>
+      </center>
+    </div>
+
+    <div class="tally" id="tally-container">
+        <h3 class="tally" id="tally"></h3>
+    </div>
+  </body>
+</html>

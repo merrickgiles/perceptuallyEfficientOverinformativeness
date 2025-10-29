@@ -1,0 +1,25 @@
+body { 
+  margin: 0;
+  padding: 0;
+  display: flex; 
+  align-items: center;  /* To center the SVG vertically */
+  justify-content: center; /* To center the SVG horizontally */
+  height: 100vh; /* Ensure the body takes full viewport height */
+}
+
+.svg-container {
+    position: relative;
+    width: 100px; /* Match the width of the SVG */
+    height: 100vh;
+    overflow: hidden; /* Prevents the circles from being visible outside the viewport */
+}
+
+.svg-container svg {
+    position: absolute;
+    top: 0;
+}
+
+/* Position the circles above the viewport initially */
+svg circle {
+    transform: translateY(-100vh);
+}

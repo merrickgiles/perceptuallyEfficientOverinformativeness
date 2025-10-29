@@ -1,0 +1,795 @@
+---
+title: "Overmodification Experiment 2: Processing Script (Version 2.0)"
+format: 
+  html:
+    toc: true
+    toc-location: right
+    toc-depth: 2 
+embed-resources: true
+editor: visual
+execute: 
+  warning: false
+---
+
+A processing script for experiment two of the overmodification project
+
+*Set up computing environment*
+
+```{r setup}
+#| echo: true 
+#| output: false
+
+library(tidyverse)
+library(jsonlite)
+library(brms)
+library(tidybayes)
+library(BayesFactor)
+library(ggthemr)
+ggthemr("pale")
+
+
+sand = c("#e0cda9")
+dust = c("#9E8472")
+forest = c("#a0ae9b")
+shallowWaters = c("#a4b8c1")
+
+darkSand = c("#5C4033")
+darkDust = c("#1b0000")
+darkForest = c("#06402B")
+darkShallowWaters = c("#2f4858")
+
+earthShades = c("#b2988e", "#b37a5f", "#d4b88a", "#a0ae9b", "#8d9da8")
+
+earthShadesDark = c("#554740", "#553929", "#68553d", "#06402B", "#2f4858")
+
+fourPalette = c("#7a6b6e", "#8d9da8", "#e0cda9", "#a8a89e")
+
+fourPaletteDark = c("#1b0000", "#2f4858", "#5C4033", "#06402B")
+
+threePalette = c("#8d9da8", "#a8a89e", "#e0cda9")
+
+threePaletteDark = c("#2f4858", "#06402B", "#5C4033")
+
+data <- read_csv("data/rawData.csv")
+
+finishStatusOrient <- read_csv("data/finishStatuses/orientationFinishStatuses.csv")
+finishStatusColorLoFreq <- read_csv("data/finishStatuses/colorLoFreqFinishStatuses.csv")
+finishStatusColorHiFreq <- read_csv("data/finishStatuses/colorHiFreqFinishStatuses.csv")
+
+
+#for ease of col name use
+colnames(data)<- c("serverCode", "column1", "column2", "string")
+```
+
+###### 
+
+*Removing participants who did not complete the experiment (in-line with ethics approval), and experimenters debug link*
+
+```{r}
+# experimenters debugging
+data <- data %>%   
+  select(-column1) %>%   
+  filter(!grepl('debug', serverCode)) %>%    
+  separate(
+    serverCode, 
+    into = c("Participant id", NA), 
+    sep = ":", 
+    remove=FALSE
+    )
+
+# drop outs
+finishStatus <- bind_rows(finishStatusOrient, finishStatusColorLoFreq, finishStatusColorHiFreq) 
+
+data <- finishStatus %>%
+  select("Participant id", "Status") %>% 
+  left_join(data) %>% 
+  filter(Status == "APPROVED") %>% 
+  select(-`Participant id`, -Status) 
+```
+
+## Transforming JSON strings to nice tibbles
+
+*Turn server codes into participants with id's, and filter out unnecessary columns.*
+
+```{r}
+participantData <- data %>%   
+  separate(serverCode, 
+           into = c("participant", NA), 
+           sep = ":", 
+           remove=FALSE) %>% 
+  group_by(participant) %>% 
+  mutate(participant = if(n() > 1) { 
+    sprintf("participant%03d",                   
+            cur_group_id())     
+    }) %>% 
+  ungroup() %>% 
+  select(participant, 
+         everything(), 
+         -serverCode) %>% 
+  arrange(participant) %>% 
+  select(-column2)
+```
+
+*Check our total N*
+
+```{r}
+usablePreEverything <- participantData$participant %>% 
+  unique()
+
+message('Everything including rejections and returns: ', length(usablePreEverything), ' people.')
+```
+
+As expected, 60 participants.
+
+###### 
+
+*Filter in relevant data*
+
+```{r}
+data <- participantData %>% 
+  filter(str_detect(tolower(string), "setsize") | 
+         str_detect(tolower(string), "condition"))
+```
+
+*Parse, and also removing full trial here, to take the data we need.*
+
+```{r}
+parseddata <- data %>% 
+  mutate(inx = 1:n()) %>% 
+  rowwise() %>% 
+  mutate(trialdata = lapply(string, fromJSON)) %>%
+  unnest(trialdata) %>% 
+  mutate(label = names(trialdata)) %>% 
+  spread(label, trialdata) %>% 
+  # remove full trial
+  select(-fullTrial) %>% 
+  unnest(where(is.list)) %>% 
+  select(-string, -inx) 
+```
+
+*Demarcate participants in low freq condition*
+
+```{r}
+# Assuming you have a participant identifier column like "participantID"
+# First, identify which participants have the "nonFreqColorTerms" condition
+nonFreqParticipants <- parseddata %>%
+  filter(condition == "nonFreqColorTerms") %>%
+  distinct(participant) %>%
+  pull(participant)
+
+# Now update targetColor for all rows belonging to those participants
+parseddata <- parseddata %>%
+  mutate(
+    targetColor = case_when(
+      participant %in% nonFreqParticipants & targetColor == "blue" ~ "teal",
+      participant %in% nonFreqParticipants & targetColor == "green" ~ "jade",
+      TRUE ~ targetColor
+    )
+  )
+```
+
+###### 
+
+*Make low freq redundant values change*
+
+```{r}
+# First, identify participants who have teal or jade target colors
+participants_with_low_freq_colors <- parseddata %>%
+  filter(targetColor %in% c("teal", "jade")) %>%
+  distinct(participant) %>%
+  pull(participant)
+
+# Update redundant column for all rows belonging to those participants
+parseddata <- parseddata %>%
+  mutate(
+    redundant = case_when(
+      participant %in% participants_with_low_freq_colors ~ "colorredundantlowfreq",
+      TRUE ~ redundant
+    )
+  )
+
+# remove condition column 
+parseddata <- parseddata %>% 
+  select(-condition) 
+```
+
+*Save the dataframe*
+
+```{r}
+write_csv(parseddata, "data/parsedDataFrame.csv")
+```
+
+*Check our total N recruited after filtering in relevant data*
+
+```{r}
+usableAfterFirstFilter <- parseddata$participant %>% 
+  unique()
+
+message('Total recruited is: ', length(usableAfterFirstFilter), ' people.')
+```
+
+N still at 60, as it should be.
+
+###### 
+
+###### 
+
+## Participant Removal
+
+There is just one applicable criteria here: accuracy. Whether the noun used matches the actual shape.
+
+*Filter in crit data*
+
+```{r}
+parsedCrit <- parseddata %>% 
+  filter(
+    trialType == "crit"
+  )
+```
+
+*Mutate accuracy*
+
+```{r}
+accuracyParsedCrit <- parsedCrit %>%
+  mutate(accurate = str_detect(response, fixed(targetShape)))
+```
+
+*Check for unacceptable participants (\>50% as pre-registered)*
+
+```{r}
+participantAccuracy <- accuracyParsedCrit %>%
+  group_by(participant) %>%
+  summarise(
+    total_trials = n(),
+    false_trials = sum(accurate == FALSE, na.rm = TRUE),
+    proportion_false = false_trials / total_trials
+  ) %>%
+  filter(proportion_false > 0.5) %>% view()
+
+```
+
+No removals! Woohoo!
+
+*Compute n-trials with inaccuracies*
+
+```{r}
+inaccurateTrials <- accuracyParsedCrit %>% 
+  filter(accurate == FALSE)
+
+# n trials removed
+nrow(inaccurateTrials)
+
+# % trials removed 
+nrow(inaccurateTrials) / nrow(accuracyParsedCrit)
+
+```
+
+44 trials removed for inaccuracy. 0.2% of trials.
+
+*Filter out the rest of inaccuracies via individual trials, and remove accurate because we don't need it.*
+
+```{r}
+parsedcrit <- accuracyParsedCrit %>% 
+  filter(accurate == TRUE) %>% 
+  select(-accurate) 
+```
+
+###### 
+
+#### Taking stock
+
+```{r}
+usableAfterExclusions <- parsedcrit$participant %>% 
+  unique()
+
+usableTrials <- nrow(parsedcrit)
+
+message('Total participants analysed: ', length(usableAfterFirstFilter), ' people.')
+
+message('Total number of critical trials: ', usableTrials)
+```
+
+And that's it! Hard to believe after the hell of the last experiment.
+
+###### 
+
+###### 
+
+## Building the Final Tibble
+
+*Create overinformativeness*
+
+```{r}
+nouns <- c("circle", "square", "hexagon", "pentagon")
+```
+
+*Create overinformativeness column as any response with more than the nouns*
+
+```{r}
+process_response <- function(response) {
+  words <- str_split(tolower(response), "\\s+")[[1]]
+  nonNounCount <- sum(!words %in% nouns & words != "")
+  return(nonNounCount)
+}
+
+tibble <- parsedCrit %>%
+  mutate(across(where(is.character), tolower)) %>%
+  rowwise() %>%
+  mutate(
+    nonNounCount = process_response(response),
+    overinformative = nonNounCount >= 1
+  ) %>%
+  select(-nonNounCount) %>%
+  ungroup()
+```
+
+*Manual Check*
+
+```{r}
+tibble %>% 
+  select(overinformative, response) 
+```
+
+*Rename for plotting and working with df*
+
+```{r}
+tibble <- tibble %>%
+    mutate(setSize = recode(setSize, setsize3 = 'setsize03')) %>% 
+  mutate(setSize = recode(setSize, setsize6 = 'setsize06')) %>% 
+  mutate(setSize = recode(setSize, setsize9 = 'setsize09'))
+```
+
+###### 
+
+###### 
+
+## Whaddowegot?
+
+*Colour vs. Orientation Redundant*
+
+```{r}
+tibble %>% 
+  filter(trialType == "crit") %>%
+  mutate(od = ifelse(overinformative, 1, 0)) %>% 
+  ggplot(
+    aes(x = redundant, 
+        y = od, 
+        fill = redundant,
+        color = redundant)
+    ) + 
+  stat_summary(fun.y = mean, geom="bar", 
+               alpha = 0.9, show.legend=FALSE, 
+               color = NA) + 
+  geom_jitter(
+      stat = "summary", aes(group = participant),
+      fun = mean, alpha = 0.25, size = 2.8, 
+      show.legend = FALSE, width = 0.2
+      ) +
+  stat_summary(fun.data = mean_cl_boot, 
+               geom="linerange", size = 1, 
+               color = "grey25") +
+  coord_cartesian(ylim = c(0, 1)) +
+  ylab("Proportion Overinformative") + 
+  xlab("Redundant Attribute") +
+  theme(
+    text = element_text(size = 18, 
+                        family = "serif",
+                        color = "black"), 
+    panel.border = element_rect(color = "gray80", 
+                                fill = NA, 
+                                size = 1),
+    panel.grid = element_blank()
+    ) +
+ scale_x_discrete(
+    limits = c("orientredundant", "colorredundantlowfreq", "colorredundant"),
+  
+    labels = c("Orientation",  "Colour \n LF", "Colour \n HF")
+ ) + 
+  scale_fill_manual(values = threePalette) +
+  scale_color_manual(values = threePaletteDark)
+```
+
+###### 
+
+*Comparison of set sizes, faceted by redundant attribute*
+
+```{r}
+labels <- c(
+  "colorredundant" = "HF Colour Redundant",
+  "colorredundantlowfreq" = "LF Colour Redundant",
+  "orientredundant" = "Orientation Redundant"
+)
+
+tibble %>% 
+  mutate(od = ifelse(overinformative, 1, 0)) %>% 
+  filter(trialType == "crit") %>% 
+  ggplot(
+    aes(x = setSize, 
+        y = od, 
+        fill = setSize,
+        color = setSize)
+    ) + 
+  facet_wrap(~redundant,
+             labeller = as_labeller(labels)
+               ) +
+  stat_summary(fun.y = mean, geom="bar", 
+               alpha = 0.9, show.legend=FALSE, 
+               color = NA) + 
+  geom_jitter(
+      stat = "summary", aes(group = participant),
+      fun = mean, alpha = 0.4, size = 2.8, 
+      show.legend = FALSE, width = 0.1
+      ) +
+  stat_summary(fun.data = mean_cl_boot, 
+               geom="linerange", size = 1, 
+               color = "grey25") +
+  coord_cartesian(ylim = c(0, 1)) +
+  ylab("Proportion Overinformative") + 
+  xlab("Display Set Size") +
+  theme(
+    text = element_text(size = 18, 
+                        family = "serif",
+                        color = "black"), 
+    panel.border = element_rect(color = "gray80", 
+                                fill = NA, 
+                                size = 0.7),
+    panel.grid = element_blank()
+    ) +
+  scale_fill_manual(values = fourPalette
+                    ) + 
+  scale_color_manual(values = fourPaletteDark
+                     ) +
+  scale_x_discrete(
+    labels = c("Three", "Six", "Nine", "Sixteen")
+    ) 
+```
+
+###### 
+
+*Comparison of n-distractors, faceted by redundant attribute*
+
+```{r}
+labels <- c(
+  "colorredundant" = "HF Colour Redundant",
+  "colorredundantlowfreq" = "LF Colour Redundant",
+  "orientredundant" = "Orientation Redundant"
+)
+
+tibble %>% 
+  mutate(od = ifelse(overinformative, 1, 0)) %>% 
+  filter(trialType == "crit") %>% 
+  ggplot(
+    aes(x = nDistract, 
+        y = od, 
+        fill = nDistract,
+        color = nDistract)
+    ) + 
+  facet_wrap(~redundant,
+             labeller = as_labeller(labels)
+               ) +
+  stat_summary(fun.y = mean, geom="bar", 
+               alpha = 0.9, show.legend=FALSE, 
+               color = NA) + 
+  geom_jitter(
+      stat = "summary", aes(group = participant),
+      fun = mean, alpha = 0.4, size = 2.8, 
+      show.legend = FALSE, width = 0.1
+      ) +
+  stat_summary(fun.data = mean_cl_boot, 
+               geom="linerange", size = 1, 
+               color = "grey25") +
+  coord_cartesian(ylim = c(0, 1)) +
+  ylab("Proportion Overinformative") + 
+  xlab("Number of Distractors") +
+  theme(
+    text = element_text(size = 18, 
+                        family = "serif",
+                        color = "black"), 
+    panel.border = element_rect(color = "gray80", 
+                                fill = NA, 
+                                size = 0.7),
+    panel.grid = element_blank()
+    ) +
+  scale_fill_manual(values = earthShades) +
+  scale_color_manual(values = earthShadesDark) + 
+  scale_x_discrete(
+    labels = c("None", "One", "Two", "Three", "Four")
+    ) 
+```
+
+###### 
+
+###### 
+
+## Inferential Statistics
+
+### Null
+
+*Set up*
+
+```{r}
+#| echo: true 
+#| output: false
+
+null <- brm(
+  formula = overinformative ~ 1,
+  data = tibble,
+  family = bernoulli(link = "logit"), #binary logistic regression
+  warmup = 5000,  #burn-in   
+  iter = 10000,  #samples    
+  chains = 4,  #n chains    
+  cores=4, # cpu cores running in parallel  
+  #prior = prior("normal(0, 2)", class = "b"),
+  seed = 3000, #seed so we can return
+  save_pars = save_pars(all = TRUE)
+  )
+```
+
+*Summary*
+
+```{r}
+summary(null)
+
+# chain convergence
+mcmc_plot(null,
+         type = "trace",
+         prob = 0.95)
+
+# point estimate visualisation
+mcmc_plot(null,
+         type = "areas",
+         prob = 0.95)
+```
+
+ 
+
+### Full Model
+
+*Set-up*
+
+```{r}
+#| echo: true 
+#| output: false
+
+full <- brm(
+  formula = overinformative ~ 1 + redundant + nDistract + setSize,
+  data = tibble,
+  family = bernoulli(link = "logit"), #binary logistic regression
+  warmup = 5000,  #burn-in   
+  iter = 10000,  #samples    
+  chains = 4,  #n chains    
+  cores=4, # cpu cores running in parallel  
+  prior = prior("normal(0, 2)", class = "b"),
+  seed = 3000, #seed so we can return
+  save_pars = save_pars(all = TRUE)
+  )
+```
+
+*Summary*
+
+```{r}
+summary(full)
+
+# chain convergence
+mcmc_plot(full,
+         type = "trace",
+         prob = 0.95)
+
+# point estimate visualisation
+mcmc_plot(full,
+         type = "areas",
+         prob = 0.95)
+```
+
+###### 
+
+### Setsize + Attribute-redundant
+
+*Set up*
+
+```{r}
+#| echo: true 
+#| output: false
+
+SetAtt  <- brm(
+  formula = overinformative ~ 1 + redundant + setSize,
+  data = tibble,
+  family = bernoulli(link = "logit"), #binary logistic regression
+  warmup = 5000,  #burn-in   
+  iter = 10000,  #samples    
+  chains = 4,  #n chains    
+  cores=4, # cpu cores running in parallel  
+  prior = prior("normal(0, 2)", class = "b"),
+  seed = 3000, #seed so we can return
+  save_pars = save_pars(all = TRUE)
+  )
+```
+
+*Summary*
+
+```{r}
+summary(SetAtt)
+
+# chain convergence
+mcmc_plot(SetAtt,
+         type = "trace",
+         prob = 0.95)
+
+# point estimate visualisation
+mcmc_plot(SetAtt,
+         type = "areas",
+         prob = 0.95)
+```
+
+###### 
+
+### N-distractors + Attribute-redundant
+
+*Set up*
+
+```{r}
+#| echo: true 
+#| output: false
+
+DistAtt  <- brm(
+  formula = overinformative ~ 1 + redundant + nDistract,
+  data = tibble,
+  family = bernoulli(link = "logit"), #binary logistic regression
+  warmup = 5000,  #burn-in   
+  iter = 10000,  #samples    
+  chains = 4,  #n chains    
+  cores=4, # cpu cores running in parallel  
+  prior = prior("normal(0, 2)", class = "b"),
+  seed = 3000, #seed so we can return
+  save_pars = save_pars(all = TRUE)
+  )
+```
+
+*Summary*
+
+```{r}
+summary(DistAtt)
+
+# chain convergence
+mcmc_plot(DistAtt,
+         type = "trace",
+         prob = 0.95)
+
+# point estimate visualisation
+mcmc_plot(DistAtt,
+         type = "areas",
+         prob = 0.95)
+```
+
+###### 
+
+### Set Size
+
+*Set up*
+
+```{r}
+#| echo: true 
+#| output: false
+
+setSize  <- brm(
+  formula = overinformative ~ 1 + setSize,
+  data = tibble,
+  family = bernoulli(link = "logit"), #binary logistic regression
+  warmup = 5000,  #burn-in   
+  iter = 10000,  #samples    
+  chains = 4,  #n chains    
+  cores=4, # cpu cores running in parallel  
+  prior = prior("normal(0, 2)", class = "b"),
+  seed = 3000, #seed so we can return
+  save_pars = save_pars(all = TRUE)
+  )
+```
+
+*Summary*
+
+```{r}
+summary(setSize)
+
+# chain convergence
+mcmc_plot(setSize,
+         type = "trace",
+         prob = 0.95)
+
+# point estimate visualisation
+mcmc_plot(setSize,
+         type = "areas",
+         prob = 0.95)
+```
+
+###### 
+
+### N distractors
+
+*Set up*
+
+```{r}
+#| echo: true 
+#| output: false
+
+nDistractor  <- brm(
+  formula = overinformative ~ 1 + nDistract,
+  data = tibble,
+  family = bernoulli(link = "logit"), #binary logistic regression
+  warmup = 5000,  #burn-in   
+  iter = 10000,  #samples    
+  chains = 4,  #n chains    
+  cores=4, # cpu cores running in parallel  
+  prior = prior("normal(0, 2)", class = "b"),
+  seed = 3000, #seed so we can return
+  save_pars = save_pars(all = TRUE)
+  )
+```
+
+*Summary*
+
+```{r}
+summary(nDistractor)
+
+# chain convergence
+mcmc_plot(nDistractor,
+         type = "trace",
+         prob = 0.95)
+
+# point estimate visualisation
+mcmc_plot(nDistractor,
+         type = "areas",
+         prob = 0.95)
+```
+
+### Attribute Redundant
+
+*Set up*
+
+```{r}
+#| echo: true 
+#| output: false
+
+attribute  <- brm(
+  formula = overinformative ~ 1 + redundant, 
+  data = tibble, 
+  family = bernoulli(link = "logit"), #binary logistic  regression 
+  warmup = 5000,  #burn-in   
+  iter = 10000,  #samples    
+  chains = 4,  #n chains    
+  cores=4, # cpu cores running in parallel  
+  prior = prior("normal(0, 2)", class = "b"), 
+  seed = 3000, #seed for determinism 
+  save_pars = save_pars(all = TRUE) 
+  )
+```
+
+*Summary*
+
+```{r}
+summary(attribute)
+
+# chain convergence
+mcmc_plot(attribute,
+         type = "trace",
+         prob = 0.95)
+
+# point estimate visualisation
+mcmc_plot(attribute,
+         type = "areas",
+         prob = 0.95)
+```
+
+###### 
+
+###### 
+
+### Model Comparison
+
+```{r}
+bayes_factor(full, null, log = TRUE)
+bayes_factor(DistAtt, null, log = TRUE)
+bayes_factor(SetAtt, null, log = TRUE)
+bayes_factor(setSize, null, log = TRUE)
+bayes_factor(nDistractor, null, log = TRUE)
+bayes_factor(attribute, null, log = TRUE)
+```

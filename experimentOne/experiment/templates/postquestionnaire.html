@@ -1,0 +1,115 @@
+<div id="container-questionnaire">
+    <h1>Post-Study Questionaire</h1>
+
+    <hr>
+
+    <p>You are finished! Thank you for your contribution! Before we submit the experiment, we ask that you answer the following questions.  The information that you provide will better help us analyze the data from the experiment.</p>
+	
+    <div class="instructions well">
+
+        <form id="postquiz" action="debrief" method="post">
+
+            <!-- beginning of a question -->
+            <div class="row question">
+                <div class="col-md-8">
+                    Please tell us about the strategy you used when describing the bats. <input id="strategy" type="text" name="firstlang">
+                </div>
+            </div>
+            <!-- end of a question -->
+
+            <!-- beginning of a question -->
+            <div class="row question">
+                <div class="col-md-8">
+                    Age: <input id="age" type="text" name="age">
+                </div>
+            </div>
+            <!-- end of a question -->
+
+
+            <!-- beginning of a question -->
+            <div class="row question">
+                <div class="col-md-8">
+                    Native Language: <input id="firstlang" type="text" name="firstlang">
+                </div>
+            </div>
+            <!-- end of a question -->
+
+
+            <!-- beginning of a question -->
+            <div class="row question">
+                <div class="col-md-8">
+                    Other Languages?: <input id="otherlang" type="text" name="otherlang">
+                </div>
+            </div>
+            <!-- end of a question -->
+
+
+                        <!-- beginning of a question -->
+            <div class="row question">
+                <div class="col-md-8">
+                    Gender:
+		            <select id="gender" name="gender">
+		                <option value="Unanswered" SELECTED>Prefer Not To Say</option>
+		                <option value="Female">Female</option>
+		                <option value="Male">Male</option>
+		                <option value="NB">Non-Binary</option>
+		                <option value="Unlisted">Other</option>
+                	</select>
+                </div>
+            </div>
+            <!-- end of a question -->
+
+             
+            <!-- beginning of a question -->
+            <div class="row question">
+                <div class="col-md-8">
+                    Do you have any impairments of Color Vision?
+                    <select id="vision" name="vision">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+            </div>
+            <!-- end of a question -->
+
+
+
+            <!-- beginning of a question -->
+            <div class="row question">
+                <div class="col-md-8">
+                    Do you have any impairments of Hearing?
+                    <select id="hearing" name="hearing">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+            </div>
+            <!-- end of a question -->
+
+
+
+        </form>
+    </div>
+
+	<p> 
+    <hr>
+
+    <div class="instructionsnav">
+        <div class="row">
+            <div class="col-xs-2">
+            </div>
+            <div class="col-xs-7">
+            </div>
+            <div class="col-xs-3">
+                <button type="button" id="next" value="next" class="btn btn-primary btn-lg continue">
+                    Continue <span class="glyphicon glyphicon-arrow-right"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+

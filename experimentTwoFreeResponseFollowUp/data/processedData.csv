@@ -1,0 +1,1206 @@
+participant,index,nDistract,redundant,response,setSize,trialType,overinformative
+participant001,4,distractors2,colorredundant,has four corners,setsize06,crit,FALSE
+participant001,5,distractors0,colorredundant,has four green corners,setsize16,crit,TRUE
+participant001,6,distractors1,colorredundant,has four corners blue,setsize03,crit,TRUE
+participant001,8,distractors1,colorredundant,four corners green,setsize06,crit,TRUE
+participant001,9,distractors0,colorredundant,five corners green,setsize06,crit,TRUE
+participant001,11,distractors0,colorredundant,five corners blue,setsize16,crit,TRUE
+participant001,13,distractors4,colorredundant,6 corners blue,setsize06,crit,TRUE
+participant001,14,distractors0,colorredundant,5 corners green,setsize09,crit,TRUE
+participant001,16,distractors2,colorredundant,4 corners green,setsize09,crit,TRUE
+participant001,17,distractors0,colorredundant,four corners blue,setsize16,crit,TRUE
+participant001,18,distractors3,colorredundant,green 6 sides,setsize06,crit,TRUE
+participant001,22,distractors2,colorredundant,green round,setsize06,crit,TRUE
+participant001,23,distractors4,colorredundant,blue 4 sides,setsize06,crit,TRUE
+participant001,24,distractors4,colorredundant,green 4 sides,setsize09,crit,TRUE
+participant001,26,distractors3,colorredundant,green 4 sides,setsize06,crit,TRUE
+participant001,27,distractors0,colorredundant,round green,setsize16,crit,TRUE
+participant001,28,distractors0,colorredundant,5 sides green,setsize16,crit,TRUE
+participant001,29,distractors0,colorredundant,blue 6 sides,setsize03,crit,TRUE
+participant001,30,distractors0,colorredundant,green square,setsize16,crit,TRUE
+participant001,31,distractors0,colorredundant,round green,setsize16,crit,TRUE
+participant001,34,distractors0,colorredundant,blue 6 sides,setsize09,crit,TRUE
+participant001,35,distractors0,colorredundant,blue 4 sides square,setsize16,crit,TRUE
+participant001,36,distractors1,colorredundant,green 5 sides,setsize09,crit,TRUE
+participant001,39,distractors2,colorredundant,blue six sides,setsize09,crit,TRUE
+participant001,40,distractors0,colorredundant,blue square,setsize03,crit,TRUE
+participant001,41,distractors0,colorredundant,green 5 sides,setsize16,crit,TRUE
+participant001,44,distractors1,colorredundant,green 5 sides,setsize03,crit,TRUE
+participant001,45,distractors4,colorredundant,green 6 sides,setsize09,crit,TRUE
+participant001,46,distractors1,colorredundant,blue 6 sides,setsize06,crit,TRUE
+participant001,47,distractors3,colorredundant,green 5 sides,setsize09,crit,TRUE
+participant001,48,distractors1,colorredundant,green round,setsize09,crit,TRUE
+participant001,49,distractors0,colorredundant,green square,setsize06,crit,TRUE
+participant001,50,distractors3,colorredundant,green 6 sides,setsize09,crit,TRUE
+participant002,4,distractors3,colorredundant,green pentagon,setsize09,crit,TRUE
+participant002,5,distractors0,colorredundant,blue pentagon,setsize16,crit,TRUE
+participant002,7,distractors4,colorredundant,blue circle,setsize06,crit,TRUE
+participant002,8,distractors1,colorredundant,blue circle,setsize06,crit,TRUE
+participant002,9,distractors1,colorredundant,green square,setsize09,crit,TRUE
+participant002,11,distractors2,colorredundant,green pentagon,setsize06,crit,TRUE
+participant002,12,distractors0,colorredundant,blue circle,setsize06,crit,TRUE
+participant002,13,distractors1,colorredundant,blue hexagon,setsize03,crit,TRUE
+participant002,14,distractors4,colorredundant,green hexagon,setsize09,crit,TRUE
+participant002,15,distractors0,colorredundant,green square,setsize16,crit,TRUE
+participant002,16,distractors0,colorredundant,green circle,setsize16,crit,TRUE
+participant002,17,distractors0,colorredundant,blue square,setsize16,crit,TRUE
+participant002,19,distractors0,colorredundant,green square,setsize16,crit,TRUE
+participant002,23,distractors2,colorredundant,blue pentagon,setsize09,crit,TRUE
+participant002,25,distractors1,colorredundant,blue hexagon,setsize06,crit,TRUE
+participant002,26,distractors0,colorredundant,green hexagon,setsize16,crit,TRUE
+participant002,27,distractors4,colorredundant,blue circle,setsize09,crit,TRUE
+participant002,29,distractors2,colorredundant,green circle,setsize06,crit,TRUE
+participant002,30,distractors4,colorredundant,blue square,setsize06,crit,TRUE
+participant002,32,distractors1,colorredundant,green hexagon,setsize09,crit,TRUE
+participant002,35,distractors3,colorredundant,blue hexagon,setsize06,crit,TRUE
+participant002,36,distractors3,colorredundant,green hexagon,setsize06,crit,TRUE
+participant002,37,distractors3,colorredundant,green square,setsize09,crit,TRUE
+participant002,40,distractors0,colorredundant,green square,setsize16,crit,TRUE
+participant002,41,distractors0,colorredundant,green square,setsize16,crit,TRUE
+participant002,44,distractors2,colorredundant,blue pentagon,setsize09,crit,TRUE
+participant002,45,distractors1,colorredundant,green pentagon,setsize03,crit,TRUE
+participant002,46,distractors0,colorredundant,green square,setsize16,crit,TRUE
+participant002,49,distractors0,colorredundant,green square,setsize16,crit,TRUE
+participant003,4,distractors0,colorredundant,6 sided green shape,setsize16,crit,TRUE
+participant003,5,distractors3,colorredundant,6 sided blue shape,setsize06,crit,TRUE
+participant003,7,distractors4,colorredundant,5 sided green shape,setsize09,crit,TRUE
+participant003,8,distractors1,colorredundant,5 sided green shape,setsize03,crit,TRUE
+participant003,10,distractors4,colorredundant,blue square,setsize09,crit,TRUE
+participant003,11,distractors3,colorredundant,6 sided blue,setsize09,crit,TRUE
+participant003,14,distractors3,colorredundant,6 sided blue,setsize09,crit,TRUE
+participant003,15,distractors0,colorredundant,green square,setsize09,crit,TRUE
+participant003,16,distractors2,colorredundant,6 sided green,setsize06,crit,TRUE
+participant003,17,distractors0,colorredundant,blue circle,setsize16,crit,TRUE
+participant003,18,distractors0,colorredundant,green square,setsize06,crit,TRUE
+participant003,19,distractors0,colorredundant,5 sided green,setsize16,crit,TRUE
+participant003,20,distractors0,colorredundant,5 sided green,setsize16,crit,TRUE
+participant003,21,distractors2,colorredundant,6 sided blue,setsize09,crit,TRUE
+participant003,23,distractors0,colorredundant,5 sided green,setsize16,crit,TRUE
+participant003,24,distractors0,colorredundant,green circle,setsize03,crit,TRUE
+participant003,25,distractors1,colorredundant,blue square,setsize06,crit,TRUE
+participant003,27,distractors0,colorredundant,6 sided blue,setsize09,crit,TRUE
+participant003,30,distractors0,colorredundant,6 sided green,setsize06,crit,TRUE
+participant003,31,distractors1,colorredundant,green square,setsize09,crit,TRUE
+participant003,32,distractors2,colorredundant,5 sided blue,setsize09,crit,TRUE
+participant003,33,distractors3,colorredundant,6 sided blue,setsize06,crit,TRUE
+participant003,34,distractors0,colorredundant,6 sided green,setsize16,crit,TRUE
+participant003,35,distractors4,colorredundant,blue square,setsize06,crit,TRUE
+participant003,36,distractors0,colorredundant,6 sided green,setsize03,crit,TRUE
+participant003,37,distractors1,colorredundant,5 sided green,setsize03,crit,TRUE
+participant003,40,distractors0,colorredundant,blue square,setsize16,crit,TRUE
+participant003,41,distractors4,colorredundant,5 sided blue,setsize06,crit,TRUE
+participant003,42,distractors1,colorredundant,green square,setsize06,crit,TRUE
+participant003,43,distractors2,colorredundant,5 sided blue,setsize06,crit,TRUE
+participant003,44,distractors0,colorredundant,6 sided blue,setsize16,crit,TRUE
+participant003,48,distractors1,colorredundant,green circle,setsize09,crit,TRUE
+participant003,49,distractors0,colorredundant,6 sided green,setsize16,crit,TRUE
+participant003,50,distractors0,colorredundant,6 sided blue,setsize16,crit,TRUE
+participant004,4,distractors0,orientationredundant,5 sided shape ,setsize16,crit,FALSE
+participant004,5,distractors4,orientationredundant,circle,setsize06,crit,FALSE
+participant004,6,distractors3,orientationredundant,square,setsize06,crit,FALSE
+participant004,10,distractors4,orientationredundant,6 sided shape,setsize09,crit,FALSE
+participant004,11,distractors0,orientationredundant,circle,setsize16,crit,FALSE
+participant004,13,distractors3,orientationredundant,square horizontal lines,setsize09,crit,TRUE
+participant004,14,distractors2,orientationredundant,circle vertical lines,setsize09,crit,TRUE
+participant004,15,distractors0,orientationredundant,circle ,setsize16,crit,FALSE
+participant004,16,distractors2,orientationredundant,5 sided shape ,setsize06,crit,FALSE
+participant004,17,distractors1,orientationredundant,6 sided shape ,setsize09,crit,FALSE
+participant004,18,distractors0,orientationredundant,6 sided shape,setsize09,crit,FALSE
+participant004,19,distractors1,orientationredundant,circle ,setsize03,crit,FALSE
+participant004,20,distractors4,orientationredundant,circle ,setsize06,crit,FALSE
+participant004,21,distractors1,orientationredundant,5 sided shape,setsize09,crit,FALSE
+participant004,22,distractors3,orientationredundant,square,setsize06,crit,FALSE
+participant004,23,distractors0,orientationredundant,6 sided shape ,setsize03,crit,FALSE
+participant004,24,distractors0,orientationredundant,5 sided shape ,setsize09,crit,FALSE
+participant004,25,distractors0,orientationredundant,6 sided shape ,setsize16,crit,FALSE
+participant004,27,distractors2,orientationredundant,square ,setsize06,crit,FALSE
+participant004,31,distractors1,orientationredundant,square ,setsize03,crit,FALSE
+participant004,34,distractors3,orientationredundant,6 sided horizontal lines,setsize09,crit,TRUE
+participant004,35,distractors1,orientationredundant,6 sided vertical lines,setsize06,crit,TRUE
+participant004,36,distractors4,orientationredundant,5 sided horizontal lines ,setsize09,crit,TRUE
+participant004,39,distractors0,orientationredundant,6 sided vertical lines ,setsize06,crit,TRUE
+participant004,40,distractors0,orientationredundant,square ,setsize16,crit,FALSE
+participant004,41,distractors0,orientationredundant,6 sided,setsize06,crit,FALSE
+participant004,42,distractors0,orientationredundant,circle ,setsize16,crit,FALSE
+participant004,43,distractors0,orientationredundant,5 sided,setsize16,crit,FALSE
+participant004,44,distractors2,orientationredundant,5 sided vertical lines ,setsize09,crit,TRUE
+participant004,45,distractors0,orientationredundant,6 sided,setsize03,crit,FALSE
+participant004,46,distractors0,orientationredundant,circle ,setsize16,crit,FALSE
+participant004,47,distractors1,orientationredundant,square ,setsize06,crit,FALSE
+participant004,49,distractors0,orientationredundant,square ,setsize16,crit,FALSE
+participant004,50,distractors0,orientationredundant,5 sided horizontal lines ,setsize16,crit,TRUE
+participant006,4,distractors1,colorredundant,the hexagon,setsize03,crit,FALSE
+participant006,5,distractors0,colorredundant,the blue circle,setsize16,crit,TRUE
+participant006,6,distractors0,colorredundant,the blue circle,setsize09,crit,TRUE
+participant006,8,distractors0,colorredundant,the blue hexagon,setsize16,crit,TRUE
+participant006,10,distractors0,colorredundant,the blue hexagon,setsize16,crit,TRUE
+participant006,11,distractors0,colorredundant,the blue hexagon,setsize16,crit,TRUE
+participant006,13,distractors0,colorredundant,the green square,setsize16,crit,TRUE
+participant006,15,distractors0,colorredundant,the blue circle,setsize16,crit,TRUE
+participant006,16,distractors2,colorredundant,the green square,setsize06,crit,TRUE
+participant006,18,distractors0,colorredundant,the square,setsize03,crit,FALSE
+participant006,21,distractors3,colorredundant,the hexagon,setsize09,crit,FALSE
+participant006,23,distractors3,colorredundant,the hexagon,setsize09,crit,FALSE
+participant006,24,distractors4,colorredundant,the hexagon,setsize09,crit,FALSE
+participant006,26,distractors0,colorredundant,the blue pentagon,setsize16,crit,TRUE
+participant006,27,distractors2,colorredundant,the pentagon,setsize06,crit,FALSE
+participant006,28,distractors4,colorredundant,the square,setsize06,crit,FALSE
+participant006,29,distractors1,colorredundant,the pentagon,setsize06,crit,FALSE
+participant006,31,distractors0,colorredundant,the circle,setsize16,crit,FALSE
+participant006,32,distractors1,colorredundant,the square,setsize03,crit,FALSE
+participant006,35,distractors0,colorredundant,the pentagon,setsize03,crit,FALSE
+participant006,36,distractors4,colorredundant,the circle,setsize06,crit,FALSE
+participant006,37,distractors1,colorredundant,the pentagon,setsize06,crit,FALSE
+participant006,38,distractors2,colorredundant,the pentagon,setsize09,crit,FALSE
+participant006,39,distractors3,colorredundant,the circle,setsize06,crit,FALSE
+participant006,40,distractors1,colorredundant,the blue circle,setsize09,crit,TRUE
+participant006,41,distractors0,colorredundant,the circle,setsize06,crit,FALSE
+participant006,42,distractors0,colorredundant,the blue square,setsize16,crit,TRUE
+participant006,43,distractors0,colorredundant,the square,setsize09,crit,FALSE
+participant006,44,distractors0,colorredundant,the square,setsize06,crit,FALSE
+participant006,45,distractors2,colorredundant,the circle,setsize09,crit,FALSE
+participant006,46,distractors3,colorredundant,the circle,setsize06,crit,FALSE
+participant006,47,distractors0,colorredundant,the square,setsize16,crit,FALSE
+participant006,48,distractors1,colorredundant,the circle,setsize09,crit,FALSE
+participant006,49,distractors4,colorredundant,the square,setsize09,crit,FALSE
+participant007,4,distractors1,orientationredundant,5 sides and horizontal stripes,setsize03,crit,TRUE
+participant007,8,distractors0,orientationredundant,square,setsize16,crit,FALSE
+participant007,10,distractors4,orientationredundant,circle,setsize06,crit,FALSE
+participant007,11,distractors0,orientationredundant,pentagon,setsize16,crit,FALSE
+participant007,12,distractors3,orientationredundant,pentagon,setsize09,crit,FALSE
+participant007,13,distractors0,orientationredundant,circle,setsize16,crit,FALSE
+participant007,14,distractors4,orientationredundant,square,setsize09,crit,FALSE
+participant007,15,distractors2,orientationredundant,pentagon,setsize06,crit,FALSE
+participant007,18,distractors2,orientationredundant,6 sided shape,setsize09,crit,FALSE
+participant007,20,distractors1,orientationredundant,circle,setsize06,crit,FALSE
+participant007,22,distractors0,orientationredundant,circle,setsize16,crit,FALSE
+participant007,23,distractors1,orientationredundant,6 sided shape,setsize09,crit,FALSE
+participant007,24,distractors0,orientationredundant,6 sided shape,setsize06,crit,FALSE
+participant007,25,distractors3,orientationredundant,6 sided shape,setsize09,crit,FALSE
+participant007,26,distractors1,orientationredundant,square,setsize06,crit,FALSE
+participant007,27,distractors0,orientationredundant,pentagon,setsize03,crit,FALSE
+participant007,28,distractors0,orientationredundant,square,setsize16,crit,FALSE
+participant007,29,distractors0,orientationredundant,6 sides,setsize16,crit,FALSE
+participant007,30,distractors0,orientationredundant,pentagon,setsize16,crit,FALSE
+participant007,31,distractors1,orientationredundant,square,setsize03,crit,FALSE
+participant007,32,distractors4,orientationredundant,6 sides,setsize06,crit,FALSE
+participant007,35,distractors0,orientationredundant,circle,setsize03,crit,FALSE
+participant007,36,distractors0,orientationredundant,6 sides,setsize16,crit,FALSE
+participant007,37,distractors0,orientationredundant,circle,setsize16,crit,FALSE
+participant007,38,distractors3,orientationredundant,square,setsize06,crit,FALSE
+participant007,39,distractors0,orientationredundant,6 sides,setsize09,crit,FALSE
+participant007,40,distractors2,orientationredundant,6 sides,setsize06,crit,FALSE
+participant007,41,distractors0,orientationredundant,circle,setsize06,crit,FALSE
+participant007,42,distractors0,orientationredundant,6 sides,setsize09,crit,FALSE
+participant007,43,distractors4,orientationredundant,square,setsize09,crit,FALSE
+participant007,44,distractors0,orientationredundant,pentagon,setsize16,crit,FALSE
+participant007,47,distractors3,orientationredundant,circle,setsize06,crit,FALSE
+participant007,48,distractors1,orientationredundant,pentagon,setsize09,crit,FALSE
+participant007,50,distractors2,orientationredundant,circle,setsize09,crit,FALSE
+participant008,5,distractors0,orientationredundant,it is square,setsize03,crit,FALSE
+participant008,8,distractors0,orientationredundant,it is a circle,setsize16,crit,FALSE
+participant008,9,distractors1,orientationredundant,it has 5 sides,setsize03,crit,FALSE
+participant008,12,distractors4,orientationredundant,a square,setsize06,crit,FALSE
+participant008,15,distractors1,orientationredundant,it is a square,setsize03,crit,FALSE
+participant008,21,distractors0,orientationredundant,a square,setsize16,crit,FALSE
+participant008,22,distractors1,orientationredundant,a square,setsize09,crit,FALSE
+participant008,23,distractors0,orientationredundant,a circle,setsize16,crit,FALSE
+participant008,25,distractors2,orientationredundant,a square,setsize06,crit,FALSE
+participant008,30,distractors3,orientationredundant,circle with vertical lines,setsize09,crit,TRUE
+participant008,33,distractors2,orientationredundant,a square,setsize09,crit,FALSE
+participant008,34,distractors0,orientationredundant,a circle,setsize16,crit,FALSE
+participant008,36,distractors4,orientationredundant,circle,setsize09,crit,FALSE
+participant008,37,distractors2,orientationredundant,square,setsize06,crit,FALSE
+participant008,42,distractors0,orientationredundant,square,setsize16,crit,FALSE
+participant008,44,distractors0,orientationredundant,square,setsize16,crit,FALSE
+participant008,46,distractors0,orientationredundant,circle,setsize03,crit,FALSE
+participant008,47,distractors1,orientationredundant,square,setsize06,crit,FALSE
+participant008,49,distractors3,orientationredundant,square,setsize06,crit,FALSE
+participant008,50,distractors1,orientationredundant,square,setsize09,crit,FALSE
+participant009,19,distractors0,colorredundant,odd colour out,setsize16,crit,FALSE
+participant009,23,distractors0,colorredundant,only one of its colour,setsize06,crit,FALSE
+participant009,25,distractors0,colorredundant,sole pentagon,setsize16,crit,TRUE
+participant009,26,distractors0,colorredundant,only one of its colour and type,setsize06,crit,FALSE
+participant009,27,distractors2,colorredundant,sole 4 sided object,setsize09,crit,TRUE
+participant009,28,distractors4,colorredundant,has no sides,setsize06,crit,FALSE
+participant009,30,distractors1,colorredundant,sole blue object with sides,setsize09,crit,TRUE
+participant009,34,distractors0,colorredundant,sole object of its colour,setsize03,crit,TRUE
+participant009,36,distractors0,colorredundant,sole object of its colour,setsize16,crit,TRUE
+participant009,38,distractors0,colorredundant,sole square,setsize16,crit,TRUE
+participant009,40,distractors3,colorredundant,sole green square,setsize06,crit,TRUE
+participant009,41,distractors4,colorredundant,sole green circle,setsize09,crit,TRUE
+participant009,42,distractors2,colorredundant,sole green hexagon,setsize06,crit,TRUE
+participant009,43,distractors0,colorredundant,sole green object,setsize09,crit,TRUE
+participant009,44,distractors3,colorredundant,sole blue circle,setsize09,crit,TRUE
+participant009,45,distractors2,colorredundant,sole green hexagon,setsize09,crit,TRUE
+participant009,49,distractors0,colorredundant,sole blue square,setsize16,crit,TRUE
+participant010,4,distractors1,orientationredundant,round with vertical stripes,setsize09,crit,TRUE
+participant010,5,distractors2,orientationredundant,a pentagon with horizontal stripes,setsize09,crit,TRUE
+participant010,8,distractors0,orientationredundant,square with vertical stripes,setsize16,crit,TRUE
+participant010,9,distractors3,orientationredundant,round with horizontal stripes,setsize09,crit,TRUE
+participant010,10,distractors4,orientationredundant,square with horizontal stripes,setsize09,crit,TRUE
+participant010,13,distractors3,orientationredundant,square with horizontal stripes,setsize09,crit,TRUE
+participant010,14,distractors2,orientationredundant,round with horizontal stripes,setsize09,crit,TRUE
+participant010,15,distractors0,orientationredundant,pentagon with horizontal stripes,setsize16,crit,TRUE
+participant010,17,distractors0,orientationredundant,round with horizontal stripes,setsize16,crit,TRUE
+participant010,19,distractors1,orientationredundant,square with vertical stripes,setsize09,crit,TRUE
+participant010,20,distractors0,orientationredundant,hexagon with horizontal stripes,setsize03,crit,TRUE
+participant010,21,distractors0,orientationredundant,pentagon with vertical stripes,setsize16,crit,TRUE
+participant010,22,distractors0,orientationredundant,hexagon with horizontal stripes,setsize06,crit,TRUE
+participant010,23,distractors0,orientationredundant,pentagon with vertical stripes,setsize16,crit,TRUE
+participant010,24,distractors0,orientationredundant,round with vertical stripes,setsize16,crit,TRUE
+participant010,25,distractors1,orientationredundant,pentagon with vertical stripes,setsize06,crit,TRUE
+participant010,28,distractors3,orientationredundant,round with horizontal stripes,setsize06,crit,TRUE
+participant010,30,distractors0,orientationredundant,square with horizontal stripes,setsize03,crit,TRUE
+participant010,31,distractors0,orientationredundant,pentagon with vertical stripes,setsize06,crit,TRUE
+participant010,32,distractors0,orientationredundant,pentagon with horizontal stripes,setsize16,crit,TRUE
+participant010,34,distractors4,orientationredundant,square with vertical stripes,setsize09,crit,TRUE
+participant010,35,distractors2,orientationredundant,pentagon with vertical stripes,setsize06,crit,TRUE
+participant010,36,distractors4,orientationredundant,pentagon with horizontal stripes,setsize06,crit,TRUE
+participant010,38,distractors2,orientationredundant,pentagon with vertical stripes,setsize06,crit,TRUE
+participant010,39,distractors0,orientationredundant,square with vertical stripes,setsize16,crit,TRUE
+participant010,41,distractors0,orientationredundant,round with vertical stripes,setsize09,crit,TRUE
+participant010,42,distractors3,orientationredundant,hexagon with horizontal stripes,setsize06,crit,TRUE
+participant010,43,distractors0,orientationredundant,pentagon with horizontal stripes,setsize16,crit,TRUE
+participant010,44,distractors0,orientationredundant,square with horizontal stripes,setsize09,crit,TRUE
+participant010,46,distractors0,orientationredundant,round with horizontal stripes,setsize16,crit,TRUE
+participant010,47,distractors4,orientationredundant,hexagon with vertical stripes,setsize06,crit,TRUE
+participant010,48,distractors1,orientationredundant,pentagon with horizontal stripes,setsize03,crit,TRUE
+participant010,49,distractors1,orientationredundant,square with horizontal stripes,setsize06,crit,TRUE
+participant010,50,distractors1,orientationredundant,square with vertical stripes,setsize03,crit,TRUE
+participant011,6,distractors1,orientationredundant,hexagon with horizontal stripes,setsize06,crit,TRUE
+participant011,8,distractors0,orientationredundant,circle ,setsize03,crit,FALSE
+participant011,9,distractors1,orientationredundant,circle,setsize06,crit,FALSE
+participant011,11,distractors0,orientationredundant,hexagon with vertical stripes,setsize09,crit,TRUE
+participant011,12,distractors2,orientationredundant,hexagon with vertical stripes,setsize06,crit,TRUE
+participant011,13,distractors0,orientationredundant,square with vertical stripes,setsize16,crit,TRUE
+participant011,14,distractors0,orientationredundant,hexagon with horizontal stripes,setsize16,crit,TRUE
+participant011,15,distractors4,orientationredundant,circle with horizontal stripes,setsize06,crit,TRUE
+participant011,17,distractors0,orientationredundant,square with vertical stripes,setsize16,crit,TRUE
+participant011,19,distractors1,orientationredundant,circle,setsize03,crit,FALSE
+participant011,20,distractors4,orientationredundant,pentagon,setsize06,crit,FALSE
+participant011,21,distractors4,orientationredundant,square,setsize09,crit,FALSE
+participant011,22,distractors0,orientationredundant,pentagon,setsize16,crit,FALSE
+participant011,23,distractors1,orientationredundant,circle,setsize09,crit,FALSE
+participant011,24,distractors1,orientationredundant,circle,setsize09,crit,FALSE
+participant011,25,distractors3,orientationredundant,pentagon,setsize09,crit,FALSE
+participant011,26,distractors0,orientationredundant,pentagon,setsize06,crit,FALSE
+participant011,28,distractors2,orientationredundant,circle,setsize09,crit,FALSE
+participant011,29,distractors2,orientationredundant,square,setsize06,crit,FALSE
+participant011,30,distractors0,orientationredundant,pentagon,setsize16,crit,FALSE
+participant011,34,distractors0,orientationredundant,circle,setsize03,crit,FALSE
+participant011,37,distractors2,orientationredundant,circle with horizontal stripes,setsize09,crit,TRUE
+participant011,38,distractors3,orientationredundant,hexagon with horizontal stripes,setsize09,crit,TRUE
+participant011,39,distractors0,orientationredundant,pentagon with horizontal stripes,setsize16,crit,TRUE
+participant011,40,distractors0,orientationredundant,circle,setsize06,crit,FALSE
+participant011,41,distractors1,orientationredundant,hexagon,setsize03,crit,FALSE
+participant011,42,distractors3,orientationredundant,pentagon,setsize06,crit,FALSE
+participant011,44,distractors0,orientationredundant,square,setsize09,crit,FALSE
+participant011,47,distractors0,orientationredundant,square,setsize16,crit,FALSE
+participant011,48,distractors3,orientationredundant,pentagon,setsize06,crit,FALSE
+participant011,49,distractors0,orientationredundant,pentagon,setsize16,crit,FALSE
+participant011,50,distractors4,orientationredundant,pentagon,setsize09,crit,FALSE
+participant012,5,distractors0,colorredundant,green circle,setsize16,crit,TRUE
+participant012,7,distractors0,colorredundant,green 5-sided shape,setsize16,crit,TRUE
+participant012,8,distractors3,colorredundant,blue six-sided shape,setsize09,crit,TRUE
+participant012,10,distractors0,colorredundant,green circle,setsize03,crit,TRUE
+participant012,11,distractors1,colorredundant,blue square,setsize06,crit,TRUE
+participant012,12,distractors3,colorredundant,green 6-sided shape,setsize06,crit,TRUE
+participant012,14,distractors0,colorredundant,blue square,setsize06,crit,TRUE
+participant012,15,distractors2,colorredundant,blue 5-sided shape,setsize06,crit,TRUE
+participant012,17,distractors0,colorredundant,blue square,setsize16,crit,TRUE
+participant012,18,distractors0,colorredundant,blue 6-sided shape,setsize16,crit,TRUE
+participant012,19,distractors1,colorredundant,blue circle,setsize03,crit,TRUE
+participant012,20,distractors2,colorredundant,blue square,setsize06,crit,TRUE
+participant012,21,distractors1,colorredundant,blue square,setsize09,crit,TRUE
+participant012,22,distractors3,colorredundant,blue 5-sided shape,setsize06,crit,TRUE
+participant012,24,distractors0,colorredundant,green 5-sided shape,setsize16,crit,TRUE
+participant012,26,distractors0,colorredundant,green shape,setsize16,crit,FALSE
+participant012,27,distractors3,colorredundant,blue square,setsize09,crit,TRUE
+participant012,29,distractors0,colorredundant,blue 6-sided shape,setsize16,crit,TRUE
+participant012,30,distractors0,colorredundant,green circle,setsize09,crit,TRUE
+participant012,31,distractors2,colorredundant,blue circle,setsize09,crit,TRUE
+participant012,32,distractors4,colorredundant,green 5-sided shape,setsize09,crit,TRUE
+participant012,33,distractors0,colorredundant,blue square,setsize16,crit,TRUE
+participant012,35,distractors1,colorredundant,blue square,setsize09,crit,TRUE
+participant012,37,distractors2,colorredundant,blue 6-sided shape,setsize09,crit,TRUE
+participant012,38,distractors0,colorredundant,the only blue shape,setsize16,crit,FALSE
+participant012,39,distractors4,colorredundant,green circle,setsize06,crit,TRUE
+participant012,40,distractors4,colorredundant,blue 5-sided shape,setsize09,crit,TRUE
+participant012,41,distractors1,colorredundant,blue 6-sided shape,setsize03,crit,TRUE
+participant012,42,distractors0,colorredundant,only green shape,setsize09,crit,FALSE
+participant012,44,distractors0,colorredundant,green square,setsize03,crit,TRUE
+participant012,45,distractors0,colorredundant,blue square,setsize16,crit,TRUE
+participant012,46,distractors1,colorredundant,green 5-sided shape,setsize06,crit,TRUE
+participant012,47,distractors0,colorredundant,only blue shape,setsize06,crit,FALSE
+participant012,49,distractors4,colorredundant,blue square,setsize06,crit,TRUE
+participant013,4,distractors1,colorredundant,shape with 6 sides,setsize06,crit,FALSE
+participant013,5,distractors0,colorredundant,no sides,setsize16,crit,FALSE
+participant013,7,distractors0,colorredundant,four sides and gree,setsize16,crit,TRUE
+participant013,8,distractors1,colorredundant,no sides but blue,setsize09,crit,TRUE
+participant013,9,distractors0,colorredundant,4 sides and blue,setsize16,crit,TRUE
+participant013,10,distractors0,colorredundant,no sides and green,setsize16,crit,TRUE
+participant013,11,distractors4,colorredundant,no sides and green,setsize06,crit,TRUE
+participant013,13,distractors0,colorredundant,5 sides and blue,setsize16,crit,TRUE
+participant013,14,distractors3,colorredundant,no sides and green,setsize06,crit,TRUE
+participant013,15,distractors2,colorredundant,four sides and green,setsize06,crit,TRUE
+participant013,16,distractors2,colorredundant,6 sides and blue,setsize06,crit,TRUE
+participant013,17,distractors3,colorredundant,five sides and blue,setsize09,crit,TRUE
+participant013,18,distractors0,colorredundant,6 sides and blue,setsize03,crit,TRUE
+participant013,19,distractors1,colorredundant,6 sides and green,setsize03,crit,TRUE
+participant013,20,distractors4,colorredundant,5 sides and green,setsize06,crit,TRUE
+participant013,22,distractors4,colorredundant,5 sides and blue,setsize09,crit,TRUE
+participant013,24,distractors1,colorredundant,5 sides and blue,setsize09,crit,TRUE
+participant013,27,distractors0,colorredundant,four sides and blue,setsize16,crit,TRUE
+participant013,28,distractors1,colorredundant,no sides and blue,setsize06,crit,TRUE
+participant013,29,distractors1,colorredundant,no sides and green,setsize03,crit,TRUE
+participant013,31,distractors0,colorredundant,four sides and blue,setsize03,crit,TRUE
+participant013,32,distractors3,colorredundant,no sides and green,setsize09,crit,TRUE
+participant013,33,distractors0,colorredundant,five sides and green,setsize16,crit,TRUE
+participant013,34,distractors0,colorredundant,six sides and green,setsize16,crit,TRUE
+participant013,36,distractors0,colorredundant,five sides and blue,setsize06,crit,TRUE
+participant013,37,distractors0,colorredundant,four sides and green,setsize16,crit,TRUE
+participant013,38,distractors0,colorredundant,no sides and blue,setsize06,crit,TRUE
+participant013,39,distractors3,colorredundant,no sides and blue,setsize06,crit,TRUE
+participant013,40,distractors0,colorredundant,no sides and blue,setsize09,crit,TRUE
+participant013,41,distractors2,colorredundant,five sides and green,setsize09,crit,TRUE
+participant013,45,distractors2,colorredundant,6 sides and green,setsize09,crit,TRUE
+participant013,46,distractors0,colorredundant,four sides and green,setsize09,crit,TRUE
+participant013,48,distractors4,colorredundant,five sides and blue,setsize09,crit,TRUE
+participant013,49,distractors0,colorredundant,five sides and green,setsize16,crit,TRUE
+participant014,7,distractors2,orientationredundant,pentagon,setsize06,crit,FALSE
+participant014,8,distractors0,orientationredundant,circle,setsize03,crit,FALSE
+participant014,9,distractors2,orientationredundant,circle,setsize09,crit,FALSE
+participant014,11,distractors0,orientationredundant,circle,setsize06,crit,FALSE
+participant014,13,distractors4,orientationredundant,pentagon,setsize06,crit,FALSE
+participant014,14,distractors1,orientationredundant,square,setsize09,crit,FALSE
+participant014,16,distractors4,orientationredundant,hexagon,setsize06,crit,FALSE
+participant014,17,distractors0,orientationredundant,circle,setsize16,crit,FALSE
+participant014,18,distractors3,orientationredundant,pentagon,setsize09,crit,FALSE
+participant014,19,distractors0,orientationredundant,circle,setsize16,crit,FALSE
+participant014,21,distractors0,orientationredundant,circle,setsize16,crit,FALSE
+participant014,23,distractors0,orientationredundant,hexagon vertical lines,setsize16,crit,TRUE
+participant014,24,distractors0,orientationredundant,pentagon horizontal lines,setsize16,crit,TRUE
+participant014,25,distractors1,orientationredundant,pentagon,setsize09,crit,FALSE
+participant014,27,distractors2,orientationredundant,hexagon,setsize06,crit,FALSE
+participant014,28,distractors3,orientationredundant,square,setsize09,crit,FALSE
+participant014,30,distractors3,orientationredundant,pentagon,setsize06,crit,FALSE
+participant014,31,distractors1,orientationredundant,square,setsize06,crit,FALSE
+participant014,32,distractors0,orientationredundant,square,setsize16,crit,FALSE
+participant014,34,distractors0,orientationredundant,square,setsize03,crit,FALSE
+participant014,35,distractors0,orientationredundant,circle,setsize16,crit,FALSE
+participant014,36,distractors0,orientationredundant,hexagon,setsize06,crit,FALSE
+participant014,37,distractors3,orientationredundant,pentagon,setsize06,crit,FALSE
+participant014,38,distractors1,orientationredundant,square,setsize03,crit,FALSE
+participant014,39,distractors0,orientationredundant,hexagon,setsize16,crit,FALSE
+participant014,40,distractors1,orientationredundant,square,setsize06,crit,FALSE
+participant014,43,distractors2,orientationredundant,pentagon,setsize09,crit,FALSE
+participant014,44,distractors1,orientationredundant,pentagon,setsize03,crit,FALSE
+participant014,45,distractors0,orientationredundant,pentagon,setsize16,crit,FALSE
+participant014,46,distractors0,orientationredundant,circle,setsize09,crit,FALSE
+participant014,47,distractors0,orientationredundant,pentagon,setsize09,crit,FALSE
+participant014,48,distractors0,orientationredundant,hexagon,setsize16,crit,FALSE
+participant014,49,distractors4,orientationredundant,hexagon,setsize09,crit,FALSE
+participant014,50,distractors4,orientationredundant,square,setsize09,crit,FALSE
+participant015,4,distractors3,colorredundant,six sides,setsize09,crit,FALSE
+participant015,5,distractors3,colorredundant,no corners,setsize09,crit,FALSE
+participant015,6,distractors0,colorredundant,green six sided,setsize16,crit,TRUE
+participant015,7,distractors1,colorredundant,5 sided,setsize03,crit,FALSE
+participant015,9,distractors4,colorredundant,5 sides green,setsize09,crit,TRUE
+participant015,10,distractors0,colorredundant,5 sides green,setsize16,crit,TRUE
+participant015,11,distractors1,colorredundant,5 sides green,setsize03,crit,TRUE
+participant015,12,distractors3,colorredundant,6 sides green,setsize06,crit,TRUE
+participant015,13,distractors0,colorredundant,no corners blue,setsize16,crit,TRUE
+participant015,14,distractors3,colorredundant,no corners green,setsize06,crit,TRUE
+participant015,16,distractors2,colorredundant,5 sides blue,setsize09,crit,TRUE
+participant015,17,distractors0,colorredundant,5 sides green,setsize16,crit,TRUE
+participant015,18,distractors2,colorredundant,no corners green,setsize06,crit,TRUE
+participant015,20,distractors0,colorredundant,no corners blue,setsize03,crit,TRUE
+participant015,21,distractors0,colorredundant,6 sides blue,setsize09,crit,TRUE
+participant015,23,distractors0,colorredundant,5 sides blue,setsize16,crit,TRUE
+participant015,25,distractors1,colorredundant,5 sides blue,setsize06,crit,TRUE
+participant015,26,distractors0,colorredundant,6 sides blue,setsize06,crit,TRUE
+participant015,28,distractors0,colorredundant,no corners green,setsize03,crit,TRUE
+participant015,31,distractors1,colorredundant,6 sides blue,setsize09,crit,TRUE
+participant015,32,distractors0,colorredundant,no corners green,setsize16,crit,TRUE
+participant015,33,distractors2,colorredundant,no corners green,setsize09,crit,TRUE
+participant015,34,distractors4,colorredundant,6 sides green,setsize06,crit,TRUE
+participant015,35,distractors1,colorredundant,5 sides green,setsize06,crit,TRUE
+participant015,37,distractors0,colorredundant,4 sides blue,setsize09,crit,TRUE
+participant015,38,distractors0,colorredundant,no corners green,setsize16,crit,TRUE
+participant015,40,distractors4,colorredundant,5 sides blue,setsize09,crit,TRUE
+participant015,41,distractors4,colorredundant,no corners  blue,setsize06,crit,TRUE
+participant015,43,distractors0,colorredundant,6 sides green,setsize16,crit,TRUE
+participant015,44,distractors0,colorredundant,no corners blue,setsize16,crit,TRUE
+participant015,46,distractors2,colorredundant,6 sides green,setsize06,crit,TRUE
+participant015,47,distractors0,colorredundant,no corners blue,setsize16,crit,TRUE
+participant015,49,distractors1,colorredundant,no corners green,setsize09,crit,TRUE
+participant015,50,distractors0,colorredundant,6 sides blue,setsize06,crit,TRUE
+participant017,5,distractors4,orientationredundant,hexagonal shape with horizontal stripes,setsize06,crit,TRUE
+participant017,6,distractors4,orientationredundant,square with vertical stripes,setsize09,crit,TRUE
+participant017,7,distractors1,orientationredundant,circle with horizontal stripes,setsize09,crit,TRUE
+participant017,8,distractors3,orientationredundant,hexagon with veritcal stripes,setsize06,crit,TRUE
+participant017,9,distractors2,orientationredundant,circle with vertical stripes,setsize09,crit,TRUE
+participant017,10,distractors0,orientationredundant,circle with vertical stripes,setsize16,crit,TRUE
+participant017,11,distractors0,orientationredundant,square with vertical stripes,setsize06,crit,TRUE
+participant017,12,distractors0,orientationredundant,square with vertical stripes,setsize16,crit,TRUE
+participant017,14,distractors0,orientationredundant,hexagonal shape with horizontal stripes,setsize16,crit,TRUE
+participant017,18,distractors0,orientationredundant,hexagonal shape with horizontal stripes,setsize16,crit,TRUE
+participant017,19,distractors0,orientationredundant,pentagon with vertical stripes,setsize16,crit,TRUE
+participant017,20,distractors0,orientationredundant,hexagonal shape with vertical stripes,setsize03,crit,TRUE
+participant017,22,distractors0,orientationredundant,pentagon with horizontal stripes,setsize16,crit,TRUE
+participant017,23,distractors1,orientationredundant,square with horizontal stripes,setsize06,crit,TRUE
+participant017,24,distractors2,orientationredundant,square with vertical stripes,setsize09,crit,TRUE
+participant017,25,distractors1,orientationredundant,square with vertical stripes,setsize03,crit,TRUE
+participant017,28,distractors2,orientationredundant,square with vertical stripes,setsize06,crit,TRUE
+participant017,29,distractors0,orientationredundant,circle with horizontal stripes,setsize16,crit,TRUE
+participant017,31,distractors1,orientationredundant,hexagon with vertical stripes,setsize06,crit,TRUE
+participant017,33,distractors3,orientationredundant,hexagonal shape with horizontal stripes,setsize09,crit,TRUE
+participant017,34,distractors3,orientationredundant,square with vertical stripes,setsize06,crit,TRUE
+participant017,35,distractors0,orientationredundant,pentagon with vertical stripes,setsize03,crit,TRUE
+participant017,36,distractors4,orientationredundant,circle with horizontal stripes,setsize09,crit,TRUE
+participant017,37,distractors0,orientationredundant,square with vertical stripes,setsize16,crit,TRUE
+participant017,38,distractors0,orientationredundant,hexagonal shape with horizontal stripes,setsize16,crit,TRUE
+participant017,39,distractors3,orientationredundant,square with horizontal stripes,setsize09,crit,TRUE
+participant017,41,distractors0,orientationredundant,hexagonal shape with horizontal stripes,setsize09,crit,TRUE
+participant017,42,distractors2,orientationredundant,circle with vertical stripes,setsize06,crit,TRUE
+participant017,44,distractors0,orientationredundant,pentagon with vertical stripes,setsize06,crit,TRUE
+participant017,45,distractors1,orientationredundant,square with horizontal stripes,setsize09,crit,TRUE
+participant017,46,distractors0,orientationredundant,circle with horizontal stripes,setsize16,crit,TRUE
+participant017,47,distractors4,orientationredundant,square with horizontal stripes,setsize06,crit,TRUE
+participant017,48,distractors0,orientationredundant,circle with vertical stripes,setsize09,crit,TRUE
+participant017,50,distractors1,orientationredundant,square with vertical stripes,setsize03,crit,TRUE
+participant018,5,distractors0,colorredundant,6 sided green shape,setsize09,crit,TRUE
+participant018,6,distractors2,colorredundant,blue pentagon,setsize06,crit,TRUE
+participant018,7,distractors0,colorredundant,green 6 sided shape,setsize16,crit,TRUE
+participant018,8,distractors0,colorredundant,green square,setsize16,crit,TRUE
+participant018,9,distractors4,colorredundant,blue circle,setsize09,crit,TRUE
+participant018,10,distractors3,colorredundant,blue 5 side shape,setsize06,crit,TRUE
+participant018,11,distractors1,colorredundant,green 5 sided shape,setsize09,crit,TRUE
+participant018,12,distractors1,colorredundant,blue circle,setsize03,crit,TRUE
+participant018,14,distractors0,colorredundant,blue square,setsize16,crit,TRUE
+participant018,15,distractors0,colorredundant,green square,setsize09,crit,TRUE
+participant018,17,distractors4,colorredundant,green 5 sided shape,setsize06,crit,TRUE
+participant018,18,distractors0,colorredundant,blue square,setsize16,crit,TRUE
+participant018,20,distractors0,colorredundant,green 5 sided shape,setsize16,crit,TRUE
+participant018,21,distractors1,colorredundant,blue 6 sided shape,setsize09,crit,TRUE
+participant018,22,distractors4,colorredundant,blue 5 sided shape,setsize09,crit,TRUE
+participant018,23,distractors3,colorredundant,blue circle,setsize09,crit,TRUE
+participant018,24,distractors0,colorredundant,green 5 sided shape,setsize06,crit,TRUE
+participant018,25,distractors3,colorredundant,blue square,setsize06,crit,TRUE
+participant018,26,distractors0,colorredundant,blue 5 sided shape,setsize16,crit,TRUE
+participant018,29,distractors0,colorredundant,blue 6 sided shape,setsize16,crit,TRUE
+participant018,31,distractors0,colorredundant,blue 5 sided shape,setsize06,crit,TRUE
+participant018,33,distractors1,colorredundant,green 6 sided shape,setsize03,crit,TRUE
+participant018,34,distractors2,colorredundant,blue circle,setsize06,crit,TRUE
+participant018,35,distractors1,colorredundant,green circle,setsize06,crit,TRUE
+participant018,36,distractors0,colorredundant,green square,setsize03,crit,TRUE
+participant018,37,distractors0,colorredundant,blue square,setsize03,crit,TRUE
+participant018,38,distractors0,colorredundant,green 5 sided shape,setsize16,crit,TRUE
+participant018,39,distractors2,colorredundant,blue 6 sided shape,setsize09,crit,TRUE
+participant018,40,distractors2,colorredundant,green circle,setsize09,crit,TRUE
+participant018,42,distractors0,colorredundant,blue circle,setsize16,crit,TRUE
+participant018,45,distractors4,colorredundant,green 6 sided shape,setsize06,crit,TRUE
+participant018,46,distractors0,colorredundant,green pentagon,setsize16,crit,TRUE
+participant018,47,distractors3,colorredundant,green 6 sided shape,setsize09,crit,TRUE
+participant018,48,distractors1,colorredundant,blue pentagon,setsize06,crit,TRUE
+participant019,4,distractors0,colorredundant,5 sides,setsize03,crit,FALSE
+participant019,5,distractors4,colorredundant,6 sides,setsize09,crit,FALSE
+participant019,6,distractors4,colorredundant,like a ball,setsize06,crit,TRUE
+participant019,7,distractors3,colorredundant,4 sides,setsize06,crit,FALSE
+participant019,8,distractors1,colorredundant,blue more than 4 sides,setsize03,crit,TRUE
+participant019,10,distractors1,colorredundant,5 sides,setsize06,crit,FALSE
+participant019,11,distractors0,colorredundant,5 sides,setsize06,crit,FALSE
+participant019,12,distractors1,colorredundant,4 sides,setsize09,crit,FALSE
+participant019,18,distractors0,colorredundant,5 sides,setsize03,crit,FALSE
+participant019,19,distractors0,colorredundant,5 sides,setsize09,crit,FALSE
+participant019,20,distractors0,colorredundant,4 sides,setsize16,crit,FALSE
+participant019,22,distractors2,colorredundant,5 sides,setsize09,crit,FALSE
+participant019,23,distractors0,colorredundant,4 sides,setsize16,crit,FALSE
+participant019,27,distractors0,colorredundant,4 sides,setsize09,crit,FALSE
+participant019,28,distractors2,colorredundant,5 sides,setsize06,crit,FALSE
+participant019,29,distractors0,colorredundant,6 sides,setsize16,crit,FALSE
+participant019,30,distractors0,colorredundant,6 sides,setsize16,crit,FALSE
+participant019,31,distractors1,colorredundant,blue ball,setsize06,crit,TRUE
+participant019,33,distractors0,colorredundant,4 sides,setsize16,crit,FALSE
+participant019,35,distractors0,colorredundant,4 sides,setsize16,crit,FALSE
+participant019,36,distractors1,colorredundant,green like a ball,setsize09,crit,TRUE
+participant019,37,distractors0,colorredundant,6 sides,setsize16,crit,FALSE
+participant019,38,distractors4,colorredundant,5 sides,setsize09,crit,FALSE
+participant019,39,distractors3,colorredundant,4 sides,setsize09,crit,FALSE
+participant019,40,distractors0,colorredundant,green like a ball,setsize06,crit,TRUE
+participant019,41,distractors0,colorredundant,4 sides,setsize16,crit,FALSE
+participant019,42,distractors2,colorredundant,blue ball,setsize09,crit,TRUE
+participant019,43,distractors0,colorredundant,5 sides,setsize16,crit,FALSE
+participant019,44,distractors0,colorredundant,4 sides,setsize16,crit,FALSE
+participant019,45,distractors4,colorredundant,6 sides,setsize06,crit,FALSE
+participant019,46,distractors3,colorredundant,green like a ball,setsize06,crit,TRUE
+participant019,47,distractors2,colorredundant,green like a ball,setsize06,crit,TRUE
+participant019,49,distractors3,colorredundant,4 sides,setsize09,crit,FALSE
+participant019,50,distractors1,colorredundant,6 sides,setsize03,crit,FALSE
+participant020,5,distractors4,orientationredundant,shapes has 5 sides and 5 points,setsize06,crit,TRUE
+participant020,7,distractors4,orientationredundant,4 sides,setsize06,crit,FALSE
+participant020,8,distractors4,orientationredundant,4 sides,setsize09,crit,FALSE
+participant020,10,distractors2,orientationredundant,5 sided shape,setsize06,crit,FALSE
+participant020,11,distractors1,orientationredundant,"5 sides and 5 points, line straight down",setsize09,crit,TRUE
+participant020,15,distractors0,orientationredundant,4 sided shape with line going across,setsize16,crit,TRUE
+participant020,18,distractors3,orientationredundant,round shape with lines going downwards,setsize09,crit,TRUE
+participant020,20,distractors1,orientationredundant,has 4 sides and stripes going across,setsize06,crit,TRUE
+participant020,22,distractors0,orientationredundant,has 5 sides and lines going down,setsize16,crit,TRUE
+participant020,23,distractors0,orientationredundant,5 sides and lines going across inside,setsize03,crit,TRUE
+participant020,24,distractors0,orientationredundant,round shape with across,setsize16,crit,TRUE
+participant020,26,distractors0,orientationredundant,6 sides and lines going down,setsize16,crit,TRUE
+participant020,27,distractors0,orientationredundant,has 4 corners and sides and lines going across,setsize16,crit,TRUE
+participant020,29,distractors3,orientationredundant,5 sided shape with lines going across,setsize06,crit,TRUE
+participant020,30,distractors0,orientationredundant,round shape with line inside going across,setsize09,crit,TRUE
+participant020,31,distractors0,orientationredundant,round with lines going across,setsize16,crit,TRUE
+participant020,32,distractors1,orientationredundant,rounded shapes with lines going downwards,setsize06,crit,TRUE
+participant020,33,distractors1,orientationredundant,6 sides and 6 corners. lines going across,setsize03,crit,TRUE
+participant020,34,distractors2,orientationredundant,4 sided shape with stripes going across,setsize09,crit,TRUE
+participant020,36,distractors0,orientationredundant,rounded shape with lines going across,setsize16,crit,TRUE
+participant020,38,distractors0,orientationredundant,round shape with lines going downwards,setsize03,crit,TRUE
+participant020,39,distractors0,orientationredundant,5 sided shape that has stripes across the inside,setsize09,crit,TRUE
+participant020,42,distractors2,orientationredundant,4 sided shape with stripes going across,setsize09,crit,TRUE
+participant020,43,distractors4,orientationredundant,5 sided shape with lines going downwards,setsize09,crit,TRUE
+participant020,45,distractors0,orientationredundant,shape with 6 sides and stripes going downwards,setsize06,crit,TRUE
+participant020,47,distractors0,orientationredundant,4 sides and downwards stripes,setsize16,crit,TRUE
+participant020,48,distractors1,orientationredundant,4 sides and 4 corners with stripes going across the inside,setsize09,crit,TRUE
+participant020,49,distractors0,orientationredundant,rounded shape with stripes going across the inside,setsize06,crit,TRUE
+participant020,50,distractors1,orientationredundant,4 sided shape with stripes going downwards,setsize03,crit,TRUE
+participant021,4,distractors2,orientationredundant,hexagon with lines,setsize06,crit,FALSE
+participant021,5,distractors4,orientationredundant,pentagon with horizontal lines,setsize09,crit,TRUE
+participant021,10,distractors1,orientationredundant,square horizontal,setsize06,crit,TRUE
+participant021,13,distractors3,orientationredundant,hexagon horizontal lines,setsize06,crit,TRUE
+participant021,14,distractors0,orientationredundant,circle horizontal lines,setsize09,crit,TRUE
+participant021,15,distractors3,orientationredundant,pentagon horizontal,setsize06,crit,TRUE
+participant021,16,distractors3,orientationredundant,suqare horizontal lines,setsize09,crit,TRUE
+participant021,17,distractors1,orientationredundant,hexagon vertical lines,setsize06,crit,TRUE
+participant021,18,distractors1,orientationredundant,hexagon vertical,setsize03,crit,TRUE
+participant021,19,distractors0,orientationredundant,circle horizontal lines,setsize16,crit,TRUE
+participant021,22,distractors3,orientationredundant,circle vertical lines,setsize09,crit,TRUE
+participant021,23,distractors2,orientationredundant,circle vertical lines,setsize06,crit,TRUE
+participant021,24,distractors0,orientationredundant,circle horizontal lines,setsize06,crit,TRUE
+participant021,25,distractors0,orientationredundant,circle horizontal lines,setsize16,crit,TRUE
+participant021,27,distractors1,orientationredundant,pentagon vertical lines,setsize09,crit,TRUE
+participant021,28,distractors2,orientationredundant,pentagon horizontal lines,setsize09,crit,TRUE
+participant021,29,distractors0,orientationredundant,square horizonal lines,setsize06,crit,TRUE
+participant021,30,distractors0,orientationredundant,square horizontal lines,setsize16,crit,TRUE
+participant021,31,distractors0,orientationredundant,hexagon horizontal lines,setsize16,crit,TRUE
+participant021,32,distractors0,orientationredundant,pentagon vertical lines,setsize16,crit,TRUE
+participant021,33,distractors1,orientationredundant,hexagon,setsize03,crit,FALSE
+participant021,34,distractors2,orientationredundant,hexagon,setsize09,crit,FALSE
+participant021,35,distractors0,orientationredundant,sqaure,setsize16,crit,FALSE
+participant021,36,distractors0,orientationredundant,hexagon,setsize09,crit,FALSE
+participant021,39,distractors0,orientationredundant,square,setsize03,crit,FALSE
+participant021,41,distractors0,orientationredundant,hexagon vertical lines,setsize16,crit,TRUE
+participant021,42,distractors1,orientationredundant,square,setsize09,crit,FALSE
+participant021,43,distractors4,orientationredundant,circle,setsize09,crit,FALSE
+participant021,44,distractors4,orientationredundant,pentagon,setsize06,crit,FALSE
+participant021,46,distractors0,orientationredundant,circle,setsize16,crit,FALSE
+participant021,48,distractors0,orientationredundant,hexagon horizontal lines,setsize16,crit,TRUE
+participant021,49,distractors0,orientationredundant,square,setsize03,crit,FALSE
+participant022,4,distractors2,colorredundant,the shape with 6 sides,setsize06,crit,FALSE
+participant022,6,distractors0,colorredundant,the green shape,setsize06,crit,FALSE
+participant022,7,distractors0,colorredundant,the round shape,setsize16,crit,FALSE
+participant022,8,distractors0,colorredundant,the blue shape with 6 sides,setsize16,crit,TRUE
+participant022,9,distractors4,colorredundant,the green four-sided shape,setsize09,crit,TRUE
+participant022,10,distractors1,colorredundant,"the round, green shape",setsize09,crit,TRUE
+participant022,11,distractors3,colorredundant,the blue round shape.,setsize09,crit,TRUE
+participant022,12,distractors1,colorredundant,the blue six sided shape,setsize03,crit,TRUE
+participant022,13,distractors2,colorredundant,the blue six sided shape,setsize06,crit,TRUE
+participant022,14,distractors2,colorredundant,the green four sided shape,setsize09,crit,TRUE
+participant022,15,distractors0,colorredundant,the blue six sided shape,setsize09,crit,TRUE
+participant022,16,distractors0,colorredundant,the blue five sided shape.,setsize16,crit,TRUE
+participant022,19,distractors0,colorredundant,"the round, blue shape",setsize03,crit,TRUE
+participant022,20,distractors0,colorredundant,"the green, four sided shape.",setsize16,crit,TRUE
+participant022,22,distractors4,colorredundant,the green six sided shape.,setsize06,crit,TRUE
+participant022,24,distractors0,colorredundant,"the green, four sided shape.",setsize16,crit,TRUE
+participant022,25,distractors4,colorredundant,"the green, six sided shape.",setsize09,crit,TRUE
+participant022,26,distractors0,colorredundant,"the blue, four sided shape.",setsize16,crit,TRUE
+participant022,29,distractors1,colorredundant,the five sided green shape,setsize06,crit,TRUE
+participant022,30,distractors3,colorredundant,the four sided blue shape.,setsize06,crit,TRUE
+participant022,31,distractors0,colorredundant,the six sided blue shape.,setsize16,crit,TRUE
+participant022,32,distractors0,colorredundant,the five sided green shape.,setsize09,crit,TRUE
+participant022,33,distractors1,colorredundant,the six sided blue shape.,setsize09,crit,TRUE
+participant022,34,distractors0,colorredundant,the five sided green shape.,setsize16,crit,TRUE
+participant022,35,distractors3,colorredundant,the four sided green shape.,setsize09,crit,TRUE
+participant022,36,distractors0,colorredundant,the six sided blue shape.,setsize06,crit,TRUE
+participant022,37,distractors1,colorredundant,the six sided green shape.,setsize03,crit,TRUE
+participant022,40,distractors4,colorredundant,the six sided green shape.,setsize06,crit,TRUE
+participant022,41,distractors2,colorredundant,"the round, blue shape.",setsize09,crit,TRUE
+participant022,42,distractors0,colorredundant,the six sided green shape.,setsize16,crit,TRUE
+participant022,43,distractors0,colorredundant,the blue shape.,setsize16,crit,TRUE
+participant022,46,distractors3,colorredundant,the six sided blue shape.,setsize06,crit,TRUE
+participant022,48,distractors1,colorredundant,the four sided green shape.,setsize06,crit,TRUE
+participant022,50,distractors0,colorredundant,the blue shape.,setsize03,crit,TRUE
+participant023,4,distractors0,orientationredundant,hexagon with horizontal lines,setsize16,crit,TRUE
+participant023,5,distractors4,orientationredundant,"hexagon, horizontal lines",setsize09,crit,TRUE
+participant023,8,distractors0,orientationredundant,"hexagon, vertical lines ",setsize16,crit,TRUE
+participant023,9,distractors2,orientationredundant,"hexagon, horizontal lines",setsize06,crit,TRUE
+participant023,10,distractors3,orientationredundant,"hexagon, vertical lines ",setsize09,crit,TRUE
+participant023,11,distractors1,orientationredundant,"pentagon, vertical lines ",setsize09,crit,TRUE
+participant023,12,distractors4,orientationredundant,"pentagon, vertical lines ",setsize06,crit,TRUE
+participant023,13,distractors0,orientationredundant,"hexagon, vertical lines ",setsize16,crit,TRUE
+participant023,14,distractors1,orientationredundant,"circle, horizontal lines",setsize09,crit,TRUE
+participant023,15,distractors0,orientationredundant,"circle, vertical lines ",setsize16,crit,TRUE
+participant023,16,distractors0,orientationredundant,"hexagon, vertical lines ",setsize16,crit,TRUE
+participant023,20,distractors3,orientationredundant,"square, horizontal lines",setsize09,crit,TRUE
+participant023,21,distractors0,orientationredundant,"square, vertical lines ",setsize16,crit,TRUE
+participant023,22,distractors1,orientationredundant,"square, vertical lines ",setsize03,crit,TRUE
+participant023,23,distractors0,orientationredundant,"square, vertical lines ",setsize09,crit,TRUE
+participant023,25,distractors0,orientationredundant,"hexagon, vertical lines ",setsize16,crit,TRUE
+participant023,26,distractors2,orientationredundant,"square, horizontal lines ",setsize09,crit,TRUE
+participant023,27,distractors2,orientationredundant,"square, horizontal lines ",setsize09,crit,TRUE
+participant023,29,distractors3,orientationredundant,"pentagon, vertical lines ",setsize06,crit,TRUE
+participant023,30,distractors1,orientationredundant,"circle, horizontal lines ",setsize06,crit,TRUE
+participant023,31,distractors4,orientationredundant,"square, horizontal lines ",setsize09,crit,TRUE
+participant023,33,distractors3,orientationredundant,"circle, vertical lines ",setsize06,crit,TRUE
+participant023,35,distractors0,orientationredundant,"square, horizontal lines ",setsize16,crit,TRUE
+participant023,36,distractors1,orientationredundant,"pentagon, vertical lines ",setsize03,crit,TRUE
+participant023,37,distractors0,orientationredundant,"circle, vertical lines ",setsize03,crit,TRUE
+participant023,38,distractors4,orientationredundant,"square, horizontal lines ",setsize06,crit,TRUE
+participant023,40,distractors0,orientationredundant,"circle, vertical lines ",setsize06,crit,TRUE
+participant023,43,distractors0,orientationredundant,"hexagon, vertical lines ",setsize09,crit,TRUE
+participant023,45,distractors0,orientationredundant,"pentagon, vertical lines ",setsize03,crit,TRUE
+participant023,46,distractors2,orientationredundant,"circle, vertical lines ",setsize06,crit,TRUE
+participant023,47,distractors0,orientationredundant,"circle, horizontal lines ",setsize06,crit,TRUE
+participant023,48,distractors0,orientationredundant,"pentagon, horizontal lines ",setsize16,crit,TRUE
+participant023,49,distractors1,orientationredundant,"square, vertical lines ",setsize06,crit,TRUE
+participant023,50,distractors0,orientationredundant,"circle, vertical lines ",setsize16,crit,TRUE
+participant024,5,distractors0,orientationredundant,square,setsize16,crit,FALSE
+participant024,6,distractors4,orientationredundant,square,setsize06,crit,FALSE
+participant024,7,distractors4,orientationredundant,circle,setsize09,crit,FALSE
+participant024,8,distractors4,orientationredundant,hexagon,setsize09,crit,FALSE
+participant024,9,distractors1,orientationredundant,pentagon,setsize09,crit,FALSE
+participant024,10,distractors3,orientationredundant,pentagon,setsize06,crit,FALSE
+participant024,12,distractors4,orientationredundant,pentagon,setsize06,crit,FALSE
+participant024,13,distractors3,orientationredundant,pentagon,setsize06,crit,FALSE
+participant024,14,distractors0,orientationredundant,pentagon black stripes,setsize09,crit,TRUE
+participant024,16,distractors1,orientationredundant,square,setsize06,crit,FALSE
+participant024,18,distractors0,orientationredundant,pentagon,setsize16,crit,FALSE
+participant024,20,distractors0,orientationredundant,square,setsize16,crit,FALSE
+participant024,21,distractors2,orientationredundant,square,setsize06,crit,FALSE
+participant024,23,distractors0,orientationredundant,pentagon,setsize16,crit,FALSE
+participant024,24,distractors1,orientationredundant,pentagon,setsize03,crit,FALSE
+participant024,27,distractors0,orientationredundant,square,setsize16,crit,FALSE
+participant024,28,distractors1,orientationredundant,square,setsize03,crit,FALSE
+participant024,29,distractors2,orientationredundant,hexagon,setsize09,crit,FALSE
+participant024,31,distractors0,orientationredundant,square,setsize16,crit,FALSE
+participant024,32,distractors2,orientationredundant,circle,setsize09,crit,FALSE
+participant024,33,distractors0,orientationredundant,circle,setsize16,crit,FALSE
+participant024,35,distractors0,orientationredundant,hexagon,setsize03,crit,FALSE
+participant024,37,distractors0,orientationredundant,pentagon,setsize06,crit,FALSE
+participant024,38,distractors0,orientationredundant,hexagon,setsize03,crit,FALSE
+participant024,39,distractors1,orientationredundant,square,setsize06,crit,FALSE
+participant024,40,distractors2,orientationredundant,hexagon,setsize06,crit,FALSE
+participant024,41,distractors0,orientationredundant,pentagon,setsize09,crit,FALSE
+participant024,42,distractors3,orientationredundant,square,setsize09,crit,FALSE
+participant024,44,distractors0,orientationredundant,pentagon,setsize16,crit,FALSE
+participant024,45,distractors0,orientationredundant,hexagon,setsize06,crit,FALSE
+participant024,47,distractors3,orientationredundant,square,setsize09,crit,FALSE
+participant024,48,distractors0,orientationredundant,square,setsize16,crit,FALSE
+participant024,49,distractors1,orientationredundant,pentagon,setsize09,crit,FALSE
+participant025,4,distractors4,colorredundant,the only square,setsize09,crit,FALSE
+participant025,5,distractors4,colorredundant,the circle,setsize06,crit,FALSE
+participant025,7,distractors0,colorredundant,only blue shape,setsize16,crit,FALSE
+participant025,9,distractors0,colorredundant,green shape,setsize03,crit,FALSE
+participant025,10,distractors3,colorredundant,green square,setsize09,crit,TRUE
+participant025,11,distractors1,colorredundant,blue hexagon,setsize09,crit,TRUE
+participant025,13,distractors3,colorredundant,circle,setsize06,crit,FALSE
+participant025,14,distractors0,colorredundant,circle,setsize06,crit,FALSE
+participant025,15,distractors2,colorredundant,square,setsize06,crit,FALSE
+participant025,16,distractors1,colorredundant,circle,setsize06,crit,FALSE
+participant025,17,distractors1,colorredundant,square,setsize03,crit,FALSE
+participant025,19,distractors4,colorredundant,pentagon,setsize06,crit,FALSE
+participant025,21,distractors0,colorredundant,blue square,setsize16,crit,TRUE
+participant025,22,distractors0,colorredundant,blue pentagon,setsize06,crit,TRUE
+participant025,23,distractors0,colorredundant,green hexagon,setsize16,crit,TRUE
+participant025,24,distractors1,colorredundant,circle,setsize06,crit,FALSE
+participant025,25,distractors1,colorredundant,green hexagon,setsize09,crit,TRUE
+participant025,26,distractors0,colorredundant,square,setsize16,crit,FALSE
+participant025,27,distractors3,colorredundant,hexagon,setsize09,crit,FALSE
+participant025,28,distractors0,colorredundant,circle,setsize16,crit,FALSE
+participant025,29,distractors0,colorredundant,blue shape,setsize09,crit,FALSE
+participant025,31,distractors4,colorredundant,square,setsize09,crit,FALSE
+participant025,32,distractors3,colorredundant,pentagon,setsize06,crit,FALSE
+participant025,34,distractors2,colorredundant,pentagon,setsize09,crit,FALSE
+participant025,35,distractors0,colorredundant,circle,setsize03,crit,FALSE
+participant025,36,distractors2,colorredundant,pentagon,setsize06,crit,FALSE
+participant025,38,distractors0,colorredundant,hexagon,setsize16,crit,FALSE
+participant025,39,distractors0,colorredundant,square,setsize09,crit,FALSE
+participant025,40,distractors0,colorredundant,pentagon,setsize16,crit,FALSE
+participant025,42,distractors0,colorredundant,blue pentagon,setsize16,crit,TRUE
+participant025,43,distractors0,colorredundant,green hexagon,setsize16,crit,TRUE
+participant025,44,distractors1,colorredundant,square,setsize03,crit,FALSE
+participant025,45,distractors2,colorredundant,hexagon,setsize09,crit,FALSE
+participant025,49,distractors0,colorredundant,circle,setsize16,crit,FALSE
+participant026,4,distractors0,orientationredundant,the pentagon (5 sides) with vertical black stripes,setsize03,crit,TRUE
+participant026,5,distractors0,orientationredundant,the pentagon (5 sides) with horizontal back stripes,setsize16,crit,TRUE
+participant026,6,distractors1,orientationredundant,the circle with vertical black stripes,setsize03,crit,TRUE
+participant026,7,distractors0,orientationredundant,the square (4 sides) with horizontal black stripes,setsize16,crit,TRUE
+participant026,8,distractors2,orientationredundant,the square with horizontal grey stripes,setsize06,crit,TRUE
+participant026,10,distractors0,orientationredundant,the circle with horizontal grey stripes,setsize09,crit,TRUE
+participant026,11,distractors0,orientationredundant,the circle with horizontal grey stripes,setsize16,crit,TRUE
+participant026,13,distractors1,orientationredundant,the circle with vertical black lines,setsize09,crit,TRUE
+participant026,14,distractors1,orientationredundant,the pentagon (six sides) with horizontal grey stripes,setsize06,crit,TRUE
+participant026,18,distractors1,orientationredundant,the square with horizontal grey lines,setsize09,crit,TRUE
+participant026,20,distractors0,orientationredundant,the square with horizontal grey stripes,setsize03,crit,TRUE
+participant026,22,distractors2,orientationredundant,the square with horizontal black lines,setsize09,crit,TRUE
+participant026,23,distractors4,orientationredundant,the square with vertical black lines,setsize06,crit,TRUE
+participant026,24,distractors3,orientationredundant,the hexagon (6 sides) with vertical black lines,setsize09,crit,TRUE
+participant026,25,distractors0,orientationredundant,the square with vertical black lines,setsize16,crit,TRUE
+participant026,26,distractors3,orientationredundant,the hexagon (6 sides) with vertical black lines,setsize06,crit,TRUE
+participant026,27,distractors0,orientationredundant,the pentagon (5 sides) with vertical black lines,setsize09,crit,TRUE
+participant026,31,distractors1,orientationredundant,the square with horizontal gre y lines,setsize03,crit,TRUE
+participant026,32,distractors4,orientationredundant,the pentagon (5 lines) with horizontal grey lines,setsize09,crit,TRUE
+participant026,33,distractors2,orientationredundant,the hexagon(6 sides) with horizontal grey lines,setsize09,crit,TRUE
+participant026,34,distractors1,orientationredundant,the circle with vertical black lines,setsize06,crit,TRUE
+participant026,35,distractors0,orientationredundant,the pentagon (5 lines) with vertical black lines,setsize16,crit,TRUE
+participant026,37,distractors3,orientationredundant,the circle with horizontal grey lines,setsize09,crit,TRUE
+participant026,38,distractors0,orientationredundant,the hexagon (6 sides) grey horizontal lines,setsize16,crit,TRUE
+participant026,39,distractors3,orientationredundant,the pentagon (5 sides) with vertical black lines,setsize06,crit,TRUE
+participant026,40,distractors0,orientationredundant,the square with horizontal grey lines,setsize06,crit,TRUE
+participant026,41,distractors2,orientationredundant,the hexagon (6 sides) with grey horizontal lines,setsize06,crit,TRUE
+participant026,43,distractors4,orientationredundant,the pentagon (5 sides) with vertical black lines,setsize09,crit,TRUE
+participant026,44,distractors0,orientationredundant,the square with horizontal grey lines,setsize06,crit,TRUE
+participant026,45,distractors4,orientationredundant,the square with horizontal black lines,setsize06,crit,TRUE
+participant026,46,distractors0,orientationredundant,the hexagon (6 sides) with vertical black lines,setsize16,crit,TRUE
+participant026,47,distractors0,orientationredundant,the pentagon (5 sides) with vertical black lines,setsize16,crit,TRUE
+participant026,48,distractors0,orientationredundant,the circle with horizontal black lines,setsize16,crit,TRUE
+participant026,49,distractors0,orientationredundant,the square with vertical black lines like a barcode,setsize16,crit,TRUE
+participant027,4,distractors1,orientationredundant,pentagon with vertical lines,setsize06,crit,TRUE
+participant027,5,distractors0,orientationredundant,square with horizontal lines,setsize16,crit,TRUE
+participant027,6,distractors4,orientationredundant,circle with vertical lines,setsize09,crit,TRUE
+participant027,7,distractors0,orientationredundant,square with vertical lines,setsize16,crit,TRUE
+participant027,8,distractors3,orientationredundant,hexagon with vertical lines,setsize06,crit,TRUE
+participant027,9,distractors2,orientationredundant,pentagon with vertical lines,setsize06,crit,TRUE
+participant027,10,distractors0,orientationredundant,"square, horizontal lines",setsize03,crit,TRUE
+participant027,11,distractors0,orientationredundant,"pentagon, horizontal lines",setsize16,crit,TRUE
+participant027,12,distractors0,orientationredundant,"hexagon, horizontal lines",setsize03,crit,TRUE
+participant027,13,distractors0,orientationredundant,"hexagon, horizontal lines",setsize06,crit,TRUE
+participant027,14,distractors1,orientationredundant,"square, vertical lines",setsize09,crit,TRUE
+participant027,15,distractors0,orientationredundant,"hexagon, vertical lines",setsize09,crit,TRUE
+participant027,17,distractors2,orientationredundant,"square, horizontal lines",setsize09,crit,TRUE
+participant027,19,distractors2,orientationredundant,"circle, horizontal lines",setsize09,crit,TRUE
+participant027,20,distractors0,orientationredundant,"circle, vertical lines",setsize06,crit,TRUE
+participant027,22,distractors0,orientationredundant,"circle, vertical lines",setsize16,crit,TRUE
+participant027,23,distractors2,orientationredundant,"pentagon, vertical lines",setsize06,crit,TRUE
+participant027,24,distractors3,orientationredundant,"square, horizontal lines",setsize09,crit,TRUE
+participant027,27,distractors1,orientationredundant,"square, horizontal lines",setsize06,crit,TRUE
+participant027,28,distractors0,orientationredundant,"hexagon, horizontal lines",setsize16,crit,TRUE
+participant027,29,distractors1,orientationredundant,"pentagon, horizontal lines",setsize03,crit,TRUE
+participant027,31,distractors3,orientationredundant,"hexagon, horizontal lines",setsize06,crit,TRUE
+participant027,32,distractors4,orientationredundant,"pentagon, vertical lines",setsize06,crit,TRUE
+participant027,34,distractors0,orientationredundant,"pentagon, vertical lines",setsize09,crit,TRUE
+participant027,35,distractors1,orientationredundant,"pentagon, vertical lines",setsize09,crit,TRUE
+participant027,38,distractors4,orientationredundant,"circle, horizontal lines",setsize06,crit,TRUE
+participant027,41,distractors4,orientationredundant,"circle, vertical lines",setsize09,crit,TRUE
+participant027,42,distractors0,orientationredundant,"circle, vertical lines",setsize16,crit,TRUE
+participant027,43,distractors0,orientationredundant,"circle, vertical lines",setsize16,crit,TRUE
+participant027,44,distractors0,orientationredundant,"hexagon, horizontal lines",setsize16,crit,TRUE
+participant027,45,distractors0,orientationredundant,"hexagon, horizontal lines",setsize16,crit,TRUE
+participant027,47,distractors3,orientationredundant,"hexagon, vertical lines",setsize09,crit,TRUE
+participant027,48,distractors1,orientationredundant,hexagon horizontal lines,setsize03,crit,TRUE
+participant027,50,distractors0,orientationredundant,"hexagon, vertical lines",setsize16,crit,TRUE
+participant028,8,distractors4,orientationredundant,pentagon,setsize06,crit,FALSE
+participant028,9,distractors0,orientationredundant,hexagon,setsize16,crit,FALSE
+participant028,11,distractors3,orientationredundant,hexagon,setsize06,crit,FALSE
+participant028,12,distractors3,orientationredundant,hexagon,setsize09,crit,FALSE
+participant028,14,distractors0,orientationredundant,pentagon,setsize03,crit,FALSE
+participant028,17,distractors0,orientationredundant,pentagon vertical,setsize16,crit,TRUE
+participant028,18,distractors1,orientationredundant,circle,setsize06,crit,FALSE
+participant028,19,distractors0,orientationredundant,circle,setsize09,crit,FALSE
+participant028,20,distractors0,orientationredundant,pentagon,setsize06,crit,FALSE
+participant028,21,distractors0,orientationredundant,hexagon,setsize16,crit,FALSE
+participant028,22,distractors2,orientationredundant,circle,setsize09,crit,FALSE
+participant028,23,distractors1,orientationredundant,pentagon,setsize06,crit,FALSE
+participant028,24,distractors0,orientationredundant,pentagon,setsize16,crit,FALSE
+participant028,25,distractors4,orientationredundant,hexagon,setsize09,crit,FALSE
+participant028,26,distractors1,orientationredundant,hexagon,setsize03,crit,FALSE
+participant028,27,distractors0,orientationredundant,hexagon,setsize06,crit,FALSE
+participant028,28,distractors3,orientationredundant,circle,setsize06,crit,FALSE
+participant028,29,distractors2,orientationredundant,hexagon,setsize06,crit,FALSE
+participant028,30,distractors1,orientationredundant,square,setsize03,crit,FALSE
+participant028,31,distractors0,orientationredundant,circle,setsize16,crit,FALSE
+participant028,33,distractors0,orientationredundant,circle,setsize16,crit,FALSE
+participant028,36,distractors3,orientationredundant,hexagon horizontal,setsize09,crit,TRUE
+participant028,38,distractors4,orientationredundant,pentagon,setsize06,crit,FALSE
+participant028,39,distractors2,orientationredundant,circle,setsize09,crit,FALSE
+participant028,41,distractors0,orientationredundant,hexagon,setsize16,crit,FALSE
+participant028,42,distractors0,orientationredundant,pentagon,setsize16,crit,FALSE
+participant028,44,distractors4,orientationredundant,hexagon,setsize09,crit,FALSE
+participant028,46,distractors0,orientationredundant,pentagon,setsize16,crit,FALSE
+participant028,47,distractors1,orientationredundant,square,setsize09,crit,FALSE
+participant028,50,distractors1,orientationredundant,pentagon,setsize09,crit,FALSE
+participant029,4,distractors1,orientationredundant,a circle with stripes,setsize06,crit,FALSE
+participant029,5,distractors1,orientationredundant,a circle,setsize09,crit,FALSE
+participant029,7,distractors0,orientationredundant,a square with horizontal stripes,setsize16,crit,TRUE
+participant029,8,distractors0,orientationredundant,a pentagon (5 sided) figure,setsize06,crit,TRUE
+participant029,10,distractors4,orientationredundant,a pentagon with horizontal lines,setsize06,crit,TRUE
+participant029,12,distractors0,orientationredundant,a pentagon with horizontal lines,setsize16,crit,TRUE
+participant029,13,distractors0,orientationredundant,a hexagon,setsize09,crit,FALSE
+participant029,14,distractors4,orientationredundant,a hexagon,setsize09,crit,FALSE
+participant029,17,distractors1,orientationredundant,pentagon with vertical stripes,setsize09,crit,TRUE
+participant029,18,distractors4,orientationredundant,circle,setsize09,crit,FALSE
+participant029,19,distractors0,orientationredundant,circle,setsize16,crit,FALSE
+participant029,20,distractors0,orientationredundant,pentagon (5 sided),setsize16,crit,TRUE
+participant029,23,distractors2,orientationredundant,hexagon,setsize06,crit,FALSE
+participant029,24,distractors1,orientationredundant,hexagon,setsize03,crit,FALSE
+participant029,26,distractors3,orientationredundant,hexagon,setsize09,crit,FALSE
+participant029,27,distractors0,orientationredundant,circle,setsize16,crit,FALSE
+participant029,28,distractors2,orientationredundant,square,setsize06,crit,FALSE
+participant029,29,distractors3,orientationredundant,hexagon,setsize06,crit,FALSE
+participant029,30,distractors0,orientationredundant,circle,setsize03,crit,FALSE
+participant029,31,distractors3,orientationredundant,square,setsize06,crit,FALSE
+participant029,32,distractors0,orientationredundant,circle,setsize06,crit,FALSE
+participant029,33,distractors0,orientationredundant,hexagon,setsize16,crit,FALSE
+participant029,34,distractors1,orientationredundant,hexagon,setsize03,crit,FALSE
+participant029,35,distractors0,orientationredundant,pentagon,setsize03,crit,FALSE
+participant029,38,distractors3,orientationredundant,circle,setsize09,crit,FALSE
+participant029,39,distractors0,orientationredundant,pentagon,setsize16,crit,FALSE
+participant029,42,distractors0,orientationredundant,pentagon,setsize09,crit,FALSE
+participant029,43,distractors1,orientationredundant,circle,setsize06,crit,FALSE
+participant029,44,distractors0,orientationredundant,square,setsize16,crit,FALSE
+participant029,45,distractors4,orientationredundant,pentagon,setsize06,crit,FALSE
+participant029,47,distractors0,orientationredundant,circle,setsize16,crit,FALSE
+participant029,48,distractors2,orientationredundant,square,setsize09,crit,FALSE
+participant029,49,distractors2,orientationredundant,pentagon,setsize09,crit,FALSE
+participant029,50,distractors0,orientationredundant,circle,setsize16,crit,FALSE
+participant030,4,distractors0,orientationredundant,square,setsize06,crit,FALSE
+participant030,5,distractors2,orientationredundant,square,setsize09,crit,FALSE
+participant030,6,distractors1,orientationredundant,square,setsize03,crit,FALSE
+participant030,7,distractors0,orientationredundant,square,setsize03,crit,FALSE
+participant030,8,distractors0,orientationredundant,pentagon,setsize16,crit,FALSE
+participant030,9,distractors1,orientationredundant,pentagon,setsize06,crit,FALSE
+participant030,10,distractors0,orientationredundant,circle,setsize16,crit,FALSE
+participant030,11,distractors1,orientationredundant,hexagon,setsize03,crit,FALSE
+participant030,12,distractors1,orientationredundant,square,setsize09,crit,FALSE
+participant030,14,distractors1,orientationredundant,hexagon,setsize09,crit,FALSE
+participant030,15,distractors4,orientationredundant,pentagon,setsize06,crit,FALSE
+participant030,16,distractors0,orientationredundant,pentagon,setsize16,crit,FALSE
+participant030,18,distractors0,orientationredundant,hexagon,setsize16,crit,FALSE
+participant030,19,distractors0,orientationredundant,hexagon,setsize16,crit,FALSE
+participant030,20,distractors0,orientationredundant,pentagon,setsize16,crit,FALSE
+participant030,21,distractors0,orientationredundant,circle,setsize16,crit,FALSE
+participant030,22,distractors2,orientationredundant,hexagon,setsize09,crit,FALSE
+participant030,23,distractors1,orientationredundant,hexagon,setsize06,crit,FALSE
+participant030,25,distractors0,orientationredundant,hexagon,setsize16,crit,FALSE
+participant030,27,distractors4,orientationredundant,hexagon,setsize09,crit,FALSE
+participant030,29,distractors3,orientationredundant,circle,setsize09,crit,FALSE
+participant030,31,distractors0,orientationredundant,square,setsize03,crit,FALSE
+participant030,32,distractors0,orientationredundant,hexagon,setsize16,crit,FALSE
+participant030,35,distractors4,orientationredundant,circle,setsize06,crit,FALSE
+participant030,36,distractors3,orientationredundant,square,setsize06,crit,FALSE
+participant030,37,distractors0,orientationredundant,pentagon,setsize16,crit,FALSE
+participant030,39,distractors3,orientationredundant,square,setsize09,crit,FALSE
+participant030,40,distractors4,orientationredundant,square,setsize09,crit,FALSE
+participant030,41,distractors0,orientationredundant,hexagon,setsize09,crit,FALSE
+participant030,43,distractors0,orientationredundant,hexagon,setsize09,crit,FALSE
+participant030,44,distractors3,orientationredundant,pentagon,setsize06,crit,FALSE
+participant030,46,distractors0,orientationredundant,pentagon,setsize06,crit,FALSE
+participant030,48,distractors2,orientationredundant,hexagon,setsize06,crit,FALSE
+participant030,49,distractors2,orientationredundant,circle,setsize06,crit,FALSE
+participant031,5,distractors3,colorredundant,select the pentagon,setsize09,crit,TRUE
+participant031,8,distractors1,colorredundant,select the pentagon,setsize09,crit,TRUE
+participant031,12,distractors3,colorredundant,blue hexagon,setsize09,crit,TRUE
+participant031,13,distractors0,colorredundant,blue hexagon,setsize06,crit,TRUE
+participant031,15,distractors0,colorredundant,blue hexagon,setsize16,crit,TRUE
+participant031,16,distractors4,colorredundant,blue pentagon,setsize06,crit,TRUE
+participant031,17,distractors2,colorredundant,green pentagon ,setsize06,crit,TRUE
+participant031,18,distractors0,colorredundant,blue circle,setsize09,crit,TRUE
+participant031,19,distractors0,colorredundant,blue hexagon,setsize03,crit,TRUE
+participant031,20,distractors3,colorredundant,blue square,setsize06,crit,TRUE
+participant031,22,distractors1,colorredundant,green circle,setsize09,crit,TRUE
+participant031,23,distractors0,colorredundant,green pentagon,setsize06,crit,TRUE
+participant031,25,distractors2,colorredundant,blue pentagon,setsize09,crit,TRUE
+participant031,27,distractors3,colorredundant,green hexagon,setsize06,crit,TRUE
+participant031,28,distractors0,colorredundant,blue hexagon,setsize16,crit,TRUE
+participant031,29,distractors0,colorredundant,green pentagon,setsize16,crit,TRUE
+participant031,30,distractors0,colorredundant,green hexagon,setsize16,crit,TRUE
+participant031,32,distractors1,colorredundant,blue circle,setsize03,crit,TRUE
+participant031,34,distractors0,colorredundant,blue pentagon,setsize16,crit,TRUE
+participant031,35,distractors0,colorredundant,green sqiare,setsize16,crit,TRUE
+participant031,36,distractors1,colorredundant,green pentagon,setsize06,crit,TRUE
+participant031,37,distractors0,colorredundant,green circle,setsize03,crit,TRUE
+participant031,38,distractors4,colorredundant,blue pentagon,setsize09,crit,TRUE
+participant031,39,distractors4,colorredundant,blue hexagon,setsize06,crit,TRUE
+participant031,42,distractors0,colorredundant,bue square,setsize16,crit,TRUE
+participant031,43,distractors1,colorredundant,green pentagon,setsize03,crit,TRUE
+participant031,44,distractors0,colorredundant,blue pentagon,setsize09,crit,TRUE
+participant031,45,distractors2,colorredundant,blue square,setsize06,crit,TRUE
+participant031,46,distractors1,colorredundant,blue hexagon,setsize06,crit,TRUE
+participant031,47,distractors0,colorredundant,green square,setsize16,crit,TRUE
+participant031,48,distractors4,colorredundant,blue pentagon,setsize09,crit,TRUE
+participant031,49,distractors2,colorredundant,green pentagon,setsize09,crit,TRUE
+participant031,50,distractors0,colorredundant,blue circle,setsize16,crit,TRUE
+participant032,4,distractors0,orientationredundant,click the pentagon with the horizontal lines,setsize03,crit,TRUE
+participant032,5,distractors0,orientationredundant,circle with the horizontal lines,setsize16,crit,TRUE
+participant032,6,distractors1,orientationredundant,hexagon with horizontal lines,setsize06,crit,TRUE
+participant032,8,distractors4,orientationredundant,pentagon with vertical lines,setsize09,crit,TRUE
+participant032,9,distractors4,orientationredundant,square with horizontal lines,setsize06,crit,TRUE
+participant032,10,distractors2,orientationredundant,square with vertical lines,setsize06,crit,TRUE
+participant032,11,distractors2,orientationredundant,circle with vertical lines,setsize06,crit,TRUE
+participant032,12,distractors0,orientationredundant,square with vertical lines,setsize06,crit,TRUE
+participant032,14,distractors0,orientationredundant,pentagon with horizontal lines,setsize16,crit,TRUE
+participant032,15,distractors0,orientationredundant,circle with vertical lines,setsize16,crit,TRUE
+participant032,16,distractors1,orientationredundant,pentagon with vertical lines,setsize03,crit,TRUE
+participant032,18,distractors0,orientationredundant,square with vertical lines,setsize03,crit,TRUE
+participant032,19,distractors1,orientationredundant,pentagon with horizontal lines,setsize09,crit,TRUE
+participant032,20,distractors4,orientationredundant,hexagon with horizontal lines,setsize09,crit,TRUE
+participant032,21,distractors0,orientationredundant,pentagon with vertical lines,setsize06,crit,TRUE
+participant032,24,distractors3,orientationredundant,hexagon with vertical lines,setsize06,crit,TRUE
+participant032,25,distractors0,orientationredundant,pentagon with vertical lines,setsize16,crit,TRUE
+participant032,26,distractors0,orientationredundant,hexagon with vertical lines,setsize16,crit,TRUE
+participant032,27,distractors1,orientationredundant,pentagon with vertical lines,setsize06,crit,TRUE
+participant032,29,distractors3,orientationredundant,square with horizontal lines,setsize09,crit,TRUE
+participant032,31,distractors0,orientationredundant,hexagon with vertical lines,setsize16,crit,TRUE
+participant032,33,distractors0,orientationredundant,hexagon with horizontal lines,setsize09,crit,TRUE
+participant032,38,distractors0,orientationredundant,square with vertical lines,setsize16,crit,TRUE
+participant032,39,distractors0,orientationredundant,square with vertical lines,setsize16,crit,TRUE
+participant032,40,distractors3,orientationredundant,pentagon with horizontal lines,setsize09,crit,TRUE
+participant032,41,distractors0,orientationredundant,hexagon with horizontal lines,setsize16,crit,TRUE
+participant032,42,distractors1,orientationredundant,pentagon with vertical lines,setsize09,crit,TRUE
+participant032,43,distractors2,orientationredundant,circle with vertical lines,setsize09,crit,TRUE
+participant032,44,distractors0,orientationredundant,pentagon with vertical lines,setsize09,crit,TRUE
+participant032,45,distractors4,orientationredundant,square with vertical lines,setsize06,crit,TRUE
+participant032,46,distractors3,orientationredundant,circle with horizontal lines,setsize06,crit,TRUE
+participant032,47,distractors1,orientationredundant,pentagon with vertical lines,setsize03,crit,TRUE
+participant032,48,distractors0,orientationredundant,pentagon with horizontal lines,setsize16,crit,TRUE
+participant032,50,distractors2,orientationredundant,hexagon with horizontal lines,setsize09,crit,TRUE
+participant033,4,distractors4,colorredundant,blue circle,setsize09,crit,TRUE
+participant033,6,distractors0,colorredundant,green shape,setsize03,crit,FALSE
+participant033,7,distractors1,colorredundant,blue hexagon,setsize09,crit,TRUE
+participant033,8,distractors3,colorredundant,green pentagon,setsize06,crit,TRUE
+participant033,9,distractors4,colorredundant,green pentagon,setsize06,crit,TRUE
+participant033,10,distractors2,colorredundant,green circle,setsize09,crit,TRUE
+participant033,12,distractors1,colorredundant,blue hexagon,setsize03,crit,TRUE
+participant033,14,distractors0,colorredundant,green square,setsize06,crit,TRUE
+participant033,17,distractors0,colorredundant,green square,setsize06,crit,TRUE
+participant033,18,distractors3,colorredundant,circle,setsize06,crit,FALSE
+participant033,19,distractors4,colorredundant,hexagon,setsize06,crit,FALSE
+participant033,20,distractors0,colorredundant,pentagon,setsize03,crit,FALSE
+participant033,21,distractors2,colorredundant,square,setsize06,crit,FALSE
+participant033,22,distractors0,colorredundant,hexagon,setsize16,crit,FALSE
+participant033,23,distractors0,colorredundant,pentagon,setsize16,crit,FALSE
+participant033,24,distractors0,colorredundant,square,setsize09,crit,FALSE
+participant033,27,distractors0,colorredundant,blue pentagon,setsize16,crit,TRUE
+participant033,30,distractors1,colorredundant,hexagon,setsize03,crit,FALSE
+participant033,31,distractors0,colorredundant,circle,setsize16,crit,FALSE
+participant033,32,distractors4,colorredundant,pentagon,setsize09,crit,FALSE
+participant033,33,distractors0,colorredundant,hexagon,setsize16,crit,FALSE
+participant033,34,distractors0,colorredundant,circle,setsize16,crit,FALSE
+participant033,35,distractors0,colorredundant,pentagon,setsize16,crit,FALSE
+participant033,36,distractors0,colorredundant,square,setsize16,crit,FALSE
+participant033,38,distractors0,colorredundant,pentagon,setsize16,crit,FALSE
+participant033,39,distractors1,colorredundant,circle,setsize06,crit,FALSE
+participant033,41,distractors3,colorredundant,square,setsize09,crit,FALSE
+participant033,42,distractors1,colorredundant,square,setsize06,crit,FALSE
+participant033,43,distractors2,colorredundant,hexagon,setsize06,crit,FALSE
+participant033,44,distractors3,colorredundant,circle,setsize09,crit,FALSE
+participant033,45,distractors0,colorredundant,hexagon,setsize16,crit,FALSE
+participant033,47,distractors1,colorredundant,square,setsize09,crit,FALSE
+participant033,50,distractors2,colorredundant,hexagon,setsize09,crit,FALSE
+participant034,4,distractors2,colorredundant,the shape is hexagonal,setsize09,crit,FALSE
+participant034,5,distractors2,colorredundant,the shape is hexagonal and coloured green,setsize06,crit,TRUE
+participant034,7,distractors4,colorredundant,the shape is hexagonal and green,setsize09,crit,TRUE
+participant034,8,distractors4,colorredundant,blue hexagon,setsize06,crit,TRUE
+participant034,9,distractors1,colorredundant,blue square,setsize03,crit,TRUE
+participant034,12,distractors0,colorredundant,blue square,setsize16,crit,TRUE
+participant034,13,distractors1,colorredundant,green circle,setsize06,crit,TRUE
+participant034,14,distractors3,colorredundant,green circle,setsize09,crit,TRUE
+participant034,16,distractors0,colorredundant,green pentagon,setsize16,crit,TRUE
+participant034,17,distractors3,colorredundant,green pentagon,setsize06,crit,TRUE
+participant034,18,distractors2,colorredundant,blue hexagon,setsize09,crit,TRUE
+participant034,19,distractors0,colorredundant,blue pentagon,setsize16,crit,TRUE
+participant034,21,distractors0,colorredundant,green hexagon,setsize16,crit,TRUE
+participant034,23,distractors0,colorredundant,green pentagon,setsize16,crit,TRUE
+participant034,24,distractors2,colorredundant,green pentagon,setsize06,crit,TRUE
+participant034,25,distractors0,colorredundant,green hexagon,setsize16,crit,TRUE
+participant034,26,distractors4,colorredundant,blue pentagon,setsize09,crit,TRUE
+participant034,27,distractors0,colorredundant,blue pentagon,setsize16,crit,TRUE
+participant034,29,distractors0,colorredundant,blue circle,setsize16,crit,TRUE
+participant034,30,distractors0,colorredundant,blue hexagon,setsize16,crit,TRUE
+participant034,31,distractors0,colorredundant,green circle,setsize09,crit,TRUE
+participant034,32,distractors1,colorredundant,blue circle,setsize06,crit,TRUE
+participant034,33,distractors1,colorredundant,blue circle,setsize03,crit,TRUE
+participant034,34,distractors0,colorredundant,blue circle,setsize06,crit,TRUE
+participant034,37,distractors4,colorredundant,blue square,setsize06,crit,TRUE
+participant034,39,distractors3,colorredundant,blue pentagon,setsize06,crit,TRUE
+participant034,41,distractors0,colorredundant,blue pentagon,setsize03,crit,TRUE
+participant034,42,distractors0,colorredundant,green circle,setsize03,crit,TRUE
+participant034,43,distractors1,colorredundant,green square,setsize09,crit,TRUE
+participant034,44,distractors0,colorredundant,green hexagon,setsize06,crit,TRUE
+participant034,45,distractors1,colorredundant,green square,setsize09,crit,TRUE
+participant034,46,distractors3,colorredundant,green circle,setsize09,crit,TRUE
+participant034,47,distractors0,colorredundant,blue circle,setsize16,crit,TRUE
+participant034,48,distractors0,colorredundant,blue hexagon,setsize09,crit,TRUE
+participant035,4,distractors1,colorredundant,a green circle,setsize03,crit,TRUE
+participant035,5,distractors0,colorredundant,a green circle,setsize16,crit,TRUE
+participant035,6,distractors3,colorredundant,a green pentagon,setsize06,crit,TRUE
+participant035,8,distractors2,colorredundant,a green pentagon,setsize06,crit,TRUE
+participant035,9,distractors3,colorredundant,a green square,setsize09,crit,TRUE
+participant035,10,distractors4,colorredundant,blue square,setsize06,crit,TRUE
+participant035,11,distractors4,colorredundant,blue square,setsize09,crit,TRUE
+participant035,12,distractors0,colorredundant,blue pentagon,setsize09,crit,TRUE
+participant035,16,distractors1,colorredundant,green circle,setsize09,crit,TRUE
+participant035,17,distractors2,colorredundant,blue circle,setsize09,crit,TRUE
+participant035,18,distractors0,colorredundant,green pentagon,setsize16,crit,TRUE
+participant035,19,distractors0,colorredundant,green hexagon,setsize16,crit,TRUE
+participant035,22,distractors0,colorredundant,green hexagon,setsize03,crit,TRUE
+participant035,23,distractors0,colorredundant,blue pentagon,setsize16,crit,TRUE
+participant035,24,distractors0,colorredundant,green hexagon,setsize16,crit,TRUE
+participant035,25,distractors0,colorredundant,green hexagon,setsize06,crit,TRUE
+participant035,28,distractors0,colorredundant,green square,setsize09,crit,TRUE
+participant035,29,distractors2,colorredundant,green pentagon,setsize09,crit,TRUE
+participant035,30,distractors0,colorredundant,bue hexagon,setsize16,crit,TRUE
+participant035,31,distractors4,colorredundant,bliue hexagon,setsize09,crit,TRUE
+participant035,32,distractors2,colorredundant,blue hexagon,setsize06,crit,TRUE
+participant035,34,distractors1,colorredundant,green square,setsize09,crit,TRUE
+participant035,35,distractors3,colorredundant,blue circle,setsize09,crit,TRUE
+participant035,36,distractors4,colorredundant,green pentagon,setsize06,crit,TRUE
+participant035,37,distractors0,colorredundant,blue circle,setsize16,crit,TRUE
+participant035,39,distractors1,colorredundant,blue square,setsize06,crit,TRUE
+participant035,40,distractors0,colorredundant,green square,setsize16,crit,TRUE
+participant035,44,distractors1,colorredundant,green hexagon,setsize06,crit,TRUE
+participant035,45,distractors0,colorredundant,green circle,setsize03,crit,TRUE
+participant035,46,distractors1,colorredundant,green hexagon,setsize03,crit,TRUE
+participant035,47,distractors0,colorredundant,blue circle,setsize16,crit,TRUE
+participant035,48,distractors0,colorredundant,green square,setsize16,crit,TRUE
+participant035,49,distractors3,colorredundant,blue hexagon,setsize06,crit,TRUE
+participant035,50,distractors0,colorredundant,green circle,setsize06,crit,TRUE
+participant036,5,distractors0,colorredundant,it is a green square,setsize16,crit,TRUE
+participant036,6,distractors0,colorredundant,it is a green square,setsize16,crit,TRUE
+participant036,7,distractors4,colorredundant,it is a green circle,setsize06,crit,TRUE
+participant036,8,distractors0,colorredundant,it is an aquamarine square,setsize16,crit,TRUE
+participant036,9,distractors2,colorredundant,it is a green pentagon,setsize09,crit,TRUE
+participant036,10,distractors4,colorredundant,it is a green pentagon,setsize09,crit,TRUE
+participant036,12,distractors1,colorredundant,it is a green square,setsize06,crit,TRUE
+participant036,15,distractors3,colorredundant,it is an aquamarine square,setsize06,crit,TRUE
+participant036,16,distractors4,colorredundant,it is a green pentagon,setsize06,crit,TRUE
+participant036,17,distractors3,colorredundant,it is an aquamarine circle,setsize09,crit,TRUE
+participant036,18,distractors0,colorredundant,it is an aquamarine hexagon,setsize16,crit,TRUE
+participant036,19,distractors2,colorredundant,it is an aquamarine square,setsize06,crit,TRUE
+participant036,21,distractors0,colorredundant,it is a green hexagon,setsize16,crit,TRUE
+participant036,22,distractors0,colorredundant,it is na aquamarine circle,setsize06,crit,TRUE
+participant036,23,distractors2,colorredundant,it is an aquamarine pentagon,setsize09,crit,TRUE
+participant036,24,distractors4,colorredundant,it is an aquamarine circle,setsize09,crit,TRUE
+participant036,26,distractors0,colorredundant,it is a green square,setsize16,crit,TRUE
+participant036,27,distractors1,colorredundant,it is a green pentagon,setsize06,crit,TRUE
+participant036,29,distractors0,colorredundant,it is a green square,setsize03,crit,TRUE
+participant036,30,distractors2,colorredundant,it is a green pentagon,setsize06,crit,TRUE
+participant036,33,distractors3,colorredundant,it is a green hexagon,setsize09,crit,TRUE
+participant036,34,distractors0,colorredundant,it is a green square,setsize16,crit,TRUE
+participant036,35,distractors0,colorredundant,it is an aquamarine hexagon,setsize16,crit,TRUE
+participant036,37,distractors0,colorredundant,it is a green square,setsize16,crit,TRUE
+participant036,39,distractors1,colorredundant,it is a green pentagon,setsize09,crit,TRUE
+participant036,41,distractors1,colorredundant,it is a green circle,setsize03,crit,TRUE
+participant036,42,distractors0,colorredundant,it is a green circle,setsize09,crit,TRUE
+participant036,43,distractors0,colorredundant,it is a green hexagon,setsize16,crit,TRUE
+participant036,45,distractors0,colorredundant,it is an aquamarine hexagon,setsize03,crit,TRUE
+participant036,46,distractors0,colorredundant,it is an aquamarine square,setsize09,crit,TRUE
+participant036,47,distractors0,colorredundant,it is an aquamarine hexagon,setsize06,crit,TRUE
+participant036,48,distractors3,colorredundant,it is a green pentagon,setsize06,crit,TRUE
+participant036,49,distractors1,colorredundant,it is a green hexagon,setsize09,crit,TRUE
+participant036,50,distractors1,colorredundant,it is a green square,setsize03,crit,TRUE
+participant038,4,distractors2,orientationredundant,circle,setsize06,crit,FALSE
+participant038,6,distractors0,orientationredundant,hexagon with horizontal stripes,setsize09,crit,TRUE
+participant038,7,distractors4,orientationredundant,circle with horizontal stripes,setsize06,crit,TRUE
+participant038,8,distractors4,orientationredundant,square with horizontal stripes,setsize06,crit,TRUE
+participant038,10,distractors1,orientationredundant,circle,setsize09,crit,FALSE
+participant038,11,distractors0,orientationredundant,pentagon with horizontal stripes,setsize16,crit,TRUE
+participant038,12,distractors0,orientationredundant,"circle, horizontal stripes",setsize16,crit,TRUE
+participant038,13,distractors1,orientationredundant,square,setsize06,crit,FALSE
+participant038,15,distractors0,orientationredundant,"hexagon, horizontal stripes",setsize16,crit,TRUE
+participant038,16,distractors4,orientationredundant,"square, horizontal stripes",setsize09,crit,TRUE
+participant038,18,distractors3,orientationredundant,"square, horizontal stripes",setsize06,crit,TRUE
+participant038,19,distractors0,orientationredundant,square,setsize03,crit,FALSE
+participant038,21,distractors1,orientationredundant,pentagon,setsize06,crit,FALSE
+participant038,22,distractors0,orientationredundant,"circle, horizontal stripes",setsize16,crit,TRUE
+participant038,23,distractors2,orientationredundant,pentagon,setsize09,crit,FALSE
+participant038,24,distractors2,orientationredundant,square,setsize06,crit,FALSE
+participant038,25,distractors1,orientationredundant,hexagon horizontal stripes,setsize09,crit,TRUE
+participant038,26,distractors0,orientationredundant,pentagon,setsize03,crit,FALSE
+participant038,28,distractors0,orientationredundant,hexagon horizontal stripes,setsize09,crit,TRUE
+participant038,29,distractors0,orientationredundant,square,setsize16,crit,FALSE
+participant038,30,distractors0,orientationredundant,"ppentagon, horizontal stripes",setsize16,crit,TRUE
+participant038,31,distractors0,orientationredundant,square,setsize06,crit,FALSE
+participant038,32,distractors0,orientationredundant,"pentagon, horizontal stripes",setsize16,crit,TRUE
+participant038,33,distractors0,orientationredundant,"pentagon, horizontal stripes",setsize16,crit,TRUE
+participant038,34,distractors0,orientationredundant,"pentagon, horizontal stripes",setsize16,crit,TRUE
+participant038,35,distractors1,orientationredundant,pentagon,setsize03,crit,FALSE
+participant038,38,distractors3,orientationredundant,circle,setsize09,crit,FALSE
+participant038,39,distractors0,orientationredundant,circle,setsize16,crit,FALSE
+participant038,41,distractors3,orientationredundant,circle,setsize09,crit,FALSE
+participant038,45,distractors0,orientationredundant,circle,setsize06,crit,FALSE
+participant038,46,distractors2,orientationredundant,hexagon,setsize09,crit,FALSE
+participant038,47,distractors1,orientationredundant,pentagon,setsize03,crit,FALSE
+participant038,48,distractors3,orientationredundant,circle,setsize06,crit,FALSE
+participant038,49,distractors4,orientationredundant,circle,setsize09,crit,FALSE
+participant039,4,distractors2,colorredundant,blue circle,setsize09,crit,TRUE
+participant039,5,distractors0,colorredundant,blue square,setsize03,crit,TRUE
+participant039,6,distractors2,colorredundant,green polygon,setsize06,crit,TRUE
+participant039,7,distractors2,colorredundant,blue hexagon,setsize06,crit,TRUE
+participant039,9,distractors0,colorredundant,light blue hexagon,setsize16,crit,TRUE
+participant039,11,distractors1,colorredundant,green pentagon,setsize09,crit,TRUE
+participant039,12,distractors0,colorredundant,light blue square,setsize06,crit,TRUE
+participant039,13,distractors1,colorredundant,circle,setsize03,crit,FALSE
+participant039,15,distractors1,colorredundant,square,setsize03,crit,FALSE
+participant039,16,distractors0,colorredundant,light blue hexagon,setsize16,crit,TRUE
+participant039,17,distractors0,colorredundant,circle,setsize16,crit,FALSE
+participant039,18,distractors4,colorredundant,pentagon,setsize06,crit,FALSE
+participant039,19,distractors0,colorredundant,square,setsize09,crit,FALSE
+participant039,20,distractors4,colorredundant,circle,setsize09,crit,FALSE
+participant039,21,distractors3,colorredundant,square,setsize09,crit,FALSE
+participant039,22,distractors3,colorredundant,circle,setsize06,crit,FALSE
+participant039,23,distractors0,colorredundant,hexagon,setsize16,crit,FALSE
+participant039,24,distractors1,colorredundant,square,setsize06,crit,FALSE
+participant039,25,distractors0,colorredundant,square,setsize16,crit,FALSE
+participant039,26,distractors4,colorredundant,square,setsize06,crit,FALSE
+participant039,27,distractors1,colorredundant,pentagon,setsize06,crit,FALSE
+participant039,29,distractors0,colorredundant,circle,setsize03,crit,FALSE
+participant039,33,distractors3,colorredundant,hexagon,setsize09,crit,FALSE
+participant039,37,distractors0,colorredundant,hexagon,setsize09,crit,FALSE
+participant039,38,distractors1,colorredundant,square,setsize09,crit,FALSE
+participant039,39,distractors0,colorredundant,circle,setsize16,crit,FALSE
+participant039,40,distractors0,colorredundant,circle,setsize16,crit,FALSE
+participant039,42,distractors4,colorredundant,pentagon,setsize09,crit,FALSE
+participant039,43,distractors0,colorredundant,square,setsize06,crit,FALSE
+participant039,45,distractors0,colorredundant,square,setsize16,crit,FALSE
+participant039,47,distractors0,colorredundant,hexagon,setsize16,crit,FALSE
+participant039,48,distractors2,colorredundant,square,setsize09,crit,FALSE
+participant039,49,distractors0,colorredundant,square,setsize16,crit,FALSE
+participant039,50,distractors3,colorredundant,circle,setsize06,crit,FALSE
+participant040,5,distractors3,orientationredundant,the square,setsize09,crit,FALSE
+participant040,6,distractors0,orientationredundant,6 sided shape,setsize16,crit,FALSE
+participant040,7,distractors0,orientationredundant,5 sided shape,setsize16,crit,FALSE
+participant040,8,distractors0,orientationredundant,5 sided shape,setsize09,crit,FALSE
+participant040,10,distractors0,orientationredundant,6 sided shape,setsize06,crit,FALSE
+participant040,11,distractors1,orientationredundant,circle,setsize06,crit,FALSE
+participant040,13,distractors0,orientationredundant,circle,setsize16,crit,FALSE
+participant040,14,distractors2,orientationredundant,circle,setsize09,crit,FALSE
+participant040,15,distractors3,orientationredundant,6 sides,setsize06,crit,FALSE
+participant040,16,distractors0,orientationredundant,5 sides,setsize03,crit,FALSE
+participant040,18,distractors0,orientationredundant,five sides,setsize16,crit,FALSE
+participant040,19,distractors2,orientationredundant,square,setsize06,crit,FALSE
+participant040,20,distractors4,orientationredundant,6 sides,setsize09,crit,FALSE
+participant040,21,distractors2,orientationredundant,square,setsize06,crit,FALSE
+participant040,22,distractors1,orientationredundant,square,setsize03,crit,FALSE
+participant040,23,distractors0,orientationredundant,six sides,setsize03,crit,FALSE
+participant040,24,distractors0,orientationredundant,five sides,setsize09,crit,FALSE
+participant040,25,distractors0,orientationredundant,square,setsize16,crit,FALSE
+participant040,27,distractors2,orientationredundant,square,setsize09,crit,FALSE
+participant040,28,distractors4,orientationredundant,square,setsize06,crit,FALSE
+participant040,29,distractors0,orientationredundant,circle,setsize16,crit,FALSE
+participant040,31,distractors1,orientationredundant,six sides,setsize06,crit,FALSE
+participant040,33,distractors1,orientationredundant,circle,setsize09,crit,FALSE
+participant040,34,distractors0,orientationredundant,square,setsize16,crit,FALSE
+participant040,35,distractors4,orientationredundant,circle,setsize09,crit,FALSE
+participant040,37,distractors3,orientationredundant,square,setsize06,crit,FALSE
+participant040,38,distractors0,orientationredundant,circle,setsize06,crit,FALSE
+participant040,39,distractors1,orientationredundant,square,setsize09,crit,FALSE
+participant040,40,distractors0,orientationredundant,circle,setsize16,crit,FALSE
+participant040,43,distractors4,orientationredundant,five sides,setsize06,crit,FALSE
+participant040,44,distractors0,orientationredundant,square,setsize16,crit,FALSE
+participant040,48,distractors3,orientationredundant,five sides,setsize09,crit,FALSE
+participant040,49,distractors1,orientationredundant,circle,setsize03,crit,FALSE
+participant040,50,distractors0,orientationredundant,five sides,setsize16,crit,FALSE

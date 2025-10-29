@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Experiment Scene with Text Input</title>
+
+    <style>
+        .scrollable-container {
+            height: 100vh;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        .item-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .item {
+            margin-bottom: 100px;
+        }
+        svg {
+            width: 40%;
+            height: auto;
+        }
+        .button-container {
+            margin-top: 20px;
+            margin-top: 20px;
+        }
+
+        .yes-button {
+            width: 5%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .no-button {
+            width: 5%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .play-button1 {
+            padding: 5px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .play-button2 {
+            padding: 5px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .play-button3 {
+            padding: 5px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .play-button4 {
+            padding: 5px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .play-button5 {
+            padding: 5px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .play-button6 {
+            padding: 5px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .Heading {
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+
+        .Instruction {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="scrollable-container">
+
+
+        <div class = "Heading">
+            <center>
+                <h1 id="Heading" style="font-size:30px">For this task, you will judge whether a description is suitable for Ralph.</h1>
+
+                <h1 id="Heading" style="font-size:30px">The Bats matching the description will be revealed with an X at the location they fell. </h1>
+
+                <h1 id="Heading" style="font-size:30px">After answering all the questions correctly, you can move on.</h1>
+            </center>
+        </div>
+        
+        
+        
+        
+        <div class="item-container">
+           
+            <div class = "Heading">
+                <center>
+                    <h1 id="Heading" style="font-size:30px">
+                        *******************************************************
+                        Example One
+                        *******************************************************
+                    </h1>
+                </center>
+            </div>
+
+            <div id="play-button1">
+                <center>
+                    <button type="button" class="play-button1"><b>PLAY</b></button>
+                </center>
+            </div>
+
+
+            <div class="item">
+                <center>
+                    <h1 id="Instruction" style="font-size:30px">Worker:  "the bat on the right"</h1>
+
+                    <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet">
+                        <svg id="targetIndicator1" width="210" height="297" viewBox="0 0 210 297">
+                            <path style="fill: black; stroke: black; stroke-width: 5.03887; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-dasharray: none; stroke-opacity: 1;" d="m 75.193122,109.50241 55.064458,76.04178" id="path2614" />
+                            <path style="fill: black; stroke: black; stroke-width: 5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-dasharray: none; stroke-opacity: 1;" d="M 130.19094,109.4159 75.38497,185.45558" />
+                        </svg>
+                        <svg id="stim1" width="1100" height="1100" viewBox="0 0 1920 1080">
+                            <g transform="matrix(-.044805 .050686 .050686 .044805 618.74 -.69879)">
+                                <path d="m11258 11225c-177-29-377-114-524-223-199-147-860-784-2019-1946-407-408-1083-1081-1501-1496-905-897-866-856-1754-1860-124-140-371-417-550-614-179-198-439-489-579-646-963-1081-1230-1348-2161-2160-179-156-370-325-425-375s-210-192-345-315-381-350-547-503l-302-280-103-3c-285-6-428-118-445-349-6-85 17-164 78-261 82-130 175-180 354-191 113-7 212 8 283 43 67 33 181 142 212 203 29 57 36 142 17 202l-14 47 366 325c484 429 655 578 1361 1183 789 676 1054 893 1452 1190 170 127 775 536 815 551 120 46 3281 2407 4988 3727 1837 1420 2476 1950 2747 2275 113 136 131 178 136 322 9 245-67 435-279 699-154 191-286 296-453 361-225 87-592 130-808 94z" />
+                            </g>
+                        </svg>
+                    </svg>
+                </center>
+
+                <center>
+                    <h1 id="feedback1" style="font-size:30px"></h1>
+                </center>
+
+
+                    <div class="button-container">
+                        <center>
+                            <h3 id="Instruction" style="font-size:20px">Was this a good description for Ralph?</h3>
+                            <button type="button" class="yes-button1">Yes</button>
+                            <button type="button" class="no-button1">No</button>
+                        </center>
+                    </div>
+            </div>
+            
+            
+            
+            <div class = "Heading">
+                <center>
+                    <h1 id="Heading" style="font-size:30px">
+                        *******************************************************
+                        Example Two
+                        *******************************************************
+                    </h1>
+                </center>
+            </div>
+
+
+            <div>
+                <center>
+                    <button type="button" class="play-button2"><b>PLAY</b></button>
+                </center>
+            </div>
+
+
+            <div class="item">
+                <center>
+                    <h1 id="Instruction" style="font-size:30px">Worker:  "the metal bat"</h1>
+                    <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet">
+                        <svg id="targetIndicator2" width="210" height="297" viewBox="0 0 210 297">
+                            <path style="fill: black; stroke: black; stroke-width: 5.03887; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-dasharray: none; stroke-opacity: 1;" d="m 75.193122,109.50241 55.064458,76.04178" id="path2614" />
+                            <path style="fill: black; stroke: black; stroke-width: 5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-dasharray: none; stroke-opacity: 1;" d="M 130.19094,109.4159 75.38497,185.45558" />
+                        </svg>
+                        <svg id="stim2" width="1100" height="1100" viewBox="0 0 1920 1080">
+                            <g transform="matrix(-.044805 .050686 .050686 .044805 618.74 -.69879)">
+                                <path d="m11258 11225c-177-29-377-114-524-223-199-147-860-784-2019-1946-407-408-1083-1081-1501-1496-905-897-866-856-1754-1860-124-140-371-417-550-614-179-198-439-489-579-646-963-1081-1230-1348-2161-2160-179-156-370-325-425-375s-210-192-345-315-381-350-547-503l-302-280-103-3c-285-6-428-118-445-349-6-85 17-164 78-261 82-130 175-180 354-191 113-7 212 8 283 43 67 33 181 142 212 203 29 57 36 142 17 202l-14 47 366 325c484 429 655 578 1361 1183 789 676 1054 893 1452 1190 170 127 775 536 815 551 120 46 3281 2407 4988 3727 1837 1420 2476 1950 2747 2275 113 136 131 178 136 322 9 245-67 435-279 699-154 191-286 296-453 361-225 87-592 130-808 94z" />
+                            </g>
+                        </svg>
+                    </svg>
+                </center>
+
+                <center>
+                    <h1 id="feedback2" style="font-size:30px"></h1>
+                </center>
+
+                <div class="button-container">
+                    <center>
+                        <h3 id="Instruction" style="font-size:20px">Was this a good description for Ralph?</h3>
+                        <button type="button" class="yes-button2">Yes</button>
+                        <button type="button" class="no-button2">No</button>
+                    </center>
+                </div>
+            </div>
+            
+            
+
+            <div class = "Heading">
+                <center>
+                    <h1 id="Heading" style="font-size:30px">
+                        *******************************************************
+                        Example Three
+                        *******************************************************
+                    </h1>
+                </center>
+            </div>
+
+
+            <div>
+                <center>
+                    <button type="button" class="play-button3"><b>PLAY</b></button>
+                </center>
+            </div>
+
+
+
+            <div class="item">
+                <center>
+                    <h1 id="Instruction" style="font-size:30px">Worker: "the green wooden bat"</h1>
+                    <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet">
+                        <svg id="targetIndicator3" width="210" height="297" viewBox="0 0 210 297">
+                            <path style="fill: black; stroke: black; stroke-width: 5.03887; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-dasharray: none; stroke-opacity: 1;" d="m 75.193122,109.50241 55.064458,76.04178" id="path2614" />
+                            <path style="fill: black; stroke: black; stroke-width: 5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-dasharray: none; stroke-opacity: 1;" d="M 130.19094,109.4159 75.38497,185.45558" />
+                        </svg>
+                        <svg id="stim3" width="1100" height="1100" viewBox="0 0 1920 1080">
+                            <g transform="matrix(-.044805 .050686 .050686 .044805 618.74 -.69879)">
+                                <path d="m11258 11225c-177-29-377-114-524-223-199-147-860-784-2019-1946-407-408-1083-1081-1501-1496-905-897-866-856-1754-1860-124-140-371-417-550-614-179-198-439-489-579-646-963-1081-1230-1348-2161-2160-179-156-370-325-425-375s-210-192-345-315-381-350-547-503l-302-280-103-3c-285-6-428-118-445-349-6-85 17-164 78-261 82-130 175-180 354-191 113-7 212 8 283 43 67 33 181 142 212 203 29 57 36 142 17 202l-14 47 366 325c484 429 655 578 1361 1183 789 676 1054 893 1452 1190 170 127 775 536 815 551 120 46 3281 2407 4988 3727 1837 1420 2476 1950 2747 2275 113 136 131 178 136 322 9 245-67 435-279 699-154 191-286 296-453 361-225 87-592 130-808 94z" />
+                            </g>
+                        </svg>
+                    </svg>
+                </center>
+
+                <center>
+                    <h1 id="feedback3" style="font-size:30px"></h1>
+                </center>
+
+                <div class="button-container">
+                    <center>
+                        <h3 id="Instruction" style="font-size:20px">Was this a good description for Ralph?</h3>
+                        <button type="button" class="yes-button3">Yes</button>
+                        <button type="button" class="no-button3">No</button>
+                    </center>
+                </div>
+            </div>
+
+
+
+            <div class = "Heading">
+                <center>
+                    <h1 id="Heading" style="font-size:30px">
+                        *******************************************************
+                        Example Four
+                        *******************************************************
+                    </h1>
+                </center>
+            </div>
+
+
+            <div>
+                <center>
+                    <button type="button" class="play-button4"><b>PLAY</b></button>
+                </center>
+            </div>
+
+
+            <div class="item">
+                <center>
+                    <h1 id="Instruction" style="font-size:30px">Worker:  "the green and wooden bat"</h1>
+                    <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet">
+                        <svg id="targetIndicator4" width="210" height="297" viewBox="0 0 210 297">
+                            <path style="fill: black; stroke: black; stroke-width: 5.03887; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-dasharray: none; stroke-opacity: 1;" d="m 75.193122,109.50241 55.064458,76.04178" id="path2614" />
+                            <path style="fill: black; stroke: black; stroke-width: 5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-dasharray: none; stroke-opacity: 1;" d="M 130.19094,109.4159 75.38497,185.45558" />
+                        </svg>
+                        <svg id="stim4" width="1100" height="1100" viewBox="0 0 1920 1080">
+                            <g transform="matrix(-.044805 .050686 .050686 .044805 618.74 -.69879)">
+                                <path d="m11258 11225c-177-29-377-114-524-223-199-147-860-784-2019-1946-407-408-1083-1081-1501-1496-905-897-866-856-1754-1860-124-140-371-417-550-614-179-198-439-489-579-646-963-1081-1230-1348-2161-2160-179-156-370-325-425-375s-210-192-345-315-381-350-547-503l-302-280-103-3c-285-6-428-118-445-349-6-85 17-164 78-261 82-130 175-180 354-191 113-7 212 8 283 43 67 33 181 142 212 203 29 57 36 142 17 202l-14 47 366 325c484 429 655 578 1361 1183 789 676 1054 893 1452 1190 170 127 775 536 815 551 120 46 3281 2407 4988 3727 1837 1420 2476 1950 2747 2275 113 136 131 178 136 322 9 245-67 435-279 699-154 191-286 296-453 361-225 87-592 130-808 94z" />
+                            </g>
+                        </svg>
+                    </svg>
+                </center>
+
+                <center>
+                    <h1 id="feedback4" style="font-size:30px"></h1>
+                </center>
+
+                <div class="button-container">
+                    <center>
+                        <h3 id="Instruction" style="font-size:20px">Was this a good description for Ralph?</h3>
+                        <button type="button" class="yes-button4">Yes</button>
+                        <button type="button" class="no-button4">No</button>
+                    </center>
+                </div>
+            </div>            
+
+
+
+            <div class = "Heading">
+                <center>
+                    <h1 id="Heading" style="font-size:30px">
+                        *******************************************************
+                        Example Five 
+                        *******************************************************
+                    </h1>
+                </center>
+            </div>
+
+
+            <div>
+                <center>
+                    <button type="button" class="play-button5"><b>PLAY</b></button>
+                </center>
+            </div>
+
+
+
+            <div class="item">
+                <center>
+                    <h1 id="Instruction" style="font-size:30px">Worker:  "the blue bat"</h1>
+                    <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet">
+                        <svg id="targetIndicator5" width="210" height="297" viewBox="0 0 210 297">
+                            <path style="fill: black; stroke: black; stroke-width: 5.03887; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-dasharray: none; stroke-opacity: 1;" d="m 75.193122,109.50241 55.064458,76.04178" id="path2614" />
+                            <path style="fill: black; stroke: black; stroke-width: 5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-dasharray: none; stroke-opacity: 1;" d="M 130.19094,109.4159 75.38497,185.45558" />
+                        </svg>
+                        <svg id="stim5" width="1100" height="1100" viewBox="0 0 1920 1080">
+                            <g transform="matrix(-.044805 .050686 .050686 .044805 618.74 -.69879)">
+                                <path d="m11258 11225c-177-29-377-114-524-223-199-147-860-784-2019-1946-407-408-1083-1081-1501-1496-905-897-866-856-1754-1860-124-140-371-417-550-614-179-198-439-489-579-646-963-1081-1230-1348-2161-2160-179-156-370-325-425-375s-210-192-345-315-381-350-547-503l-302-280-103-3c-285-6-428-118-445-349-6-85 17-164 78-261 82-130 175-180 354-191 113-7 212 8 283 43 67 33 181 142 212 203 29 57 36 142 17 202l-14 47 366 325c484 429 655 578 1361 1183 789 676 1054 893 1452 1190 170 127 775 536 815 551 120 46 3281 2407 4988 3727 1837 1420 2476 1950 2747 2275 113 136 131 178 136 322 9 245-67 435-279 699-154 191-286 296-453 361-225 87-592 130-808 94z" />
+                            </g>
+                        </svg>
+                    </svg>
+                </center>
+
+                <center>
+                    <h1 id="feedback5" style="font-size:30px"></h1>
+                </center>
+
+                <div class="button-container">
+                    <center>
+                        <h3 id="Instruction" style="font-size:20px">Was this a good description for Ralph?</h3>
+                        <button type="button" class="yes-button5">Yes</button>
+                        <button type="button" class="no-button5">No</button>
+                    </center>
+                </div>
+            </div>
+
+
+            <div class = "Heading">
+                <center>
+                    <h1 id="Heading" style="font-size:30px">
+                        *******************************************************
+                        Example Six
+                        *******************************************************
+                    </h1>
+                </center>
+            </div>
+
+
+            <div>
+                <center>
+                    <button type="button" class="play-button6"><b>PLAY</b></button>
+                </center>
+            </div>
+
+
+
+            <div class="item">
+                <center>
+                    <h1 id="Instruction" style="font-size:30px">Worker:  "the wooden bat"</h1>
+                    <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet">
+                        <svg id="targetIndicator6" width="210" height="297" viewBox="0 0 210 297">
+                            <path style="fill: black; stroke: black; stroke-width: 5.03887; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-dasharray: none; stroke-opacity: 1;" d="m 75.193122,109.50241 55.064458,76.04178" id="path2614" />
+                            <path style="fill: black; stroke: black; stroke-width: 5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-dasharray: none; stroke-opacity: 1;" d="M 130.19094,109.4159 75.38497,185.45558" />
+                        </svg>
+                        <svg id="stim6" width="1100" height="1100" viewBox="0 0 1920 1080">
+                            <g transform="matrix(-.044805 .050686 .050686 .044805 618.74 -.69879)">
+                                <path d="m11258 11225c-177-29-377-114-524-223-199-147-860-784-2019-1946-407-408-1083-1081-1501-1496-905-897-866-856-1754-1860-124-140-371-417-550-614-179-198-439-489-579-646-963-1081-1230-1348-2161-2160-179-156-370-325-425-375s-210-192-345-315-381-350-547-503l-302-280-103-3c-285-6-428-118-445-349-6-85 17-164 78-261 82-130 175-180 354-191 113-7 212 8 283 43 67 33 181 142 212 203 29 57 36 142 17 202l-14 47 366 325c484 429 655 578 1361 1183 789 676 1054 893 1452 1190 170 127 775 536 815 551 120 46 3281 2407 4988 3727 1837 1420 2476 1950 2747 2275 113 136 131 178 136 322 9 245-67 435-279 699-154 191-286 296-453 361-225 87-592 130-808 94z" />
+                            </g>
+                        </svg>
+                    </svg>
+                </center>
+
+                <center>
+                    <h1 id="feedback6" style="font-size:30px"></h1>
+                </center>
+
+                <div class="button-container">
+                    <center>
+                        <h3 id="Instruction" style="font-size:20px">Was this a good description for Ralph?</h3>
+                        <button type="button" class="yes-button6">Yes</button>
+                        <button type="button" class="no-button6">No</button>
+                    </center>
+                </div>
+            </div>
+
+
+            <div>
+                <center>
+                    <button type="complete-button" class="complete-button">Proceed to the next stage</button>
+                </center>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

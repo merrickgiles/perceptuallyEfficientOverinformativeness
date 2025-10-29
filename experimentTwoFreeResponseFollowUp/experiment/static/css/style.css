@@ -1,0 +1,282 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  background-color: white;
+  color: black;
+  font-weight: 300;
+  font-size: 13pt;
+}
+
+/* text styling */
+strong {
+  font-weight: 600;
+}
+
+.warm {
+  color: steelblue;
+  text-align: justify;
+}
+
+.cool {
+  color: #ccccff;
+}
+
+h1 {
+  margin-top: 0px;
+}
+
+/* these are all the same for now, but easy to modify individually */
+#container-not-an-ad,
+#container-error,
+#container-exp,
+#container-consent,
+#container-instructions,
+#container-questionnaire {
+  background: white;
+  margin: 60px;
+  font-size: 25px;
+}
+
+/* ad.html  - the ad that people view first */
+#adlogo {
+  width: 140px;
+  padding: 2px;
+  border: 1px solid #ccc;
+  margin-right: 1em;
+}
+
+/* consent.html - the consent form */
+#consent {
+  margin: 0 auto;
+  margin-top: 0;
+  width: 80%;
+  font-size: 100%;
+}
+
+.legal {
+  text-align: justify;
+  font-size: 15pt;
+  line-height: 1.1em;
+}
+
+#trial {
+  margin: 0 auto;
+  width: 800px;
+  height: auto;
+  text-align: center;
+}
+
+#crosshairs {
+  display: block; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  line-height: 20px;
+  text-align: center;
+  color: darkgray;
+  font-size: 100px;
+  font-weight: bold;
+}
+
+#targetCrosshairs { 
+  display: block; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  line-height: 20px;
+  text-align: center;
+  color: darkred;
+  font-size: 100px;
+  font-weight: bold;
+}
+
+#soundDisplay { 
+  color: darkgray;
+  font-size: 30px;
+}
+
+#targetIndicator { 
+  display: block; 
+  position: absolute;
+  visibility: visible; 
+}
+
+#stim {
+  display: block; /* Ensure block-level display */
+  position: absolute;
+  visibility: visible; /* Change to 'hidden' to hide without collapsing */
+}
+
+#zero {
+  display: block; /* Ensure block-level display */
+  position: absolute;
+  visibility: visible; /* Change to 'hidden' to hide without collapsing */
+}
+
+#colorRect {
+  display: block; /* Ensure block-level display */
+  visibility: visible; /* Change to 'hidden' to hide without collapsing */
+  position: absolute;
+}
+
+#query {
+  color: darkgray;
+  position: absolute; 
+  bottom: 2%; 
+  left: 0; 
+  right: 0; 
+}
+
+.question {
+  margin-bottom: 30px;
+}
+
+/* errors */
+#error img {
+  padding-right: 10px;
+  padding-top: 15px;
+}
+
+/*this is the css for the button I've made in the stage of the html*/
+.input-container {
+  position: fixed;
+  bottom: 2vh; /* Keeps the container proportionally distanced from the bottom */
+  right: 2vw; /* And from the right */
+  display: flex;
+  align-items: center;
+}
+
+.text-input {
+  font-family: Arial, sans-serif;
+  font-size: 1.2vw;
+  padding: 0.8vw;
+  margin-right: 1vw;
+  width: 18vw;
+  border: 2px solid #404040;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+}
+
+.text-input:focus {
+  border-color: #606060;
+  color: black;
+}
+
+.submit-button {
+  font-size: 1.2vw;
+  padding: 0.8vw 2vw;
+  cursor: pointer;
+  background-color: #404040;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0.5vw 0.75vw rgba(64, 64, 64, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-button:hover {
+  background-color: #606060; /* Lighter grey on hover */
+  transform: translateY(-2px);
+}
+
+.submit-button:active {
+  background-color: #808080; /* Even lighter grey on click */
+  box-shadow: 0 0.25vw 0.5vw rgba(64, 64, 64, 0.5);
+  transform: translateY(0);
+}
+
+.finish-button {
+  margin: 150px 150px; 
+  font-size: 1.2vw;
+  padding: 0.8vw 2vw;
+  cursor: pointer;
+  background-color: #404040;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0.5vw 0.75vw rgba(64, 64, 64, 0.5);
+  display: block;
+}
+
+.finish-button:hover {
+  background-color: #606060; /* Lighter grey on hover */
+  transform: translateY(-2px);
+}
+
+.finish-button:active {
+  background-color: #808080; /* Even lighter grey on click */
+  box-shadow: 0 0.25vw 0.5vw rgba(64, 64, 64, 0.5);
+  transform: translateY(0);
+}
+
+#play-button{ 
+  align-items: center;
+}
+
+.play-button {
+  margin: 150px 150px;
+  font-size: 1.2vw;
+  padding: 0.8vw 2vw;
+  cursor: pointer;
+  background-color: #404040;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0.5vw 0.75vw rgba(64, 64, 64, 0.5);
+  display: block;
+}
+
+.orientation-svg-container {
+  position: relative;
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.play-button:hover {
+  background-color: #606060; /* Lighter grey on hover */
+  transform: translateY(-2px);
+}
+
+#container-exp {
+  display: absolute; /* Enables Flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Take full height of the viewport */
+}
+
+#trial {
+  display: absolute; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  width: 100%; /* Optional: take full width of the parent */
+}
+
+#trial h1 {
+  font-size: 50px; /* Larger heading */
+  margin-bottom: 50px;
+}
+
+#trial p {
+  font-size: 30px; /* Larger paragraph text */
+  margin-bottom: 50px;
+}
+
+#proceed-button { 
+position: absolute; 
+padding: 1vw 2vw;
+bottom: 0; 
+right: 0;
+}
