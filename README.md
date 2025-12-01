@@ -1,3 +1,3 @@
-### Anonymised code for submission
+Code for the experiments and analysis for a project on the perceptual drivers of overinformativeness.
 
-Code for the experiments and analysis for the overinformativeness project.
+CogSci proceedings reporting Experiment One: https://escholarship.org/uc/item/4w25p5mj
