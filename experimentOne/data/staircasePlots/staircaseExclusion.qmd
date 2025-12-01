@@ -86,36 +86,49 @@ steps_yo <- colour |>
 ```
 
 ```{r}
-yo <- ggplot(
-  data = steps_yo_binned, 
-  aes(x = stim, y = correct)
-) +
-  # individual participant curves
-  stat_smooth(
-    aes(group = participant),  
-    method = "glm", 
-    se = FALSE, 
-    method.args = list(family = binomial), 
-    col = lightblue,  
-    alpha = 0.01,
-    size = 0.5
+# Get unique participants
+participants <- unique(steps_yo_binned$participant)
+
+# Loop through each participant and create a plot
+for (p in participants) {
+  # Filter data for current participant
+  participant_data <- steps_yo_binned[steps_yo_binned$participant == p, ]
+  
+  # Create plot
+  plot <- ggplot(
+    data = participant_data,
+    aes(x = stim, y = correct)
   ) +
-  stat_smooth(
-    data = steps_yo, 
-    aes(x=stim, y = correct),
-    method="glm", 
-    se=FALSE, 
-    method.args = list(family=binomial), 
-    col=midblue,
-    size = 1.7
+    geom_point(
+      col = "gray30",
+      size = 2,
+      alpha = 0.5
     ) +
-    stat_summary(fun.data = mean_cl_boot, geom="linerange", color = midblue, alpha = 1, size = 1.8) +
-  stat_summary(fun = mean, geom="point", color = darkblue, size = 2.5) +
-  my_theme() + 
-  labs(
-    x = "Orange-to-Yellow Staircase Step Number",
-    y = "Probability of Label \"yellow\"", 
-  )
+    stat_smooth(
+      method = "glm",
+      se = FALSE,
+      method.args = list(family = binomial),
+      col = "lightblue",
+      linewidth = 1.5
+    ) +
+    theme_classic() +
+    labs(
+      x = "Orange-to-Yellow Staircase Step Number",
+      y = "Probability of Label \"yeOlow\"",
+      title = paste("Participant", p)
+    ) +
+    scale_x_continuous(breaks = 0:50) +
+    scale_y_continuous(
+      "Probability of label \"yellow\"",
+      sec.axis = sec_axis(
+        ~.,
+        name = "Probability of label \"orange\""
+      )
+    )
+  
+  # Print the plot
+  print(plot)
+}
 ```
 
 ```{r}

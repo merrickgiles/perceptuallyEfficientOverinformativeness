@@ -52,9 +52,9 @@ threePaletteDark = c("#2f4858", "#06402B", "#5C4033")
 
 data <- read_csv("data/rawData.csv")
 
-finishStatusOrient <- read_csv("data/finishStatuses/orientationFinishStatuses.csv")
-finishStatusColorLoFreq <- read_csv("data/finishStatuses/colorLoFreqFinishStatuses.csv")
-finishStatusColorHiFreq <- read_csv("data/finishStatuses/colorHiFreqFinishStatuses.csv")
+finishStatusOrient <- read_csv("data/orientationFinishStatuses.csv")
+finishStatusColorLoFreq <- read_csv("data/colorLoFreqFinishStatuses.csv")
+finishStatusColorHiFreq <- read_csv("data/colorHiFreqFinishStatuses.csv")
 
 
 #for ease of col name use
@@ -312,7 +312,7 @@ process_response <- function(response) {
   return(nonNounCount)
 }
 
-tibble <- parsedCrit %>%
+tibble <- parsedcrit %>%
   mutate(across(where(is.character), tolower)) %>%
   rowwise() %>%
   mutate(
