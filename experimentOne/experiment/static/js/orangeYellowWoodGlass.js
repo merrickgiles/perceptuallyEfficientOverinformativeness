@@ -2961,12 +2961,6 @@ var OrangeYellow_WoodGlass = function () {
       if ((trials.length === 0 && step == 0) || (thumbsDownCount > 9)) {
         finish();
 
-        //if we're half way through and we haven't taken a break
-      } else if (trials.length === Math.floor(nTrials / 2) && !breakTaken) {
-        //Take a break and set that we have
-        breakTaken = true;
-        showBreakScreen();
-
       } else if (step == 0) {
         step = step + 1;
         trial = trials.shift();
@@ -3125,27 +3119,6 @@ var OrangeYellow_WoodGlass = function () {
                 }
             }
         }
-    };
-
-    var showBreakScreen = function () {
-      // Hide experiment elements - we can still leave the stuff at the top of the page, that's fine I guess.
-      d3.select("#stim").style("display", "none");
-      d3.select("#targetIndicator").style("display", "none");
-      d3.select("#text_input").style("display", "none");
-
-      //show break message
-      d3.select("body")
-        .insert("div", ":first-child")
-        .attr("id", "break-screen")
-        .html(
-          "<h2>Time for a break!</h2><p>You're exactly halfway through this final phase of the experiment. You will likely finish in a little under eight minutes. Please take a break now if you would like</p><button id='continue-btn'>Continue</button>"
-        );
-
-      //and throw in an event listener for the continue button, which clears the screen and runs the next trial when clicked.
-      d3.select("#continue-btn").on("click", function () {
-        d3.select("#break-screen").remove();
-        next(0); // Continue with the next trial
-      });
     };
 
     // Load the HTML content for the experiment stage

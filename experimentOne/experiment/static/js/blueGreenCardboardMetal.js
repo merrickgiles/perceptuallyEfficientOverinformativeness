@@ -72,7 +72,9 @@ var BlueGreen_CardboardMetal = function () {
     preload: true,
   });
   var metal_wood_02 = new Howl({
-    src: ["/static/stimuli/materialContinuums/mp3Files/cardboard_metal_02-40.mp3"],
+    src: [
+      "/static/stimuli/audio/materialContinuums/mp3Files/cardboard_metal_02-40.mp3",
+    ],
     preload: true,
   });
   var metal_wood_03 = new Howl({
@@ -2992,11 +2994,6 @@ var BlueGreen_CardboardMetal = function () {
         finish();
       }
 
-      if (trials.length === 58 && breakTaken == false) {
-        showBreakScreen();
-        breakTaken = true;
-      }
-
       // If we get here, run the trial
       runTrial();
     };
@@ -3160,28 +3157,6 @@ var BlueGreen_CardboardMetal = function () {
           }
         }
       }
-    };
-
-    var showBreakScreen = function () {
-      // Hide experiment elements - we can still leave the stuff at the top of the page, that's fine I guess.
-      d3.select("#stim").style("display", "none");
-      d3.select("#targetIndicator").style("display", "none");
-      d3.select("#text_input").style("display", "none");
-
-      //show break message
-      d3.select("body")
-        .insert("div", ":first-child")
-        .attr("id", "break-screen")
-        .html(
-          "<h2>Time for a break!</h2><p>You're exactly halfway through this final phase of the experiment. You will likely finish in a little under eight minutes. Please take a break now if you would like</p><button id='continue-btn'>Continue</button>"
-        );
-
-      //and throw in an event listener for the continue button, which clears the screen and runs the next trial when clicked.
-      d3.select("#continue-btn").on("click", function () {
-        breakTaken = true;
-        d3.select("#break-screen").remove();
-        next(0);
-      });
     };
 
     // Load the HTML content f or the experiment stage
